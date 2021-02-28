@@ -11,5 +11,6 @@
     <string name="register">Register</string>
     <string name="login">Login</string>
     <string name="author">Author</string>
-    <string name="author">Author</string>
+    <string name="testbookpage">TestBookPage</string>
+
 </resources>
