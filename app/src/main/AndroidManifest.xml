@@ -9,15 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Mobileapp">
-        <activity android:name=".Login"></activity>
+        <activity android:name=".BookPage"></activity>
+        <activity android:name=".SearchResult" />
+        <activity android:name=".Activities" />
+        <activity android:name=".Forum" />
+        <activity android:name=".Timetables" />
+        <activity android:name=".FloorMap" />
+        <activity android:name=".Library" />
+        <activity android:name=".Login" />
         <activity android:name=".Register">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".MainActivity" >
         </activity>
     </application>
 
