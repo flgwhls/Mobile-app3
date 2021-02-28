@@ -32,6 +32,7 @@
         android:layout_marginEnd="101dp"
         android:layout_marginRight="101dp"
         android:ems="10"
+        android:hint="Book Author"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
