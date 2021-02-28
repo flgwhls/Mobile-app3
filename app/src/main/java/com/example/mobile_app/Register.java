@@ -27,8 +27,6 @@ public class Register extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(Register.this,BookPage.class);
 
-
-
                 startActivity(i);
             }
             //------------  END TEMPORARY bookPage test --------------------------
