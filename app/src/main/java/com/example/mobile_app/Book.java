@@ -6,6 +6,8 @@ public class Book {
     private String title, author, edition, ISBN, Category;
     private Integer bookID;
 
+    //TODO: pleqse look and think if we need something more in this class
+
     // Constructor to create object and write to FireBase
     public Book(String title, String author, String edition, String ISBN, String category, Integer bookID) {
         this.title = title;
@@ -47,4 +49,5 @@ public class Book {
     public void setBookID(Integer bookID) {
         this.bookID = bookID;
     }
+
 }
