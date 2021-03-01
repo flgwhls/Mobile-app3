@@ -21,26 +21,17 @@ public class BookRegister extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_register);
 
-        title = findViewById(R.id.et_bookreg_title);
+        title= findViewById(R.id.et_bookreg_title);
         author = findViewById(R.id.et_bookreg_author);
         edition = findViewById(R.id.et_bookreg_edition);
         isbn = findViewById(R.id.et_bookreg_ISBN);
         category = findViewById(R.id.et_bookreg_category);
-        imagelink = findViewById(R.id.et_bookreg_imageLink);
+        imagelink = findViewById(R.id.et_bookreg_ImageLink);
+        bookregister = findViewById(R.id.btn_bookreg_register);
 
-        bookregister = findViewById(R.id.btn_reg_registerbook);
-        // reference to fireBAse
-        dbref= FirebaseDatabase.getInstance().getReference("Book");
-        // Action after click bookregister button
-        bookregister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Book b=new Book(title.getText().toString(),author.getText().toString(),edition.getText().toString(),
-                        isbn.getText().toString(),category.getText().toString(),imagelink.getText().toString());
-                //dbref.child(dbref.push().getKey()).setValue(b);
 
-            }
-        });
+
+
 
 
 
