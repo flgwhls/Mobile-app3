@@ -20,7 +20,8 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/et_book_author"
@@ -29,17 +30,18 @@
         android:layout_marginStart="100dp"
         android:layout_marginLeft="100dp"
         android:layout_marginTop="58dp"
-        android:layout_marginEnd="101dp"
-        android:layout_marginRight="101dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
         android:ems="10"
         android:hint="Book Author"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_book_title" />
+        app:layout_constraintTop_toBottomOf="@+id/et_book_title"
+        android:importantForAutofill="no" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/et_ISBN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
@@ -48,14 +50,15 @@
         android:layout_marginEnd="101dp"
         android:layout_marginRight="101dp"
         android:ems="10"
+        android:hint="ISBN Number"
+        android:importantForAutofill="no"
         android:inputType="textPersonName"
-        android:text="Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_book_author" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName4"
+        android:id="@+id/et_ImageLink"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
@@ -68,5 +71,6 @@
         android:text="Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
+        app:layout_constraintTop_toBottomOf="@+id/et_ISBN"
+        android:importantForAutofill="no" />
 </androidx.constraintlayout.widget.ConstraintLayout>
