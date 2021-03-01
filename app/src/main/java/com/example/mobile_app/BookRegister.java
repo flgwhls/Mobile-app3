@@ -29,6 +29,12 @@ public class BookRegister extends AppCompatActivity {
         imagelink = findViewById(R.id.et_bookreg_ImageLink);
         bookregister = findViewById(R.id.btn_bookreg_register);
 
+        bookregister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Book b = new Book(title.)
+            }
+        });
 
 
 
