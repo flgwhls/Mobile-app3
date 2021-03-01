@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Mobileapp">
-        <activity android:name=".BookRegister"></activity>
+        <activity android:name=".Register"></activity>
         <activity android:name=".BookPage" />
         <activity android:name=".SearchResult" />
         <activity android:name=".Activities" />
@@ -18,7 +18,7 @@
         <activity android:name=".FloorMap" />
         <activity android:name=".Library" />
         <activity android:name=".Login" />
-        <activity android:name=".Register">
+        <activity android:name=".BookRegister">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

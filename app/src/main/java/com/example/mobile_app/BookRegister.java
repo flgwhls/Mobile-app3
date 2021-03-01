@@ -11,6 +11,8 @@ import android.widget.EditText;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+
+
 public class BookRegister extends AppCompatActivity {
     EditText title, author, edition, isbn, category, imagelink;
     Button bookregister;
@@ -28,12 +30,15 @@ public class BookRegister extends AppCompatActivity {
         category = findViewById(R.id.et_bookreg_category);
         imagelink = findViewById(R.id.et_bookreg_ImageLink);
         bookregister = findViewById(R.id.btn_bookreg_register);
+        dbref = getInstance().getReference("Book");
 
-
-
-
-
-
-
+        bookregister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Book b = new Book(title.getText().toString(), author.getText().toString(),
+                        edition.getText().toString(),isbn.getText().toString(),
+                        category.getText().toString(),imagelink.getText().toString());
+            }
+        });
     }
 }
