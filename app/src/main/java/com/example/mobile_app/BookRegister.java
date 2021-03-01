@@ -29,8 +29,9 @@ public class BookRegister extends AppCompatActivity {
         isbn = findViewById(R.id.et_bookreg_ISBN);
         category = findViewById(R.id.et_bookreg_category);
         imagelink = findViewById(R.id.et_bookreg_ImageLink);
+
         bookregister = findViewById(R.id.btn_bookreg_register);
-        dbref = getInstance().getReference("Book");
+        dbref = FirebaseDatabase.getInstance().getReference("Book");
 
         bookregister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,6 +39,7 @@ public class BookRegister extends AppCompatActivity {
                 Book b = new Book(title.getText().toString(), author.getText().toString(),
                         edition.getText().toString(),isbn.getText().toString(),
                         category.getText().toString(),imagelink.getText().toString());
+                dbref.child(dbref.push().getKey()).setValue(b);
             }
         });
     }
