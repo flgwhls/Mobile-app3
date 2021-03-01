@@ -7,7 +7,7 @@
     tools:context=".BookRegister">
 
     <EditText
-        android:id="@+id/et_book_title"
+        android:id="@+id/et_bookreg_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="101dp"
@@ -24,7 +24,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/et_book_author"
+        android:id="@+id/et_bookreg_author"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
@@ -38,10 +38,10 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_book_title" />
+        app:layout_constraintTop_toBottomOf="@+id/et_bookreg_title" />
 
     <EditText
-        android:id="@+id/et_ISBN"
+        android:id="@+id/et_bookreg_ISBN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
@@ -55,10 +55,10 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_book_author" />
+        app:layout_constraintTop_toBottomOf="@+id/et_bookreg_author" />
 
     <EditText
-        android:id="@+id/et_ImageLink"
+        android:id="@+id/et_bookreg_imageLink"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
@@ -73,25 +73,25 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_breg_category" />
+        app:layout_constraintTop_toBottomOf="@+id/et_bookreg_category" />
 
     <Button
-        android:id="@+id/btn_breg_register"
+        android:id="@+id/btn_bookreg_register"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="101dp"
-        android:layout_marginLeft="101dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
         android:layout_marginTop="260dp"
-        android:layout_marginEnd="101dp"
-        android:layout_marginRight="101dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
         android:text="@string/register_book"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.137"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_ImageLink" />
+        app:layout_constraintTop_toBottomOf="@+id/et_bookreg_imageLink" />
 
     <EditText
-        android:id="@+id/et_breg_category"
+        android:id="@+id/et_bookreg_category"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
@@ -104,6 +104,6 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_ISBN"
+        app:layout_constraintTop_toBottomOf="@+id/et_bookreg_ISBN"
         android:importantForAutofill="no" />
 </androidx.constraintlayout.widget.ConstraintLayout>
