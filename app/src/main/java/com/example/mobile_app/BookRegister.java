@@ -29,10 +29,18 @@ public class BookRegister extends AppCompatActivity {
         imagelink = findViewById(R.id.et_bookreg_ImageLink);
         bookregister = findViewById(R.id.btn_bookreg_register);
 
+        dbref = FirebaseDatabase.getInstance().getReference("Book");
         bookregister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Book b = new Book(title.)
+                Book b = new Book(title.getText().toString(),author.getText().toString(),
+                        edition.getText().toString(),isbn.getText().toString(),
+                        category.getText().toString(),imagelink.getText().toString());
+                dbref.child(dbref.push().getKey()).setValue(b);
+                Intent i = new Intent(BookRegister.this,Register.class);
+
+
+
             }
         });
 

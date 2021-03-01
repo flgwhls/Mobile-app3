@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "135423240099",
+    "firebase_url": "https://mobile-app-cd292-default-rtdb.firebaseio.com",
     "project_id": "mobile-app-cd292",
     "storage_bucket": "mobile-app-cd292.appspot.com"
   },
@@ -14,11 +15,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "135423240099-kudar2hn7agg8qhtqj5fmsoonrb3lij8.apps.googleusercontent.com",
+          "client_id": "135423240099-0tro898n7h8de6otqf9np975budcrr03.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.mobile_app",
-            "certificate_hash": "b9802babaa7484c753d1b0401169052fbb82c331"
+            "certificate_hash": "771d6821ef690e9a997b01e5f7b00251c80e1286"
           }
         },
         {
