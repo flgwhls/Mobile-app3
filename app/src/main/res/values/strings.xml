@@ -12,5 +12,9 @@
     <string name="login">Login</string>
     <string name="author">Author</string>
     <string name="testbookpage">TestBookPage</string>
+    <string name="title_of_book">Title of Book</string>
+    <string name="book_author">Book Author</string>
+    <string name="isbn_number">ISBN Number</string>
+    <string name="fire_storage_link">Fire Storage link</string>
 
 </resources>

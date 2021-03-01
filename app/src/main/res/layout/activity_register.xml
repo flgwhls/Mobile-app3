@@ -12,16 +12,16 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:layout_marginLeft="100dp"
-        android:layout_marginTop="71dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="100dp"
         android:layout_marginRight="100dp"
         android:ems="10"
         android:hint="@string/first_name"
+        android:importantForAutofill="no"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:importantForAutofill="no" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/et_reg_LastName"
@@ -29,16 +29,16 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="101dp"
         android:layout_marginLeft="101dp"
-        android:layout_marginTop="47dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="101dp"
         android:layout_marginRight="101dp"
         android:ems="10"
         android:hint="@string/last_name"
+        android:importantForAutofill="no"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_reg_FirstName"
-        android:importantForAutofill="no" />
+        app:layout_constraintTop_toBottomOf="@+id/et_reg_FirstName" />
 
     <EditText
         android:id="@+id/et_reg_email"
@@ -46,16 +46,16 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:layout_marginLeft="100dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="100dp"
         android:layout_marginRight="100dp"
         android:ems="10"
         android:hint="@string/email"
+        android:importantForAutofill="no"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_reg_LastName"
-        android:importantForAutofill="no" />
+        app:layout_constraintTop_toBottomOf="@+id/et_reg_LastName" />
 
     <EditText
         android:id="@+id/et_reg_password"
@@ -63,7 +63,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:layout_marginLeft="100dp"
-        android:layout_marginTop="46dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="100dp"
         android:layout_marginRight="100dp"
         android:ems="10"
@@ -80,7 +80,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:layout_marginLeft="100dp"
-        android:layout_marginTop="46dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="100dp"
         android:layout_marginRight="100dp"
         android:ems="10"
@@ -117,6 +117,20 @@
         android:text="@string/testbookpage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_reg_register" />
+
+    <Button
+        android:id="@+id/btn_reg_registerbook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginRight="84dp"
+        android:text="BookReg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_bookpage"
         app:layout_constraintTop_toBottomOf="@+id/btn_reg_register" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
