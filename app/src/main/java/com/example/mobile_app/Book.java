@@ -3,7 +3,7 @@ package com.example.mobile_app;
 public class Book {
     // class to make Book object
     // variables
-    private String title, author, edition, ISBN, Category,imglink;
+    private String title, author, edition, ISBN, category,imglink;
 
 
     //TODO: pleqse look and think if we need something more in this class
@@ -14,8 +14,8 @@ public class Book {
         this.author = author;
         this.edition = edition;
         this.ISBN = ISBN;
-        Category = category;
-        imglink = imagelink;
+        this.category = category;
+        this.imglink = imagelink;
 
     }
     // Constructor to create object and read from FireBase
@@ -28,7 +28,7 @@ public class Book {
     public String getAuthor() {return author;}
     public String getEdition() {return edition;}
     public String getISBN() {return ISBN;}
-    public String getCategory() {return Category;}
+    public String getCategory() {return category;}
 
 
     public String getImglink() {
@@ -49,7 +49,7 @@ public class Book {
         this.ISBN = ISBN;
     }
     public void setCategory(String category) {
-        Category = category;
+        this.category = category;
     }
 
 
