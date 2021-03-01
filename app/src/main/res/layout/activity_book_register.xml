@@ -8,13 +8,13 @@
 
     <EditText
         android:id="@+id/et_book_title"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="101dp"
-        android:layout_marginLeft="101dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="101dp"
-        android:layout_marginRight="101dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
         android:ems="10"
         android:hint="@string/title_of_book"
         android:importantForAutofill="no"
@@ -25,7 +25,7 @@
 
     <EditText
         android:id="@+id/et_book_author"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:layout_marginLeft="100dp"
@@ -42,20 +42,21 @@
 
     <EditText
         android:id="@+id/et_ISBN"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:layout_marginLeft="100dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="101dp"
-        android:layout_marginRight="101dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
         android:ems="10"
         android:hint="@string/isbn_number"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_book_author" />
+        app:layout_constraintTop_toBottomOf="@+id/et_bookreg_edition" />
 
     <EditText
         android:id="@+id/et_ImageLink"
@@ -81,12 +82,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="101dp"
         android:layout_marginLeft="101dp"
-        android:layout_marginTop="260dp"
+        android:layout_marginTop="148dp"
         android:layout_marginEnd="101dp"
         android:layout_marginRight="101dp"
         android:text="@string/register_book"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.137"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_ImageLink" />
 
@@ -100,9 +101,26 @@
         android:layout_marginEnd="100dp"
         android:layout_marginRight="100dp"
         android:ems="10"
-        android:hint="Book Category"
+        android:hint="@string/book_category"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_ISBN" />
+        app:layout_constraintTop_toBottomOf="@+id/et_ISBN"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/et_bookreg_edition"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
+        android:ems="10"
+        android:hint="Book Edition"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_book_author" />
 </androidx.constraintlayout.widget.ConstraintLayout>
