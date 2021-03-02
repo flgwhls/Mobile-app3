@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 
 public class Register extends AppCompatActivity {
   // Variables
@@ -17,6 +20,8 @@ public class Register extends AppCompatActivity {
     // for testing bookpage
     Button bookpage;
     Button bookreg;
+
+    DatabaseReference dbref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +42,23 @@ public class Register extends AppCompatActivity {
         register= findViewById(R.id.btn_reg_register);
         bookpage = findViewById(R.id.btn_bookpage); // delete when not needed
         bookreg = findViewById(R.id.btn_reg_registerbook); //delete when not needed
+
+
+
+        dbref = FirebaseDatabase.getInstance().getReference("Student");
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Student s = new Student(studentID.getText().toString(),firstName.getText().toString(),
+                        lastNAme.getText().toString(),email.getText().toString(),
+                        password.getText().toString());
+                dbref.child(dbref.push().getKey()).setValue(s);
+                Intent i = new Intent(Register.this,Dashboard.class);
+                startActivity(i);
+
+
+            }
+        });
 
         //-----------------------------------------------------------------------
         // temporary for test bookpage

@@ -9,7 +9,7 @@ public class Book4Sell {
     //TODO: pleqse look and think if we need something more in this class
 
     // Constructor to create object and write to FireBase
-    public Book(String title, String author, String edition, String ISBN, String category, String imagelink, String publisher, String publicyear) {
+    public Book4Sell(String title, String author, String edition, String ISBN, String category, String imagelink, String publisher, String publicyear) {
         this.title = title;
         this.author = author;
         this.edition = edition;
@@ -21,7 +21,7 @@ public class Book4Sell {
         this.publicyear = publicyear;
     }
     // Constructor to create object and read from FireBase
-    public Book() {
+    public Book4Sell() {
 
     }
     //Methods

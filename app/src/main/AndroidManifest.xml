@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Mobileapp">
-        <activity android:name=".SellBooks"></activity>
+        <activity android:name=".Dashboard"></activity>
+        <activity android:name=".SellBooks" />
         <activity android:name=".BookRegister" />
         <activity android:name=".BookPage" />
         <activity android:name=".SearchResult" />
