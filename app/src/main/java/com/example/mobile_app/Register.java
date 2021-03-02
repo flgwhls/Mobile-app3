@@ -6,10 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+
 
 public class Register extends AppCompatActivity {
   // Variables
-    String firstName,lastNAme, email, password, confPassword;
+   // String studentID,firstName,lastNAme, email, password, confPassword;
+    EditText studentID,firstName,lastNAme, email, password, confPassword;
     Button register;
     // for testing bookpage
     Button bookpage;
@@ -25,6 +28,13 @@ public class Register extends AppCompatActivity {
 
 
         // ---------------- TO DELETE WHEN not needed  ---------------
+        studentID = findViewById(R.id.et_reg_StudentID);
+        firstName = findViewById(R.id.et_reg_FirstName);
+        lastNAme = findViewById(R.id.et_reg_LastName);
+        email = findViewById(R.id.et_reg_email);
+        password = findViewById(R.id.et_reg_password);
+        confPassword = findViewById(R.id.et_conf_password);
+        register= findViewById(R.id.btn_reg_register);
         bookpage = findViewById(R.id.btn_bookpage); // delete when not needed
         bookreg = findViewById(R.id.btn_reg_registerbook); //delete when not needed
 

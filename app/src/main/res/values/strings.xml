@@ -21,5 +21,7 @@
     <string name="book_edition">Book Edition</string>
     <string name="publisher">Publisher</string>
     <string name="publication_year">Publication Year</string>
+    <string name="student_id">Student ID</string>
+    <string name="bookreg">BookReg</string>
 
 </resources>
