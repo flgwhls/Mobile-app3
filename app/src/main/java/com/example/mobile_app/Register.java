@@ -19,6 +19,12 @@ public class Register extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+
+
+
+
+        // ---------------- TO DELETE WHEN not needed  ---------------
         bookpage = findViewById(R.id.btn_bookpage); // delete when not needed
         bookreg = findViewById(R.id.btn_reg_registerbook); //delete when not needed
 
