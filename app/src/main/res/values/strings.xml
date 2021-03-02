@@ -23,5 +23,10 @@
     <string name="publication_year">Publication Year</string>
     <string name="student_id">Student ID</string>
     <string name="bookreg">BookReg</string>
+    <string name="title">Title</string>
+    <string name="isbn">ISBN</string>
+    <string name="picture">Picture</string>
+    <string name="left">Left</string>
+    <string name="right">Right</string>
 
 </resources>
