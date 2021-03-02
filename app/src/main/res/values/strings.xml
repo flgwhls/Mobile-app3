@@ -13,10 +13,13 @@
     <string name="author">Author</string>
     <string name="testbookpage">TestBookPage</string>
     <string name="title_of_book">Title of Book</string>
-    <string name="book_author">Book Author</string>
+    <string name="book_author">Book Authors</string>
     <string name="isbn_number">ISBN Number</string>
     <string name="fire_storage_link">Fire Storage link</string>
     <string name="register_book">Register Book</string>
     <string name="book_category">Book Category</string>
+    <string name="book_edition">Book Edition</string>
+    <string name="publisher">Publisher</string>
+    <string name="publication_year">Publication Year</string>
 
 </resources>

@@ -12,7 +12,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class BookRegister extends AppCompatActivity {
-    EditText title, author, edition, isbn, category, imagelink;
+    EditText title, author, edition, isbn, category, imagelink, publisher, publicyear;
     Button bookregister;
     DatabaseReference dbref;
 
@@ -28,6 +28,8 @@ public class BookRegister extends AppCompatActivity {
         category = findViewById(R.id.et_bookreg_category);
         imagelink = findViewById(R.id.et_bookreg_ImageLink);
         bookregister = findViewById(R.id.btn_bookreg_register);
+        publisher = findViewById(R.id.et_bookreg_publisher);
+        publicyear = findViewById(R.id.et_bookreg_publicyear);
 
         dbref = FirebaseDatabase.getInstance().getReference("Book");
         bookregister.setOnClickListener(new View.OnClickListener() {
@@ -35,10 +37,11 @@ public class BookRegister extends AppCompatActivity {
             public void onClick(View view) {
                 Book b = new Book(title.getText().toString(),author.getText().toString(),
                         edition.getText().toString(),isbn.getText().toString(),
-                        category.getText().toString(),imagelink.getText().toString());
+                        category.getText().toString(),imagelink.getText().toString(),
+                        publisher.getText().toString(), publicyear.getText().toString());
                 dbref.child(dbref.push().getKey()).setValue(b);
                 Intent i = new Intent(BookRegister.this,Register.class);
-
+                startActivity(i);
 
 
             }
