@@ -21,7 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class Register extends AppCompatActivity {
   // Variables
-   // String studentID,firstName,lastNAme, email, password, confPassword;
+
     EditText studentID,firstName,lastNAme, email, password, confPassword;
     Button register;
     // for testing bookpage
@@ -29,7 +29,6 @@ public class Register extends AppCompatActivity {
     Button bookreg;
 
     DatabaseReference dbref;
-    //prova
     FirebaseAuth mFirebaseAuth;
 
     @Override
@@ -54,7 +53,7 @@ public class Register extends AppCompatActivity {
         bookreg = findViewById(R.id.btn_reg_registerbook); //delete when not needed
 
 
-        //prova
+
         mFirebaseAuth = FirebaseAuth.getInstance();
 
         dbref = FirebaseDatabase.getInstance().getReference("Student");
@@ -75,12 +74,11 @@ public class Register extends AppCompatActivity {
                         && !TextUtils.isEmpty(confPassword.getText().toString())
                         && password.getText().toString().compareTo(confPassword.getText().toString()) == 0
                         && password.getText().toString().length() >= 6) {
-                    //prova
+
 
                     dbref.child(dbref.push().getKey()).setValue(s);
 
-                   // Intent i = new Intent(Register.this,Dashboard.class);
-                   // startActivity(i);
+
 
                     mFirebaseAuth.createUserWithEmailAndPassword(emailID, passwordID).addOnCompleteListener(Register.this, new OnCompleteListener<AuthResult>() {
                         @Override
