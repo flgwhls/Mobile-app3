@@ -28,5 +28,7 @@
     <string name="picture">Picture</string>
     <string name="left">Left</string>
     <string name="right">Right</string>
+    <string name="edition">Edition</string>
+    <string name="category">Category</string>
 
 </resources>

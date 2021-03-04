@@ -7,18 +7,28 @@
     tools:context=".BookPage">
 
     <TextView
+        android:id="@+id/tv_bookp_edition2"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/tv_bookp_publicyear2" />
+
+    <TextView
         android:id="@+id/tv_bookp_isbn2"
         android:layout_width="0dp"
         android:layout_height="19dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/tv_bookp_isbn"
-        app:layout_constraintTop_toBottomOf="@+id/tv_bookp_title2" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_bookp_category2" />
 
     <TextView
         android:id="@+id/tv_bookp_isbn"
@@ -26,10 +36,10 @@
         android:layout_height="19dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:text="@string/isbn"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_bookp_title" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_bookp_category" />
 
     <TextView
         android:id="@+id/tv_bookp_title"
@@ -37,21 +47,22 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="33dp"
+        android:layout_marginTop="52dp"
         android:text="@string/title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_bookp_author" />
 
     <TextView
         android:id="@+id/tv_bookp_title2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="319dp"
+        android:layout_height="55dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="33dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/tv_bookp_title"
         app:layout_constraintTop_toBottomOf="@+id/tv_bookp_author2" />
 
@@ -68,8 +79,8 @@
 
     <TextView
         android:id="@+id/tv_bookp_author2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="319dp"
+        android:layout_height="47dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="44dp"
@@ -80,17 +91,17 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="200dp"
-        android:layout_height="278dp"
+        android:id="@+id/iv_bookp_image"
+        android:layout_width="180dp"
+        android:layout_height="231dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:contentDescription="@string/picture"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.055"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_bookp_publicyear"
+        app:layout_constraintTop_toBottomOf="@+id/tv_bookp_publisher"
         tools:srcCompat="@tools:sample/avatars" />
 
     <Button
@@ -100,9 +111,11 @@
         android:layout_marginStart="36dp"
         android:layout_marginLeft="36dp"
         android:layout_marginTop="32dp"
+        android:layout_marginBottom="61dp"
         android:text="@string/left"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_bookp_image" />
 
     <Button
         android:id="@+id/btn_bookp_right"
@@ -111,9 +124,11 @@
         android:layout_marginStart="148dp"
         android:layout_marginLeft="148dp"
         android:layout_marginTop="32dp"
+        android:layout_marginBottom="61dp"
         android:text="@string/right"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btn_bookp_left"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_bookp_image" />
 
     <TextView
         android:id="@+id/tv_bookp_publisher"
@@ -121,7 +136,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:text="@string/publisher"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_bookp_isbn" />
@@ -132,7 +147,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="22dp"
         android:layout_marginLeft="22dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -143,26 +158,65 @@
         android:id="@+id/tv_bookp_publicyear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginLeft="38dp"
+        android:layout_marginTop="24dp"
         android:text="@string/publication_year"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_bookp_publisher" />
+        app:layout_constraintStart_toEndOf="@+id/iv_bookp_image"
+        app:layout_constraintTop_toBottomOf="@+id/tv_bookp_publisher2" />
 
     <TextView
         android:id="@+id/tv_bookp_publicyear2"
-        android:layout_width="0dp"
+        android:layout_width="40dp"
         android:layout_height="19dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="180dp"
-        android:layout_marginRight="180dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginLeft="64dp"
+        android:layout_marginTop="12dp"
         android:background="#FFFFFF"
+        app:layout_constraintStart_toEndOf="@+id/iv_bookp_image"
+        app:layout_constraintTop_toBottomOf="@+id/tv_bookp_publicyear" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="124dp"
+        android:layout_marginRight="124dp"
+        android:layout_marginBottom="148dp"
+        android:text="@string/edition"
+        app:layout_constraintBottom_toTopOf="@+id/btn_bookp_right"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/iv_bookp_image"
+        app:layout_constraintTop_toBottomOf="@+id/tv_bookp_publicyear2"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tv_bookp_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/category"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_bookp_title2" />
+
+    <TextView
+        android:id="@+id/tv_bookp_category2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/tv_bookp_publicyear"
-        app:layout_constraintTop_toBottomOf="@+id/tv_bookp_publisher2" />
+        app:layout_constraintStart_toEndOf="@+id/tv_bookp_category"
+        app:layout_constraintTop_toBottomOf="@+id/tv_bookp_title2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
