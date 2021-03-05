@@ -15,10 +15,10 @@
         <activity android:name=".Activities" />
         <activity android:name=".Forum" />
         <activity android:name=".Timetables" />
-        <activity android:name=".Register" />
+        <activity android:name=".FloorMap" />
         <activity android:name=".Library" />
         <activity android:name=".Login" />
-        <activity android:name=".FloorMap">
+        <activity android:name=".Register">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
