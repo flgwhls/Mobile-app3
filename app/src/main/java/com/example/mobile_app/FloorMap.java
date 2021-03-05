@@ -6,11 +6,14 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 public class FloorMap extends AppCompatActivity {
 
-    private DrawerLayout drawer;
+     DrawerLayout drawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +31,7 @@ public class FloorMap extends AppCompatActivity {
 
     }
 
+
     @Override
     public void onBackPressed(){
         if (drawer.isDrawerOpen(GravityCompat.START)){
@@ -35,6 +39,40 @@ public class FloorMap extends AppCompatActivity {
         } else {
             super.onBackPressed();
         }
+    }
+
+    public void clickHome(View view){
+        FloorMap.redirectActivity(this,Dashboard.class);
+    }
+
+    public void clickLibrary(View view){
+        redirectActivity(this,Library.class);
+    }
+
+    public void clickTimetables(View view){
+        redirectActivity(this,Timetables.class);
+    }
+
+    public void clickFloorMap(View view){
+        redirectActivity(this,FloorMap.class);
+    }
+
+    public void clickForum(View view){
+        redirectActivity(this,Forum.class);
+    }
+
+    public void clickActivities(View view){
+        redirectActivity(this,Activities.class);
+    }
+
+    private static void redirectActivity(Activity activity, Class aClass){
+        //Intent
+        Intent i = new Intent(activity, aClass);
+        // set flag
+        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        // start activity
+        activity.startActivity(i);
+
     }
 
 }
