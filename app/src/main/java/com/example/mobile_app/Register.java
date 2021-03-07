@@ -127,7 +127,7 @@ public class Register extends AppCompatActivity {
         bookreg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(Register.this,BookRegister.class);
+                Intent i = new Intent(Register.this, BookRegisterold.class);
 
                 startActivity(i);
             }
