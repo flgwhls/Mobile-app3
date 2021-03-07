@@ -5,8 +5,12 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 public class Timetables extends AppCompatActivity {
+    private WebView webView;
+
     //Initialize drawer
     DrawerLayout drawer;
     @Override
@@ -14,6 +18,19 @@ public class Timetables extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timetables);
         drawer= findViewById(R.id.drawer_layout);
+        webView = (WebView) findViewById(R.id.webview);
+        webView.setWebViewClient(new WebViewClient());
+        webView.loadUrl("https://ttportalqalive.com/2021/studentlogin.html");
+        webView.getSettings().setJavaScriptEnabled(true);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (webView.canGoBack()) {
+            webView.goBack();;
+        }else {
+            super.onBackPressed();
+        }
     }
 
     public void ClickMenu(View view){
