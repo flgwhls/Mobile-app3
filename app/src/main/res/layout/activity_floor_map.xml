@@ -4,5 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/floor_plan"
-    tools:context=".FloorMap"/>
+    tools:context=".FloorMap"
+    android:id="@+id/drawer_layout">
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/nav_header"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="FLoor Map"
+            android:textSize="50sp"
+            android:gravity="center"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/white">
+
+
+        <include
+            layout="@layout/drawer_menu"/>
+    </RelativeLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>

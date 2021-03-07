@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:context=".BookPage">
 
     <TextView
@@ -218,5 +219,6 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/tv_bookp_category"
         app:layout_constraintTop_toBottomOf="@+id/tv_bookp_title2" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
