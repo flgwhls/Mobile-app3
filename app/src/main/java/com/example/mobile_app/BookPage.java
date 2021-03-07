@@ -2,6 +2,8 @@ package com.example.mobile_app;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.os.Bundle;
 import android.view.View;
@@ -24,11 +26,12 @@ public class BookPage extends AppCompatActivity {
     ArrayList<Book> booklist = new ArrayList<>();
     // reference to database
     DatabaseReference dbref;
-    TextView author,title, isbn,publisher, publicyear, edition, category;
+    TextView author, title, isbn, publisher, publicyear, edition, category;
     ImageView bookview;
     Button btnleft, btnright;
     String url;
     int index;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,16 +51,16 @@ public class BookPage extends AppCompatActivity {
         category = findViewById(R.id.tv_bookp_category2);
 
         //database reference
-        dbref= FirebaseDatabase.getInstance().getReference("Book");
+        dbref = FirebaseDatabase.getInstance().getReference("Book");
         // Event Listener
-        dbref.addListenerForSingleValueEvent(listener);
+//        dbref.addListenerForSingleValueEvent(listener);
         // btnright listener
 
 
         btnright.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(index < booklist.size()-1) {
+                if (index < booklist.size() - 1) {
                     index++;
                     title.setText(booklist.get(index).getTitle());
                     author.setText(booklist.get(index).getAuthor());
@@ -66,7 +69,7 @@ public class BookPage extends AppCompatActivity {
                     publicyear.setText(booklist.get(index).getPublicyear());
                     edition.setText(booklist.get(index).getEdition());
                     category.setText(booklist.get(index).getCategory());
-                    url=booklist.get(index).getImglink();
+                    url = booklist.get(index).getImglink();
                     Glide.with(getApplicationContext()).load(url).into(bookview);
                 }
 
@@ -87,7 +90,7 @@ public class BookPage extends AppCompatActivity {
                     publicyear.setText(booklist.get(index).getPublicyear());
                     edition.setText(booklist.get(index).getEdition());
                     category.setText(booklist.get(index).getCategory());
-                    url=booklist.get(index).getImglink();
+                    url = booklist.get(index).getImglink();
                     Glide.with(getApplicationContext()).load(url).into(bookview);
 
                 }
@@ -95,7 +98,8 @@ public class BookPage extends AppCompatActivity {
         });
 
     }
-    ValueEventListener listener=new ValueEventListener() {
+
+    ValueEventListener listener = new ValueEventListener() {
         @Override
         public void onDataChange(@NonNull DataSnapshot snapshot) {
             for (DataSnapshot dss : snapshot.getChildren()) {
@@ -106,19 +110,20 @@ public class BookPage extends AppCompatActivity {
 
 
             }
-            title.setText(booklist.get(0).getTitle()); 
+            title.setText(booklist.get(0).getTitle());
             author.setText(booklist.get(0).getAuthor());
             isbn.setText(booklist.get(0).getISBN());
             publisher.setText(booklist.get(0).getPublisher());
             publicyear.setText(booklist.get(0).getPublicyear());
             edition.setText(booklist.get(0).getEdition());
             category.setText(booklist.get(0).getCategory());
-            url=booklist.get(0).getImglink();
+            url = booklist.get(0).getImglink();
             Glide.with(getApplicationContext()).load(url).into(bookview);
 
         }
+
         @Override
-        public void onCancelled (@NonNull DatabaseError error){
+        public void onCancelled(@NonNull DatabaseError error) {
 
         }
     };

@@ -24,6 +24,4 @@
         android:textAlignment="center"
         android:textColor="#636363"
         android:layout_gravity="center"/>
-
-
 </LinearLayout>

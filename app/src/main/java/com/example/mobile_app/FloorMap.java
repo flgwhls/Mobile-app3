@@ -13,74 +13,49 @@ import android.view.View;
 
 public class FloorMap extends AppCompatActivity {
 
+    //Initialize drawer
      DrawerLayout drawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_floor_map);
-
         drawer= findViewById(R.id.drawer_layout);
-
-
     }
 
 
     public void ClickMenu(View view){
         //Open drawer
-        openDrawer(drawer);
-    }
-
-    public static void openDrawer(DrawerLayout drawer){
-        //Open drawer layout
-        drawer.openDrawer(GravityCompat.START);
+        Dashboard.openDrawer(drawer);
     }
 
     public void ClickLogo(View view){
         // close drawer
-        closeDrawer(drawer);
-    }
-
-    public static void closeDrawer(DrawerLayout drawer) {
-        //close drawer layout
-        //check condition
-        if (drawer.isDrawerOpen(GravityCompat.START)){
-            //if drawer is open
-            //close it
-            drawer.closeDrawer(GravityCompat.START);
-        }
-    }
-
-    public void clickMenu(View view){
-        Dashboard.openDrawer(drawer);
-    }
-
-    public void clickLogo(View view){
         Dashboard.closeDrawer(drawer);
     }
 
-    public void cLickHome(View view){
+    public void ClickHome(View view){
         Dashboard.redirectActivity(this, Dashboard.class);
     }
 
-    public void clickLibrary(View view){
+    public void ClickLibrary(View view){
         Dashboard.redirectActivity(this, Library.class);
     }
 
-    public void cLickTimeTables(View view){
-        Dashboard.redirectActivity(this, Timetables.class);
+    public void ClickTimetables(View view){
+        Dashboard.redirectActivity(this,Timetables.class);
     }
 
-    public void cLickFloorMap(View view){
+    public void ClickFloorMap(View view){
         recreate();
     }
 
-    public void cLickForum(View view){
-        Dashboard.redirectActivity(this, Forum.class);
+    public void ClickForum(View view){
+        Dashboard.redirectActivity(this,Forum.class);
     }
 
-    public void cLickActivities(View view){
-        Dashboard.redirectActivity(this, Activities.class);
+    public void ClickActivities(View view){
+        Dashboard.redirectActivity(this,Activities.class);
     }
 
     @Override

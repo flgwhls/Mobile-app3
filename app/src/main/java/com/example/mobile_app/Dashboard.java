@@ -19,11 +19,7 @@ public class Dashboard extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dashboard);
-
         drawer = findViewById(R.id.drawer_layout);
-
-
     }
 
     public void ClickMenu(View view){
@@ -51,27 +47,27 @@ public class Dashboard extends AppCompatActivity {
         }
     }
 
-    public void clickHome(View view){
+    public void ClickHome(View view){
         recreate();
     }
 
-    public void clickLibrary(View view){
+    public void ClickLibrary(View view){
         redirectActivity(this,Library.class);
     }
 
-    public void clickTimetables(View view){
+    public void ClickTimetables(View view){
         redirectActivity(this,Timetables.class);
     }
 
-    public void clickFloorMap(View view){
+    public void ClickFloorMap(View view){
         redirectActivity(this,FloorMap.class);
     }
 
-    public void clickForum(View view){
+    public void ClickForum(View view){
         redirectActivity(this,Forum.class);
     }
 
-    public void clickActivities(View view){
+    public void ClickActivities(View view){
         redirectActivity(this,Activities.class);
     }
 

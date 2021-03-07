@@ -30,7 +30,4 @@
     <string name="right">Right</string>
     <string name="edition">Edition</string>
     <string name="category">Category</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-
 </resources>
