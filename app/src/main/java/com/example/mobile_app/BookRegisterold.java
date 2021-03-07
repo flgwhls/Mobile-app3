@@ -11,7 +11,7 @@ import android.widget.EditText;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class BookRegister extends AppCompatActivity {
+public class BookRegisterold extends AppCompatActivity {
     EditText title, author, edition, isbn, category, imagelink, publisher, publicyear;
     Button bookregister;
     DatabaseReference dbref;
@@ -19,7 +19,7 @@ public class BookRegister extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_book_register);
+        setContentView(R.layout.activity_book_register_old);
 
         title= findViewById(R.id.et_bookreg_title);
         author = findViewById(R.id.et_bookreg_author);
@@ -40,7 +40,7 @@ public class BookRegister extends AppCompatActivity {
                         category.getText().toString(),imagelink.getText().toString(),
                         publisher.getText().toString(), publicyear.getText().toString());
                 dbref.child(dbref.push().getKey()).setValue(b);
-                Intent i = new Intent(BookRegister.this,Register.class);
+                Intent i = new Intent(BookRegisterold.this,Register.class);
                 startActivity(i);
 
 
