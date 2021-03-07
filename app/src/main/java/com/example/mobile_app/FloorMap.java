@@ -25,11 +25,37 @@ public class FloorMap extends AppCompatActivity {
 
     }
 
+
+    public void ClickMenu(View view){
+        //Open drawer
+        openDrawer(drawer);
+    }
+
+    public static void openDrawer(DrawerLayout drawer){
+        //Open drawer layout
+        drawer.openDrawer(GravityCompat.START);
+    }
+
+    public void ClickLogo(View view){
+        // close drawer
+        closeDrawer(drawer);
+    }
+
+    public static void closeDrawer(DrawerLayout drawer) {
+        //close drawer layout
+        //check condition
+        if (drawer.isDrawerOpen(GravityCompat.START)){
+            //if drawer is open
+            //close it
+            drawer.closeDrawer(GravityCompat.START);
+        }
+    }
+
     public void clickMenu(View view){
         Dashboard.openDrawer(drawer);
     }
 
-    public void ClickLogo(View view){
+    public void clickLogo(View view){
         Dashboard.closeDrawer(drawer);
     }
 

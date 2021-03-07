@@ -5,8 +5,7 @@
     android:background="@color/white"
     android:gravity="center_vertical"
     android:orientation="horizontal"
-    android:padding="12dp"
-    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+    android:padding="12dp">
 
 
     <ImageView
@@ -25,13 +24,6 @@
         android:textAlignment="center"
         android:textColor="#636363"
         android:layout_gravity="center"/>
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_more"/>
-
-
-
 
 
 </LinearLayout>
