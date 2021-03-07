@@ -34,9 +34,7 @@ public class FloorMap extends AppCompatActivity {
         Dashboard.closeDrawer(drawer);
     }
 
-    public void ClickHome(View view){
-        Dashboard.redirectActivity(this, Dashboard.class);
-    }
+    public void ClickHome(View view){ Dashboard.redirectActivity(this, Dashboard.class); }
 
     public void ClickLibrary(View view){
         Dashboard.redirectActivity(this, Library.class);

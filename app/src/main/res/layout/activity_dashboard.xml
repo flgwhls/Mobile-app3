@@ -8,6 +8,7 @@
     android:id="@+id/drawer_layout">
 
     <LinearLayout
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -17,7 +18,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Dashboard"
+            android:text="Dasboard"
             android:textSize="50sp"
             android:gravity="center"/>
     </LinearLayout>
@@ -28,8 +29,9 @@
         android:layout_gravity="start"
         android:background="@color/white">
 
-            <include
-                layout="@layout/drawer_menu"/>
+
+        <include
+            layout="@layout/drawer_menu"/>
     </RelativeLayout>
 
 </androidx.drawerlayout.widget.DrawerLayout>
