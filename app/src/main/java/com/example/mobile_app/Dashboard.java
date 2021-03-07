@@ -21,27 +21,38 @@ public class Dashboard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
         drawer = findViewById(R.id.drawer_layout);
 
-        ActionBarDrawerToggle toogle = new ActionBarDrawerToggle(this,drawer, toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toogle);
-        toogle.syncState();
 
     }
 
-    @Override
-    public void onBackPressed(){
+    public void ClickMenu(View view){
+        //Open drawer
+        openDrawer(drawer);
+    }
+
+    public static void openDrawer(DrawerLayout drawer){
+        //Open drawer layout
+        drawer.openDrawer(GravityCompat.START);
+    }
+
+    public void ClickLogo(View view){
+        // close drawer
+        closeDrawer(drawer);
+    }
+
+    public static void closeDrawer(DrawerLayout drawer) {
+        //close drawer layout
+        //check condition
         if (drawer.isDrawerOpen(GravityCompat.START)){
+            //if drawer is open
+            //close it
             drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
         }
     }
 
     public void clickHome(View view){
-        redirectActivity(this,Dashboard.class);
+        recreate();
     }
 
     public void clickLibrary(View view){
@@ -64,15 +75,19 @@ public class Dashboard extends AppCompatActivity {
         redirectActivity(this,Activities.class);
     }
 
-    private static void redirectActivity(Activity activity, Class aClass){
+    public static void redirectActivity(Activity activity, Class aClass){
         //Intent
         Intent i = new Intent(activity, aClass);
         // set flag
         i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         // start activity
         activity.startActivity(i);
-
     }
 
+    @Override
+    protected void onPause(){
+        super.onPause();
+        closeDrawer(drawer);
+    }
 
 }

@@ -20,59 +20,46 @@ public class FloorMap extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_floor_map);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        drawer= findViewById(R.id.drawer_layout);
 
-        drawer = findViewById(R.id.drawer_layout);
-
-        ActionBarDrawerToggle toogle = new ActionBarDrawerToggle(this,drawer, toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toogle);
-        toogle.syncState();
 
     }
 
-
-    @Override
-    public void onBackPressed(){
-        if (drawer.isDrawerOpen(GravityCompat.START)){
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
+    public void clickMenu(View view){
+        Dashboard.openDrawer(drawer);
     }
 
-    public void clickHome(View view){
-        FloorMap.redirectActivity(this,Dashboard.class);
+    public void ClickLogo(View view){
+        Dashboard.closeDrawer(drawer);
+    }
+
+    public void cLickHome(View view){
+        Dashboard.redirectActivity(this, Dashboard.class);
     }
 
     public void clickLibrary(View view){
-        redirectActivity(this,Library.class);
+        Dashboard.redirectActivity(this, Library.class);
     }
 
-    public void clickTimetables(View view){
-        redirectActivity(this,Timetables.class);
+    public void cLickTimeTables(View view){
+        Dashboard.redirectActivity(this, Timetables.class);
     }
 
-    public void clickFloorMap(View view){
-        redirectActivity(this,FloorMap.class);
+    public void cLickFloorMap(View view){
+        recreate();
     }
 
-    public void clickForum(View view){
-        redirectActivity(this,Forum.class);
+    public void cLickForum(View view){
+        Dashboard.redirectActivity(this, Forum.class);
     }
 
-    public void clickActivities(View view){
-        redirectActivity(this,Activities.class);
+    public void cLickActivities(View view){
+        Dashboard.redirectActivity(this, Activities.class);
     }
 
-    private static void redirectActivity(Activity activity, Class aClass){
-        //Intent
-        Intent i = new Intent(activity, aClass);
-        // set flag
-        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        // start activity
-        activity.startActivity(i);
-
+    @Override
+    protected void onPause(){
+        super.onPause();
+        Dashboard.closeDrawer(drawer);
     }
-
 }

@@ -18,7 +18,8 @@
         <activity android:name=".Register" />
         <activity android:name=".Library" />
         <activity android:name=".Login" />
-        <activity android:name=".FloorMap">
+        <activity android:name=".FloorMap" />
+        <activity android:name=".Dashboard">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
