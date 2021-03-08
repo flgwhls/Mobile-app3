@@ -12,6 +12,7 @@ android {
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
+        // enable multidex to use more then 65536 methods
         multiDexEnabled true
 
 
