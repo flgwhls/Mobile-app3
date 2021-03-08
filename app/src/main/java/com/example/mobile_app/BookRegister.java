@@ -15,7 +15,7 @@ public class BookRegister extends AppCompatActivity {
     EditText title, author, edition, isbn, category, imagelink, publisher, publicyear;
     Button bookregister;
     DatabaseReference dbref;
-// adapt to drawer
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
