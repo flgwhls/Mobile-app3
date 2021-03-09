@@ -53,7 +53,7 @@ public class BookPage extends AppCompatActivity {
         //database reference
         dbref = FirebaseDatabase.getInstance().getReference("Book");
         // Event Listener
-//        dbref.addListenerForSingleValueEvent(listener);
+        dbref.addListenerForSingleValueEvent(listener);
         // btnright listener
 
 
@@ -70,7 +70,7 @@ public class BookPage extends AppCompatActivity {
                     edition.setText(booklist.get(index).getEdition());
                     category.setText(booklist.get(index).getCategory());
                     url = booklist.get(index).getImglink();
-                    Glide.with(getApplicationContext()).load(url).into(bookview);
+                    Glide.with(BookPage.this.getApplicationContext()).load(url).into(bookview);
                 }
 
 
