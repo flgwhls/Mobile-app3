@@ -20,24 +20,21 @@ import com.google.firebase.database.FirebaseDatabase;
 
 
 public class Register extends AppCompatActivity {
-  // Variables
+    // Variables
 
-    EditText studentID,firstName,lastNAme, email, password, confPassword;
+    EditText studentID, firstName, lastNAme, email, password, confPassword;
     Button register;
     // for testing bookpage
     Button bookpage;
     Button bookreg;
 
     DatabaseReference dbref;
-    FirebaseAuth mFirebaseAuth;
+    private FirebaseAuth mFirebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
-
-
 
 
 
@@ -48,10 +45,7 @@ public class Register extends AppCompatActivity {
         email = findViewById(R.id.et_reg_email);
         password = findViewById(R.id.et_reg_password);
         confPassword = findViewById(R.id.et_conf_password);
-        register= findViewById(R.id.btn_reg_register);
-        bookpage = findViewById(R.id.btn_bookpage); // delete when not needed
-        bookreg = findViewById(R.id.btn_reg_registerbook); //delete when not needed
-
+        register = findViewById(R.id.btn_reg_register);
 
 
         mFirebaseAuth = FirebaseAuth.getInstance();
@@ -77,58 +71,26 @@ public class Register extends AppCompatActivity {
                 dbref.child(dbref.push().getKey()).setValue(s);
 
 
-
                 mFirebaseAuth.createUserWithEmailAndPassword(emailID, passwordID).addOnCompleteListener(Register.this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (!task.isSuccessful()) {
                             Toast.makeText(Register.this, "Sign up unsuccessful! Please try again", Toast.LENGTH_LONG).show();
                         } else {
-                            startActivity(new Intent(Register.this, Dashboard.class));
+                            startActivity(new Intent(Register.this, WelcomePage.class));
 
                         }
                     }
 
 
                 });
-            }
-                else
-
-            {
+            } else {
                 Toast.makeText(Register.this, "Error occurred!", Toast.LENGTH_LONG).show();
 
             }
 
 
-
-
-
         });
 
-        //-----------------------------------------------------------------------
-        // temporary for test bookpage
-        bookpage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(Register.this,BookPage.class);
-
-                startActivity(i);
-            }
-            //------------  END TEMPORARY bookPage test --------------------------
-
-
-        });
-        //------------ temporary for register books in firebase
-
-        // delete when not needed
-        bookreg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(Register.this, BookRegister.class);
-
-                startActivity(i);
-            }
-        });
-        // ------- END of temporary book register
     }
 }

@@ -7,6 +7,9 @@
     android:fitsSystemWindows="true"
     tools:context=".BookPage">
 
+
+
+
     <TextView
         android:id="@+id/tv_bookp_edition2"
         android:layout_width="50dp"
