@@ -44,7 +44,13 @@
                 android:layout_weight="1"
                 android:onClick="showMenu"
                 android:text="@string/choose_category" />
+
         </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_library_search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
 
     </LinearLayout>
@@ -54,10 +60,6 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:background="@color/white">
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_library_search"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
 
         <include layout="@layout/drawer_menu" />
     </RelativeLayout>

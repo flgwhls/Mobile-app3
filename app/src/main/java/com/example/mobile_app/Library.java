@@ -62,6 +62,7 @@ public class Library extends AppCompatActivity implements PopupMenu.OnMenuItemCl
             }
             bookAdaptor = new BookAdaptor(booklist);
             rv_library_search.setAdapter(bookAdaptor);
+
         }
 
         @Override
