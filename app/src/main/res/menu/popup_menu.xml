@@ -20,7 +20,7 @@
         android:title="@string/network_design" />
 
     <item
-        android:id="@+id/programing"
+        android:id="@+id/programming"
         android:title="@string/programming" />
 
     <item
