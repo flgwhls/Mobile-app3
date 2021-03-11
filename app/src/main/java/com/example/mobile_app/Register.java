@@ -57,55 +57,52 @@ public class Register extends AppCompatActivity {
         mFirebaseAuth = FirebaseAuth.getInstance();
 
         dbref = FirebaseDatabase.getInstance().getReference("Student");
-        register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String emailID = email.getText().toString();
-                String passwordID = password.getText().toString();
-                Student s = new Student(studentID.getText().toString(), firstName.getText().toString(),
-                        lastNAme.getText().toString(), email.getText().toString(),
-                        password.getText().toString());
-                // prova
-                if (!TextUtils.isEmpty(studentID.getText().toString())
-                        && !TextUtils.isEmpty(firstName.getText().toString())
-                        && !TextUtils.isEmpty(lastNAme.getText().toString())
-                        && !TextUtils.isEmpty(email.getText().toString())
-                        && !TextUtils.isEmpty(password.getText().toString())
-                        && !TextUtils.isEmpty(confPassword.getText().toString())
-                        && password.getText().toString().compareTo(confPassword.getText().toString()) == 0
-                        && password.getText().toString().length() >= 6) {
+        register.setOnClickListener(view -> {
+            String emailID = email.getText().toString();
+            String passwordID = password.getText().toString();
+            Student s = new Student(studentID.getText().toString(), firstName.getText().toString(),
+                    lastNAme.getText().toString(), email.getText().toString(),
+                    password.getText().toString());
+            // prova
+            if (!TextUtils.isEmpty(studentID.getText().toString())
+                    && !TextUtils.isEmpty(firstName.getText().toString())
+                    && !TextUtils.isEmpty(lastNAme.getText().toString())
+                    && !TextUtils.isEmpty(email.getText().toString())
+                    && !TextUtils.isEmpty(password.getText().toString())
+                    && !TextUtils.isEmpty(confPassword.getText().toString())
+                    && password.getText().toString().compareTo(confPassword.getText().toString()) == 0
+                    && password.getText().toString().length() >= 6) {
 
 
-                    dbref.child(dbref.push().getKey()).setValue(s);
+                dbref.child(dbref.push().getKey()).setValue(s);
 
 
 
-                    mFirebaseAuth.createUserWithEmailAndPassword(emailID, passwordID).addOnCompleteListener(Register.this, new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (!task.isSuccessful()) {
-                                Toast.makeText(Register.this, "Sign up unsuccessful! Please try again", Toast.LENGTH_LONG).show();
-                            } else {
-                                startActivity(new Intent(Register.this, Dashboard.class));
+                mFirebaseAuth.createUserWithEmailAndPassword(emailID, passwordID).addOnCompleteListener(Register.this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (!task.isSuccessful()) {
+                            Toast.makeText(Register.this, "Sign up unsuccessful! Please try again", Toast.LENGTH_LONG).show();
+                        } else {
+                            startActivity(new Intent(Register.this, Dashboard.class));
 
-                            }
                         }
+                    }
 
 
-                    });
-                }
-                    else
+                });
+            }
+                else
 
-                {
-                    Toast.makeText(Register.this, "Error occurred!", Toast.LENGTH_LONG).show();
-
-                }
-
-
-
-
+            {
+                Toast.makeText(Register.this, "Error occurred!", Toast.LENGTH_LONG).show();
 
             }
+
+
+
+
+
         });
 
         //-----------------------------------------------------------------------
@@ -127,7 +124,7 @@ public class Register extends AppCompatActivity {
         bookreg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(Register.this, BookRegisterold.class);
+                Intent i = new Intent(Register.this, BookRegister.class);
 
                 startActivity(i);
             }

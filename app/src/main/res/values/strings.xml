@@ -30,4 +30,24 @@
     <string name="right">Right</string>
     <string name="edition">Edition</string>
     <string name="category">Category</string>
+    <string name="title_activity_book_register">BookRegister</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="floor_map">FLoor Map</string>
+    <string name="welcome">Welcome</string>
+    <string name="choose_category">Choose category</string>
+    <string name="all">All</string>
+    <string name="cloud_computing">Cloud Computing</string>
+    <string name="computer_graphics">Computer Graphics</string>
+    <string name="network_design">Network Design</string>
+    <string name="programming">Programming</string>
+    <string name="web_design">Web Design</string>
 </resources>

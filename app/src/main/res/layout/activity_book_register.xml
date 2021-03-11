@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".BookRegister">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        //Menu bar
+        <include
+            layout="@layout/nav_header"/>
+
+        <EditText
+            android:id="@+id/et_bookreg_title"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:ems="10"
+            android:hint="@string/title_of_book"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/et_bookreg_author"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:ems="10"
+            android:hint="@string/book_author"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            />
+
+        <EditText
+            android:id="@+id/et_bookreg_ISBN"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:ems="10"
+            android:hint="@string/isbn_number"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            />
+
+    <EditText
+        android:id="@+id/et_bookreg_ImageLink"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+       
+        android:ems="10"
+        android:hint="@string/fire_storage_link"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        />
+
+        <EditText
+        android:id="@+id/et_bookreg_category"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:ems="10"
+        android:hint="@string/book_category"
+        android:inputType="textPersonName"
+       />
+
+        <EditText
+        android:id="@+id/et_bookreg_edition"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:ems="10"
+        android:hint="@string/book_edition"
+        android:inputType="textPersonName"
+       />
+
+    <EditText
+        android:id="@+id/et_bookreg_publisher"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:ems="10"
+        android:hint="@string/publisher"
+        android:inputType="textPersonName"
+       />
+
+    <EditText
+        android:id="@+id/et_bookreg_publicyear"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:ems="10"
+        android:hint="@string/publication_year"
+        android:inputType="textPersonName"
+       />
+
+        <Button
+            android:id="@+id/btn_bookreg_register"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+
+            android:text="@string/register_book" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/white">
+
+
+        <include layout="@layout/drawer_menu" />
+    </RelativeLayout>
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
