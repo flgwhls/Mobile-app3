@@ -15,13 +15,16 @@
 
         <include
             layout="@layout/nav_header"/>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="FLoor Map"
+            android:text="FloorPlan"
             android:textSize="50sp"
             android:gravity="center"/>
+
     </LinearLayout>
+
 
     <RelativeLayout
         android:layout_width="300dp"
