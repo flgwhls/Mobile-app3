@@ -6,7 +6,7 @@ public class Book {
     private String title, author, edition, ISBN, category,imglink,publisher,publicyear;
 
 
-    //TODO: pleqse look and think if we need something more in this class
+
 
     // Constructor to create object and write to FireBase
     public Book(String title, String author, String edition, String ISBN, String category, String imagelink, String publisher, String publicyear) {

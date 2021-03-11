@@ -42,7 +42,7 @@
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="floor_map">FLoor Map</string>
-    <string name="welcome">Welcome</string>
+    <string name="welcome">Welcome\n In Library</string>
     <string name="choose_category">Choose category</string>
     <string name="all">All</string>
     <string name="cloud_computing">Cloud Computing</string>
@@ -50,4 +50,8 @@
     <string name="network_design">Network Design</string>
     <string name="programming">Programming</string>
     <string name="web_design">Web Design</string>
+
+
+
+
 </resources>
