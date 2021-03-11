@@ -105,30 +105,5 @@ public class Register extends AppCompatActivity {
 
         });
 
-        //-----------------------------------------------------------------------
-        // temporary for test bookpage
-        bookpage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(Register.this,BookPage.class);
-
-                startActivity(i);
-            }
-            //------------  END TEMPORARY bookPage test --------------------------
-
-
-        });
-        //------------ temporary for register books in firebase
-
-        // delete when not needed
-        bookreg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(Register.this, BookRegister.class);
-
-                startActivity(i);
-            }
-        });
-        // ------- END of temporary book register
     }
 }
