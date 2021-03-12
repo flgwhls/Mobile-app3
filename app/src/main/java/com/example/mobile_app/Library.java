@@ -33,8 +33,8 @@ public class Library extends AppCompatActivity implements PopupMenu.OnMenuItemCl
     //Chosen category
     String menuanswer;
     ArrayList<Book> booklist = new ArrayList<>();
-    RecyclerView rv_library_search;
-    BookAdaptor bookAdaptor;
+    RecyclerView rv_library;
+    BookAdaptor mybookAdaptor;
 
 
 
@@ -46,12 +46,12 @@ public class Library extends AppCompatActivity implements PopupMenu.OnMenuItemCl
 
         drawer= findViewById(R.id.drawer_layout);
         // DataBase Reference
-        dbref = FirebaseDatabase.getInstance().getReference("Books");
-        rv_library_search = findViewById(R.id.rv_library_search);
-        rv_library_search.setLayoutManager( new LinearLayoutManager(Library.this));//Vertical view
+        dbref = FirebaseDatabase.getInstance().getReference("Book");
+        rv_library = findViewById(R.id.rv_library_search);
+        rv_library.setLayoutManager( new LinearLayoutManager(Library.this));//Vertical view
         //rv_library_search.setLayoutManager( new LinearLayoutManager(myRecyclerView.this, LinearLayoutManager.HORIZONTAL,reverseLayout: true)); //Horizontal reversal
         //rv_library_search.setLayoutManager( new GridLayoutManager(myRecyclerView.this),spanCount: 3); // Vertical 3 columns
-
+        dbref.addListenerForSingleValueEvent(listener);
     }
     // set listener
     ValueEventListener listener = new ValueEventListener() {
@@ -60,8 +60,8 @@ public class Library extends AppCompatActivity implements PopupMenu.OnMenuItemCl
             for(DataSnapshot dss: snapshot.getChildren()){
                 booklist.add(dss.getValue(Book.class));
             }
-            bookAdaptor = new BookAdaptor(booklist);
-            rv_library_search.setAdapter(bookAdaptor);
+            mybookAdaptor = new BookAdaptor(booklist);
+            rv_library.setAdapter(mybookAdaptor);
 
         }
 
@@ -127,6 +127,7 @@ public class Library extends AppCompatActivity implements PopupMenu.OnMenuItemCl
                 // when all
                 menuanswer = "all";
                 Toast.makeText(this, "All", Toast.LENGTH_SHORT).show();
+
                 return true;
             case R.id.cloud:
                 // when cloud
