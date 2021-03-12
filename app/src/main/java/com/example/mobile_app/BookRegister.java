@@ -13,8 +13,13 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class BookRegister extends AppCompatActivity {
+
+
     EditText title, author, edition, isbn, category, imagelink, publisher, publicyear;
+
+    EditText price;
     Button bookregister;
+    public String studentID,bookstatus, bookdate;
     DatabaseReference dbref;
     // Drawer Layout
     DrawerLayout drawer;
@@ -35,15 +40,16 @@ public class BookRegister extends AppCompatActivity {
         bookregister = findViewById(R.id.btn_bookreg_register);
         publisher = findViewById(R.id.et_bookreg_publisher);
         publicyear = findViewById(R.id.et_bookreg_publicyear);
-
+        price = findViewById(R.id.et_bookreg_price);
         dbref = FirebaseDatabase.getInstance().getReference("Book4sell");
         bookregister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Book4sell b = new Book(title.getText().toString(), author.getText().toString(),
+                Book4Sell b = new Book4Sell(title.getText().toString(), author.getText().toString(),
                         edition.getText().toString(), isbn.getText().toString(),
                         category.getText().toString(), imagelink.getText().toString(),
-                        publisher.getText().toString(), publicyear.getText().toString());
+                        publisher.getText().toString(), publicyear.getText().toString(),
+                        price.getText().toString(), "testStudent", "bookstatus", "15/01/2021");
                 dbref.child(dbref.push().getKey()).setValue(b);
                 Intent i = new Intent(BookRegister.this, Register.class);
                 startActivity(i);
