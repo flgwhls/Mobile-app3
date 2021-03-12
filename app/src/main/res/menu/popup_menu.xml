@@ -12,6 +12,10 @@
         android:title="@string/cloud_computing" />
 
     <item
+        android:id="@+id/dbase"
+        android:title="Databases" />
+
+    <item
         android:id="@+id/graphics"
         android:title="@string/computer_graphics" />
 

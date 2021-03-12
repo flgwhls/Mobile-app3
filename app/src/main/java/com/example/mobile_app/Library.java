@@ -38,6 +38,7 @@ public class Library extends AppCompatActivity implements PopupMenu.OnMenuItemCl
     ArrayList<Book> weblist = new ArrayList<>(); // Web Design
     ArrayList<Book> graphlist = new ArrayList<>(); // Computer Graphics
     ArrayList<Book> netlist = new ArrayList<>(); //Network Design
+    ArrayList<Book> proglist = new ArrayList<>(); // Programming
     RecyclerView rv_library;
     BookAdaptor mybookAdaptor;
 
@@ -66,14 +67,38 @@ public class Library extends AppCompatActivity implements PopupMenu.OnMenuItemCl
             for(DataSnapshot dss: snapshot.getChildren()){
 
                 booklist.add(dss.getValue(Book.class));
+                // write books in Cloud Computing category to cloudlist
                 if(dss.getValue(Book.class).getCategory().equals("Cloud Computing")){
                     cloudlist.add(dss.getValue(Book.class));
-                    catread="Cloud Computing";
                     Toast.makeText(Library.this, dss.getValue(Book.class).getCategory(), Toast.LENGTH_SHORT).show();
                 }
+                // write books in Databases category to dbaselist
+                if(dss.getValue(Book.class).getCategory().equals("Databases")){
+                    dbasedlist.add(dss.getValue(Book.class));
+                    Toast.makeText(Library.this, dss.getValue(Book.class).getCategory(), Toast.LENGTH_SHORT).show();
+                }
+                // write books in Computer Graphics category to graphlist
+                if(dss.getValue(Book.class).getCategory().equals("Computer Graphics")){
+                    graphlist.add(dss.getValue(Book.class));
+                    Toast.makeText(Library.this, dss.getValue(Book.class).getCategory(), Toast.LENGTH_SHORT).show();
+                }
+                // write books in Network Design category to netlist
+                if(dss.getValue(Book.class).getCategory().equals("Network Design")){
+                    netlist.add(dss.getValue(Book.class));
+                    Toast.makeText(Library.this, dss.getValue(Book.class).getCategory(), Toast.LENGTH_SHORT).show();
+                }// write books in Programming category to proglist
+                if(dss.getValue(Book.class).getCategory().equals("Programming")){
+                    proglist.add(dss.getValue(Book.class));
+                    Toast.makeText(Library.this, dss.getValue(Book.class).getCategory(), Toast.LENGTH_SHORT).show();
+                }// write books in Web Design category to graphlist
+                if(dss.getValue(Book.class).getCategory().equals("Web Design")){
+                    weblist.add(dss.getValue(Book.class));
+                    Toast.makeText(Library.this, dss.getValue(Book.class).getCategory(), Toast.LENGTH_SHORT).show();
+                }
+
             }
-            mybookAdaptor = new BookAdaptor(booklist);
-            rv_library.setAdapter(mybookAdaptor);
+           // mybookAdaptor = new BookAdaptor(booklist);
+           // rv_library.setAdapter(mybookAdaptor);
 
         }
 
@@ -139,7 +164,8 @@ public class Library extends AppCompatActivity implements PopupMenu.OnMenuItemCl
                 // when all
                 menuanswer = "all";
                 Toast.makeText(this, "All", Toast.LENGTH_SHORT).show();
-
+                mybookAdaptor = new BookAdaptor(booklist);
+                rv_library.setAdapter(mybookAdaptor);
                 return true;
             case R.id.cloud:
                 // when cloud
@@ -153,30 +179,44 @@ public class Library extends AppCompatActivity implements PopupMenu.OnMenuItemCl
                 // when graphics
                 menuanswer = "graphics";
                 Toast.makeText(this, "graphics", Toast.LENGTH_SHORT).show();
-
+                mybookAdaptor = new BookAdaptor(graphlist);
+                rv_library.setAdapter(mybookAdaptor);
                 return true;
             case R.id.network:
                 // when network
                 menuanswer = "network";
                 Toast.makeText(this, "network", Toast.LENGTH_SHORT).show();
+                mybookAdaptor = new BookAdaptor(netlist);
+                rv_library.setAdapter(mybookAdaptor);
+                return true;
+            case R.id.dbase:
+                // when network
+                menuanswer = "dbase";
+                Toast.makeText(this, "dbase", Toast.LENGTH_SHORT).show();
+                mybookAdaptor = new BookAdaptor(dbasedlist);
+                rv_library.setAdapter(mybookAdaptor);
 
                 return true;
             case R.id.programming:
                 // when programming
                 menuanswer = "programming";
                 Toast.makeText(this, "programming", Toast.LENGTH_SHORT).show();
-
+                mybookAdaptor = new BookAdaptor(proglist);
+                rv_library.setAdapter(mybookAdaptor);
                 return true;
             case R.id.web:
                 // when web
                 menuanswer = "web";
                 Toast.makeText(this, "web", Toast.LENGTH_SHORT).show();
-
+                mybookAdaptor = new BookAdaptor(weblist);
+                rv_library.setAdapter(mybookAdaptor);
                 return true;
             default:
                  // like all
                 menuanswer = "all";
                 Toast.makeText(this, "default", Toast.LENGTH_SHORT).show();
+                mybookAdaptor = new BookAdaptor(booklist);
+                rv_library.setAdapter(mybookAdaptor);
                 return true;
 
         } //end switch

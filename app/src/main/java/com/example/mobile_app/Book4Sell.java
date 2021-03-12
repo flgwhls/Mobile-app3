@@ -1,65 +1,39 @@
 package com.example.mobile_app;
 
-public class Book4Sell {
-    // class to make Book object
-    // variables
-    private String title, author, edition, ISBN, category,imglink,publisher,publicyear;
+public class Book4Sell extends Book {
 
+    float price;
+    String studentID, status, date;
+
+
+
+    public Book4Sell() {
+    }
+// class to make Book object
+    // variables
+
+    public Book4Sell(String title, String author, String edition, String ISBN, String category,
+                     String imagelink, String publisher, String publicyear, float price,
+                     String studentID, String status, String date) {
+        super(title, author, edition, ISBN, category, imagelink, publisher, publicyear);
+        this.price = price;
+        this.studentID = studentID;
+        this.status = status;
+        this.date = date;
+
+    }
+
+    // Methods
+
+    public float getPrice() {
+        return price;
+    }
+
+    public void setPrice(float price) {
+        this.price = price;
+    }
 
     //TODO: pleqse look and think if we need something more in this class
 
-    // Constructor to create object and write to FireBase
-    public Book4Sell(String title, String author, String edition, String ISBN, String category, String imagelink, String publisher, String publicyear) {
-        this.title = title;
-        this.author = author;
-        this.edition = edition;
-        this.ISBN = ISBN;
-        this.category = category;
-        this.imglink = imagelink;
-        this.publisher = publisher;
 
-        this.publicyear = publicyear;
-    }
-    // Constructor to create object and read from FireBase
-    public Book4Sell() {
-
-    }
-    //Methods
-    // get
-    public String getTitle() {return title;}
-    public String getAuthor() {return author;}
-    public String getEdition() {return edition;}
-    public String getISBN() {return ISBN;}
-    public String getCategory() {return category;}
-    public String getPublisher() {return publisher;}
-    public String getPublicyear() {return publicyear;}
-    public String getImglink() {
-        return imglink;
-    }
-
-    // set
-    public void setTitle(String title){
-        this.title = title;
-    }
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-    public void setEdition(String edition) {
-        this.edition = edition;
-    }
-    public void setISBN(String ISBN) {
-        this.ISBN = ISBN;
-    }
-    public void setCategory(String category) {
-        this.category = category;
-    }
-    public void setPublisher(String publisher) {
-        this.publisher = publisher;
-    }
-    public void setPublicyear(String publicyear) {
-        this.publicyear = publicyear;
-    }
-    public void setImglink(String imglink) {
-        this.imglink = imglink;
-    }
 }

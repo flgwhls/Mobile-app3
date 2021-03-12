@@ -36,11 +36,11 @@ public class BookRegister extends AppCompatActivity {
         publisher = findViewById(R.id.et_bookreg_publisher);
         publicyear = findViewById(R.id.et_bookreg_publicyear);
 
-        dbref = FirebaseDatabase.getInstance().getReference("Book");
+        dbref = FirebaseDatabase.getInstance().getReference("Book4sell");
         bookregister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Book b = new Book(title.getText().toString(), author.getText().toString(),
+                Book4sell b = new Book(title.getText().toString(), author.getText().toString(),
                         edition.getText().toString(), isbn.getText().toString(),
                         category.getText().toString(), imagelink.getText().toString(),
                         publisher.getText().toString(), publicyear.getText().toString());
