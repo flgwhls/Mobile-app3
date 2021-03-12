@@ -31,10 +31,16 @@ public class Library extends AppCompatActivity implements PopupMenu.OnMenuItemCl
     // reference to database
     DatabaseReference dbref;
     //Chosen category
-    String menuanswer;
-    ArrayList<Book> booklist = new ArrayList<>();
+    String menuanswer,catread = "Empty";
+    ArrayList<Book> booklist = new ArrayList<>(); // All books
+    ArrayList<Book> cloudlist = new ArrayList<>(); //Cloud Computing
+    ArrayList<Book> dbasedlist = new ArrayList<>(); //Databases
+    ArrayList<Book> weblist = new ArrayList<>(); // Web Design
+    ArrayList<Book> graphlist = new ArrayList<>(); // Computer Graphics
+    ArrayList<Book> netlist = new ArrayList<>(); //Network Design
     RecyclerView rv_library;
     BookAdaptor mybookAdaptor;
+
 
 
 
@@ -58,7 +64,13 @@ public class Library extends AppCompatActivity implements PopupMenu.OnMenuItemCl
         @Override
         public void onDataChange(@NonNull DataSnapshot snapshot) {
             for(DataSnapshot dss: snapshot.getChildren()){
+
                 booklist.add(dss.getValue(Book.class));
+                if(dss.getValue(Book.class).getCategory().equals("Cloud Computing")){
+                    cloudlist.add(dss.getValue(Book.class));
+                    catread="Cloud Computing";
+                    Toast.makeText(Library.this, dss.getValue(Book.class).getCategory(), Toast.LENGTH_SHORT).show();
+                }
             }
             mybookAdaptor = new BookAdaptor(booklist);
             rv_library.setAdapter(mybookAdaptor);
@@ -132,7 +144,10 @@ public class Library extends AppCompatActivity implements PopupMenu.OnMenuItemCl
             case R.id.cloud:
                 // when cloud
                 menuanswer = "cloud";
-                Toast.makeText(this, "cloud", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, "cloud", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,catread, Toast.LENGTH_SHORT).show();
+                mybookAdaptor = new BookAdaptor(cloudlist);
+                rv_library.setAdapter(mybookAdaptor);
                 return true;
             case R.id.graphics:
                 // when graphics
