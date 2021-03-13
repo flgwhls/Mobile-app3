@@ -22,7 +22,7 @@
         <EditText
             android:id="@+id/et_bookreg_title"
             android:layout_width="match_parent"
-            android:layout_height="65dp"
+            android:layout_height="60dp"
             android:ems="10"
             android:hint="@string/title_of_book"
             android:importantForAutofill="no"
@@ -31,7 +31,7 @@
         <EditText
             android:id="@+id/et_bookreg_author"
             android:layout_width="match_parent"
-            android:layout_height="65dp"
+            android:layout_height="60dp"
             android:ems="10"
             android:hint="@string/book_author"
             android:importantForAutofill="no"
@@ -40,7 +40,7 @@
         <EditText
             android:id="@+id/et_bookreg_ISBN"
             android:layout_width="match_parent"
-            android:layout_height="65dp"
+            android:layout_height="60dp"
             android:ems="10"
             android:hint="@string/isbn_number"
             android:importantForAutofill="no"
@@ -49,7 +49,7 @@
         <EditText
             android:id="@+id/et_bookreg_ImageLink"
             android:layout_width="match_parent"
-            android:layout_height="65dp"
+            android:layout_height="60dp"
 
             android:ems="10"
             android:hint="@string/fire_storage_link"
@@ -59,46 +59,46 @@
         <EditText
             android:id="@+id/et_bookreg_category"
             android:layout_width="match_parent"
-            android:layout_height="65dp"
+            android:layout_height="60dp"
             android:ems="10"
             android:hint="@string/book_category"
-            android:inputType="textPersonName"
-            android:importantForAutofill="no" />
+            android:importantForAutofill="no"
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/et_bookreg_edition"
             android:layout_width="match_parent"
-            android:layout_height="65dp"
+            android:layout_height="60dp"
             android:ems="10"
             android:hint="@string/book_edition"
-            android:inputType="textPersonName"
-            android:importantForAutofill="no" />
+            android:importantForAutofill="no"
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/et_bookreg_publisher"
             android:layout_width="match_parent"
-            android:layout_height="65dp"
+            android:layout_height="60dp"
             android:ems="10"
             android:hint="@string/publisher"
-            android:inputType="textPersonName"
-            android:importantForAutofill="no" />
+            android:importantForAutofill="no"
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/et_bookreg_publicyear"
             android:layout_width="match_parent"
-            android:layout_height="65dp"
+            android:layout_height="60dp"
             android:ems="10"
             android:hint="@string/publication_year"
-            android:inputType="textPersonName"
-            android:importantForAutofill="no" />
+            android:importantForAutofill="no"
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/et_bookreg_price"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name" />
+            android:hint="@string/book_price"
+            android:inputType="textPersonName" />
 
         <Button
             android:id="@+id/btn_bookreg_register"

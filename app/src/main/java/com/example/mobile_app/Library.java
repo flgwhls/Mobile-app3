@@ -31,7 +31,7 @@ public class Library extends AppCompatActivity implements PopupMenu.OnMenuItemCl
     // reference to database
     DatabaseReference dbref;
     //Chosen category
-    String menuanswer,catread = "Empty";
+    String menuanswer,catread;
     ArrayList<Book> booklist = new ArrayList<>(); // All books
     ArrayList<Book> cloudlist = new ArrayList<>(); //Cloud Computing
     ArrayList<Book> dbasedlist = new ArrayList<>(); //Databases
@@ -41,9 +41,6 @@ public class Library extends AppCompatActivity implements PopupMenu.OnMenuItemCl
     ArrayList<Book> proglist = new ArrayList<>(); // Programming
     RecyclerView rv_library;
     BookAdaptor mybookAdaptor;
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,35 +67,29 @@ public class Library extends AppCompatActivity implements PopupMenu.OnMenuItemCl
                 // write books in Cloud Computing category to cloudlist
                 if(dss.getValue(Book.class).getCategory().equals("Cloud Computing")){
                     cloudlist.add(dss.getValue(Book.class));
-                    Toast.makeText(Library.this, dss.getValue(Book.class).getCategory(), Toast.LENGTH_SHORT).show();
                 }
                 // write books in Databases category to dbaselist
                 if(dss.getValue(Book.class).getCategory().equals("Databases")){
                     dbasedlist.add(dss.getValue(Book.class));
-                    Toast.makeText(Library.this, dss.getValue(Book.class).getCategory(), Toast.LENGTH_SHORT).show();
                 }
                 // write books in Computer Graphics category to graphlist
                 if(dss.getValue(Book.class).getCategory().equals("Computer Graphics")){
                     graphlist.add(dss.getValue(Book.class));
-                    Toast.makeText(Library.this, dss.getValue(Book.class).getCategory(), Toast.LENGTH_SHORT).show();
                 }
                 // write books in Network Design category to netlist
                 if(dss.getValue(Book.class).getCategory().equals("Network Design")){
                     netlist.add(dss.getValue(Book.class));
-                    Toast.makeText(Library.this, dss.getValue(Book.class).getCategory(), Toast.LENGTH_SHORT).show();
                 }// write books in Programming category to proglist
                 if(dss.getValue(Book.class).getCategory().equals("Programming")){
                     proglist.add(dss.getValue(Book.class));
-                    Toast.makeText(Library.this, dss.getValue(Book.class).getCategory(), Toast.LENGTH_SHORT).show();
                 }// write books in Web Design category to graphlist
                 if(dss.getValue(Book.class).getCategory().equals("Web Design")){
                     weblist.add(dss.getValue(Book.class));
-                    Toast.makeText(Library.this, dss.getValue(Book.class).getCategory(), Toast.LENGTH_SHORT).show();
                 }
 
             }
-           // mybookAdaptor = new BookAdaptor(booklist);
-           // rv_library.setAdapter(mybookAdaptor);
+            mybookAdaptor = new BookAdaptor(booklist);
+            rv_library.setAdapter(mybookAdaptor);
 
         }
 
