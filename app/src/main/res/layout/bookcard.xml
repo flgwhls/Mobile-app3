@@ -14,7 +14,7 @@
         android:layout_height="180sp">
 
         <ImageView
-            android:id="@+id/iv_bookcard_bookpic"
+            android:id="@+id/iv_activities_card"
             android:layout_width="138dp"
             android:layout_height="180dp"
             android:layout_marginStart="16dp"
@@ -27,7 +27,7 @@
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
-            android:id="@+id/tv_bookcard_title"
+            android:id="@+id/tv_date_card"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -37,11 +37,11 @@
             android:layout_marginRight="16dp"
             android:text="@string/textview"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/iv_bookcard_bookpic"
+            app:layout_constraintStart_toEndOf="@+id/iv_activities_card"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tv_bookcard_author"
+            android:id="@+id/tv_type_card"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -51,8 +51,8 @@
             android:layout_marginRight="16dp"
             android:text="@string/textview"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/iv_bookcard_bookpic"
-            app:layout_constraintTop_toBottomOf="@+id/tv_bookcard_title" />
+            app:layout_constraintStart_toEndOf="@+id/iv_activities_card"
+            app:layout_constraintTop_toBottomOf="@+id/tv_date_card" />
 
         <TextView
             android:id="@+id/tv_bookprice_lab"
@@ -64,7 +64,7 @@
             android:layout_marginBottom="44dp"
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/iv_bookcard_bookpic"
+            app:layout_constraintStart_toEndOf="@+id/iv_activities_card"
             app:layout_constraintTop_toBottomOf="@+id/tv_bookcard_category" />
 
         <TextView
@@ -92,8 +92,8 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
             android:text="@string/category"
-            app:layout_constraintStart_toEndOf="@+id/iv_bookcard_bookpic"
-            app:layout_constraintTop_toBottomOf="@+id/tv_bookcard_author" />
+            app:layout_constraintStart_toEndOf="@+id/iv_activities_card"
+            app:layout_constraintTop_toBottomOf="@+id/tv_type_card" />
 
         <TextView
             android:id="@+id/tv_bookcard_category"
@@ -106,7 +106,7 @@
             android:layout_marginRight="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/tv_bookcard_category_lab"
-            app:layout_constraintTop_toBottomOf="@+id/tv_bookcard_author" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_type_card" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

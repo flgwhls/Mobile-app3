@@ -5,7 +5,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -58,10 +57,10 @@ public class BookAdaptor extends RecyclerView.Adapter<BookAdaptor.BookHolder>
         public BookHolder(@NonNull View itemView){
             super(itemView);
 
-            title = itemView.findViewById(R.id.tv_bookcard_title);
-            author = itemView.findViewById(R.id.tv_bookcard_author);
+            title = itemView.findViewById(R.id.tv_date_card);
+            author = itemView.findViewById(R.id.tv_type_card);
             category = itemView.findViewById(R.id.tv_bookcard_category);
-            iv_bookview = itemView.findViewById(R.id.iv_bookcard_bookpic);
+            iv_bookview = itemView.findViewById(R.id.iv_activities_card);
 
         }
     }

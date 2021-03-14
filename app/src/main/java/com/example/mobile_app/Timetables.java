@@ -69,7 +69,7 @@ public class Timetables extends AppCompatActivity {
     }
 
     public void ClickActivities(View view){
-        Dashboard.redirectActivity(this,Activities.class);
+        Dashboard.redirectActivity(this, Recycler_view_activities.class);
     }
 
     @Override
