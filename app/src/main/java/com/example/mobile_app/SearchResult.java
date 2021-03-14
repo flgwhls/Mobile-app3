@@ -34,7 +34,7 @@ public class SearchResult extends AppCompatActivity {
         drawer= findViewById(R.id.drawer_layout);
         // DataBase Reference
         dbref = FirebaseDatabase.getInstance().getReference("Book");
-        rv_library = findViewById(R.id.rv_library_search);
+        rv_library = findViewById(R.id.recview);
         rv_library.setLayoutManager( new LinearLayoutManager(SearchResult.this));//Vertical view
         //rv_library_search.setLayoutManager( new LinearLayoutManager(myRecyclerView.this, LinearLayoutManager.HORIZONTAL,reverseLayout: true)); //Horizontal reversal
         //rv_library_search.setLayoutManager( new GridLayoutManager(myRecyclerView.this),spanCount: 3); // Vertical 3 columns

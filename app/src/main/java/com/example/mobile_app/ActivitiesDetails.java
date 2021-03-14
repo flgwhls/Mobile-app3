@@ -3,22 +3,53 @@ package com.example.mobile_app;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
-public class Activities extends AppCompatActivity {
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.squareup.picasso.Picasso;
+
+import java.net.URI;
+
+
+public class ActivitiesDetails extends AppCompatActivity {
+
+
+
+    ImageView iv;
+    TextView date,type;
 
 
     //Initialize drawer
-    DrawerLayout drawer;
+   DrawerLayout drawer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_activities);
+        setContentView(R.layout.activity_activities_details);
+        iv= findViewById(R.id.iv_activities_details);
+        date= findViewById(R.id.tv_activities_Date);
+        type=findViewById(R.id.tv_activities_type);
+
         drawer= findViewById(R.id.drawer_layout);
+
+
+       Activities a= getIntent().getParcelableExtra("Activities");
+
+       Picasso.get().load(a.getUrl()).fit().into(iv);
+        date.setText(a.getDate());
+        type.setText(a.getType());
+
+
+
     }
 
-    public void ClickMenu(View view){
+   public void ClickMenu(View view){
         //Open drawer
         Dashboard.openDrawer(drawer);
     }
@@ -48,13 +79,19 @@ public class Activities extends AppCompatActivity {
         Dashboard.redirectActivity(this,Forum.class);
     }
 
-    public void ClickActivities(View view){
+    public void ClickActivities(View view){Dashboard.redirectActivity(this,Recycler_view_activities.class);}
+
+
+    public void ClickActivitiesDetails(View view){
         recreate();
     }
+
 
     @Override
     protected void onPause(){
         super.onPause();
         Dashboard.closeDrawer(drawer);
+
     }
+
 }

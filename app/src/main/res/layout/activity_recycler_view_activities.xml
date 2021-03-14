@@ -22,32 +22,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@string/welcome"
+            android:text="Activities"
             android:textSize="20sp" />
-
-        <SearchView
-            android:id="@+id/sv_library_search"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:focusable="auto"
-            android:inputType="text" >
-
-        </SearchView>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/btn_lib_menu"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="showMenu"
-                android:text="@string/choose_category" />
-
-        </LinearLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
