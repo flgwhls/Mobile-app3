@@ -41,7 +41,7 @@ public class SearchResult extends AppCompatActivity {
 
     }
     // set listener
-    ValueEventListener listener = new ValueEventListener() {
+   /* ValueEventListener listener = new ValueEventListener() {
         @Override
         public void onDataChange(@NonNull DataSnapshot snapshot) {
             for(DataSnapshot dss: snapshot.getChildren()){
@@ -56,7 +56,7 @@ public class SearchResult extends AppCompatActivity {
         public void onCancelled(@NonNull DatabaseError error) {
 
         }
-    };
+    };*/
 
 
 }

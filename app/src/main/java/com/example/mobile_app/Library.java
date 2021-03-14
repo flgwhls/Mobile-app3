@@ -6,7 +6,9 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.PopupMenu;
@@ -21,7 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class Library extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener{
+public class Library extends AppCompatActivity implements BookAdaptor.BookHolder.OnBookClickListener, PopupMenu.OnMenuItemClickListener {
 
     //Initialize drawer
     DrawerLayout drawer;
@@ -32,7 +34,8 @@ public class Library extends AppCompatActivity implements PopupMenu.OnMenuItemCl
     DatabaseReference dbref;
     //Chosen category
     String menuanswer,catread;
-    ArrayList<Book> booklist = new ArrayList<>(); // All books
+    ArrayList<Book> allbooklist = new ArrayList<>(); //all Books
+    ArrayList<Book> booklist = new ArrayList<>(); // array to view
     ArrayList<Book> cloudlist = new ArrayList<>(); //Cloud Computing
     ArrayList<Book> dbasedlist = new ArrayList<>(); //Databases
     ArrayList<Book> weblist = new ArrayList<>(); // Web Design
@@ -62,8 +65,8 @@ public class Library extends AppCompatActivity implements PopupMenu.OnMenuItemCl
         @Override
         public void onDataChange(@NonNull DataSnapshot snapshot) {
             for(DataSnapshot dss: snapshot.getChildren()){
+                allbooklist.add(dss.getValue(Book.class)); //Put all book
 
-                booklist.add(dss.getValue(Book.class));
                 // write books in Cloud Computing category to cloudlist
                 if(dss.getValue(Book.class).getCategory().equals("Cloud Computing")){
                     cloudlist.add(dss.getValue(Book.class));
@@ -88,9 +91,10 @@ public class Library extends AppCompatActivity implements PopupMenu.OnMenuItemCl
                 }
 
             }
-            mybookAdaptor = new BookAdaptor(booklist);
+           /* menuanswer="booklist";
+            mybookAdaptor = new BookAdaptor(booklist,Library.this);
             rv_library.setAdapter(mybookAdaptor);
-
+*/
         }
 
         @Override
@@ -98,6 +102,7 @@ public class Library extends AppCompatActivity implements PopupMenu.OnMenuItemCl
 
         }
     };
+
 
     public void ClickMenu(View view){
         //Open drawer
@@ -144,73 +149,74 @@ public class Library extends AppCompatActivity implements PopupMenu.OnMenuItemCl
         popup.inflate(R.menu.popup_menu);
         popup.show();
     }
-    // Method to choose books in one category and view in Recycler View
+
 
     // use to get answer and view cards in RecyclerView
     @Override
     public boolean onMenuItemClick(MenuItem item){
 
         switch (item.getItemId()){
-            case R.id.all:
+          /*  case R.id.all:
                 // when all
                 menuanswer = "all";
-                Toast.makeText(this, "All", Toast.LENGTH_SHORT).show();
-                mybookAdaptor = new BookAdaptor(booklist);
+                mybookAdaptor = new BookAdaptor(booklist,Library.this);
                 rv_library.setAdapter(mybookAdaptor);
-                return true;
+                return true;*/
             case R.id.cloud:
                 // when cloud
-                menuanswer = "cloud";
+                menuanswer = "cloudlist";
                 //Toast.makeText(this, "cloud", Toast.LENGTH_SHORT).show();
-                Toast.makeText(this,catread, Toast.LENGTH_SHORT).show();
-                mybookAdaptor = new BookAdaptor(cloudlist);
+                mybookAdaptor = new BookAdaptor(cloudlist,Library.this);
                 rv_library.setAdapter(mybookAdaptor);
                 return true;
             case R.id.graphics:
                 // when graphics
-                menuanswer = "graphics";
-                Toast.makeText(this, "graphics", Toast.LENGTH_SHORT).show();
-                mybookAdaptor = new BookAdaptor(graphlist);
+                menuanswer = "graphlist";
+                mybookAdaptor = new BookAdaptor(graphlist,Library.this);
                 rv_library.setAdapter(mybookAdaptor);
                 return true;
             case R.id.network:
                 // when network
-                menuanswer = "network";
-                Toast.makeText(this, "network", Toast.LENGTH_SHORT).show();
-                mybookAdaptor = new BookAdaptor(netlist);
+                menuanswer = "netlist";
+                mybookAdaptor = new BookAdaptor(netlist,Library.this);
                 rv_library.setAdapter(mybookAdaptor);
                 return true;
             case R.id.dbase:
                 // when network
-                menuanswer = "dbase";
-                Toast.makeText(this, "dbase", Toast.LENGTH_SHORT).show();
-                mybookAdaptor = new BookAdaptor(dbasedlist);
+                menuanswer = "dbasedlist";
+                mybookAdaptor = new BookAdaptor(dbasedlist,Library.this);
                 rv_library.setAdapter(mybookAdaptor);
 
                 return true;
             case R.id.programming:
                 // when programming
-                menuanswer = "programming";
-                Toast.makeText(this, "programming", Toast.LENGTH_SHORT).show();
-                mybookAdaptor = new BookAdaptor(proglist);
+                menuanswer = "proglist";
+                mybookAdaptor = new BookAdaptor(proglist,Library.this);
                 rv_library.setAdapter(mybookAdaptor);
                 return true;
             case R.id.web:
                 // when web
-                menuanswer = "web";
-                Toast.makeText(this, "web", Toast.LENGTH_SHORT).show();
-                mybookAdaptor = new BookAdaptor(weblist);
+                menuanswer = "weblist";
+                mybookAdaptor = new BookAdaptor(weblist,Library.this);
                 rv_library.setAdapter(mybookAdaptor);
                 return true;
             default:
                  // like all
-                menuanswer = "all";
-                Toast.makeText(this, "default", Toast.LENGTH_SHORT).show();
-                mybookAdaptor = new BookAdaptor(booklist);
+                menuanswer = "booklist";
+
+                mybookAdaptor = new BookAdaptor(booklist,Library.this);
                 rv_library.setAdapter(mybookAdaptor);
                 return true;
 
         } //end switch
+
+    }
+    @Override
+    public void OnBookClick(int position) {
+        Intent i= new Intent(Library.this,BookPage.class);
+
+        i.putExtra("Book", booklist.get(position));
+        startActivity(i);
 
     }
 }
