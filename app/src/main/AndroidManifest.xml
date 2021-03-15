@@ -11,23 +11,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Mobileapp">
-        <activity android:name=".BookRegister"/>
-        <activity android:name=".BookPage"/>
+        <activity android:name=".WebBooksRecycler"></activity>
+        <activity android:name=".ProgBooksRecykler" />
+        <activity android:name=".NetBooksRecycler" />
+        <activity android:name=".GraphBooksRecycler" />
+        <activity android:name=".DbaseBooksRecycler" />
+        <activity android:name=".CloudBooksRecycler" />
+        <activity android:name=".AllBooksRecycler" />
+        <activity android:name=".BuyBook" />
+        <activity android:name=".BookRegister" />
+        <activity android:name=".BookPage" />
         <activity android:name=".SearchResult" />
         <activity android:name=".Activities" />
         <activity android:name=".Forum" />
         <activity android:name=".Dashboard" />
-        <activity android:name=".Register"/>
-        <activity android:name=".Library" />
-        <activity android:name=".Login" />
-        <activity android:name=".FloorMap" />
-        <activity android:name=".Timetables">
+        <activity android:name=".Register" />
+        <activity android:name=".Library">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Login" />
+        <activity android:name=".FloorMap" />
+        <activity android:name=".Timetables" />
     </application>
 
 </manifest>

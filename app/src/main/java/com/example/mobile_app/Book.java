@@ -2,7 +2,7 @@ package com.example.mobile_app;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-
+// USED BY GREG DO NOT CHANGE !!!
 public class Book implements Parcelable {
     // class to make Book object
     // variables

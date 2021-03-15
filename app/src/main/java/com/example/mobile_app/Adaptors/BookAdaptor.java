@@ -16,7 +16,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-
+// USED BY GREG DO NOT CHANGE !!!
 public class BookAdaptor extends RecyclerView.Adapter<BookAdaptor.BookHolder>
 {
     // Arraylist for books
