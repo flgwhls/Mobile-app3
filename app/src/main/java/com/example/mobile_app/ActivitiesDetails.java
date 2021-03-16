@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
@@ -25,6 +26,7 @@ public class ActivitiesDetails extends AppCompatActivity {
     ImageView iv;
     TextView date,type;
 
+    String url;
 
     //Initialize drawer
    DrawerLayout drawer;
@@ -41,9 +43,11 @@ public class ActivitiesDetails extends AppCompatActivity {
 
        Activities a= getIntent().getParcelableExtra("Activities");
 
-       Picasso.get().load(a.getUrl()).fit().into(iv);
+      // Picasso.get().load(a.getUrl()).fit().into(iv);
         date.setText(a.getDate());
         type.setText(a.getType());
+        url = a.getUrl();
+        Glide.with(getApplicationContext()).load(url).into(iv);
 
 
 

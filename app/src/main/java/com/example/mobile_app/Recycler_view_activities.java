@@ -1,23 +1,32 @@
 package com.example.mobile_app;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
 import com.example.mobile_app.Adaptors.ActivitiesAdaptor;
-import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
-public class Recycler_view_activities extends AppCompatActivity {
+import java.util.ArrayList;
+
+public class Recycler_view_activities extends AppCompatActivity implements ActivitiesAdaptor.ActivitiesHolder.OnActivitiesClickListener{
 
 
+    DatabaseReference dbref;
     DrawerLayout drawer;
     RecyclerView recview;
-    ActivitiesAdaptor adapter;
+    ActivitiesAdaptor adaptor;
+    ArrayList<Activities> list= new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,25 +39,36 @@ public class Recycler_view_activities extends AppCompatActivity {
 
 
 
-        //test
-        FirebaseRecyclerOptions<Activities> options =
-                new FirebaseRecyclerOptions.Builder<Activities>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Activities"), Activities.class)
-                        .build();
-        adapter = new ActivitiesAdaptor(options);
-        recview.setAdapter(adapter);
 
+        dbref= FirebaseDatabase.getInstance().getReference("Activities");
+        dbref.addListenerForSingleValueEvent(listener);
+    }
+    ValueEventListener listener= new ValueEventListener() {
+        @Override
+        public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-    }
+            for (DataSnapshot dss: snapshot.getChildren())
+            {
+                list.add(dss.getValue(Activities.class));
+
+            }
+            adaptor=new ActivitiesAdaptor(list, Recycler_view_activities.this);
+            recview.setAdapter(adaptor);
+        }
+
+        @Override
+        public void onCancelled(@NonNull DatabaseError error) {
+
+        }
+    };
+
     @Override
-    protected void onStart (){
-        super.onStart();
-        adapter.startListening();
-    }
-    @Override
-    protected void onStop (){
-        super.onStop();
-        adapter.stopListening();
+    public void OnActivitiesClick(int pos) {
+
+        Intent i= new Intent(Recycler_view_activities.this,ActivitiesDetails.class);
+        i.putExtra("Activities", list.get(pos));
+        startActivity(i);
+
     }
     public void ClickMenu(View view){
         //Open drawer

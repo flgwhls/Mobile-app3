@@ -9,47 +9,73 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
 import com.example.mobile_app.Activities;
 import com.example.mobile_app.R;
-import com.firebase.ui.database.FirebaseRecyclerAdapter;
-import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.squareup.picasso.Picasso;
 
-public class ActivitiesAdaptor extends FirebaseRecyclerAdapter<Activities, ActivitiesAdaptor.myviewholder>
-{
-    public ActivitiesAdaptor(@NonNull FirebaseRecyclerOptions<Activities> options) {
-        super(options);
-    }
+import java.util.ArrayList;
 
-    @Override
-    protected void onBindViewHolder(@NonNull myviewholder holder, int position, @NonNull Activities model) {
+public class ActivitiesAdaptor extends RecyclerView.Adapter<ActivitiesAdaptor.ActivitiesHolder> {
 
-        holder.date.setText(model.getDate());
-        holder.type.setText(model.getType());
-        Glide.with(holder.url.getContext()).load(model.getUrl()).into(holder.url);
-    }
+    ArrayList<Activities> list;
+    ActivitiesHolder.OnActivitiesClickListener listener;
 
+    public ActivitiesAdaptor (ArrayList<Activities>list, ActivitiesHolder.OnActivitiesClickListener _listener){
+        this.list=list;
+        listener= _listener;
+}
     @NonNull
     @Override
-    public myviewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.activitiescard,parent,false);
-        return new myviewholder(view);
+    public ActivitiesHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View v= LayoutInflater.from(parent.getContext()).inflate(R.layout.activitiescard,parent,false);
+        return new ActivitiesHolder(v, listener);
     }
 
-    class myviewholder extends RecyclerView.ViewHolder
+    @Override
+    public void onBindViewHolder(@NonNull ActivitiesHolder holder, int position) {
+
+
+        holder.date.setText(list.get(position).getDate());
+        holder.type.setText(list.get(position).getType());
+        Picasso.get().load(list.get(position).getUrl()).fit().into(holder.iv);
+    }
+
+    @Override
+    public int getItemCount() {
+        return list.size();
+    }
+
+    //implements is 2 part (implements View.OnClickListener + alt+invio need to select implement method)
+    public static class ActivitiesHolder extends RecyclerView.ViewHolder implements View.OnClickListener
     {
 
-
-
-        ImageView url;
+        ImageView iv;
         TextView date,type;
-        public myviewholder(@NonNull View itemView)
-        {
+
+        OnActivitiesClickListener listener;
+        public ActivitiesHolder(@NonNull View itemView,OnActivitiesClickListener _listener) {
             super(itemView);
-            url=(ImageView)itemView.findViewById(R.id.iv_activities_card);
-            date=(TextView) itemView.findViewById(R.id.tv_date_card);
-            type=(TextView)itemView.findViewById(R.id.tv_type_card);
+
+            listener=_listener;
+            date=itemView.findViewById(R.id.tv_activities_date);
+            type=itemView.findViewById(R.id.tv_activities_type);
+            iv=itemView.findViewById(R.id.iv_activities_img);
+            itemView.setOnClickListener(this);
 
         }
+        // derive from alt+invio (Implements)
+        @Override
+        public void onClick(View v) {
+
+            listener.OnActivitiesClick(getAdapterPosition());
+        }
+
+        //2 part
+        public interface OnActivitiesClickListener
+        {
+            public void OnActivitiesClick(int pos);
+        }
     }
+
 }
+
