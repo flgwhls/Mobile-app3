@@ -16,42 +16,108 @@
         <include
             layout="@layout/nav_header"/>
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:text="Check Library"
-            android:layout_gravity="center"
-            android:textAlignment="center"
-            android:textSize="16sp"
-            android:textColor="#636363"/>
-        <TextView
+            android:padding="40dp"
+            android:outlineSpotShadowColor="@color/black">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/dash_lib_icon"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Visit Library"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:textSize="28sp"
+                android:textColor="#636363" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:text="Check Library"
-            android:layout_gravity="center"
-            android:textAlignment="center"
-            android:textSize="16sp"
-            android:textColor="#636363"/>
-        <TextView
+            android:padding="40dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/dash_tm_icon"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Check Time Tables"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:textSize="28sp"
+                android:textColor="#636363" />
+        </LinearLayout>
+
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:text="Check Library"
-            android:layout_gravity="center"
-            android:textAlignment="center"
-            android:textSize="16sp"
-            android:textColor="#636363"/>
-        <TextView
+            android:padding="40dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/dash_fp_icon"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Visit Floor Plan"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:textSize="28sp"
+                android:textColor="#636363" />
+        </LinearLayout>
+
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:text="Check Library"
-            android:layout_gravity="center"
-            android:textAlignment="center"
-            android:textSize="16sp"
-            android:textColor="#636363"/>
+            android:padding="40dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/dash_forum_icon"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Visit Forum"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:textSize="28sp"
+                android:textColor="#636363" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="40dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/dash_act_icon"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Check Student Activities"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:textSize="28sp"
+                android:textColor="#636363" />
+        </LinearLayout>
+
+
+
 
 
     </LinearLayout>
