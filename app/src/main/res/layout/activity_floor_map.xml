@@ -13,14 +13,16 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <include
-            layout="@layout/nav_header"/>
-        <TextView
+        <include layout="@layout/nav_header" />
+        <ImageView
+            android:id="@+id/imageView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="FLoor Map"
-            android:textSize="50sp"
-            android:gravity="center"/>
+            android:layout_height="381dp"
+            app:srcCompat="@drawable/floor_plan" />
+
+
+
+
     </LinearLayout>
 
     <RelativeLayout

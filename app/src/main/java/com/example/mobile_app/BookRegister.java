@@ -11,7 +11,7 @@ import android.widget.EditText;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
+// USED BY GREG DO NOT CHANGE !!!
 public class BookRegister extends AppCompatActivity {
     EditText title, author, edition, isbn, category, imagelink, publisher, publicyear;
     Button bookregister;
@@ -36,7 +36,7 @@ public class BookRegister extends AppCompatActivity {
         publisher = findViewById(R.id.et_bookreg_publisher);
         publicyear = findViewById(R.id.et_bookreg_publicyear);
 
-        dbref = FirebaseDatabase.getInstance().getReference("Book");
+        dbref = FirebaseDatabase.getInstance().getReference("Book4sell");
         bookregister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

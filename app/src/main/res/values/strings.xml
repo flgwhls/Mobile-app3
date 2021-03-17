@@ -25,7 +25,6 @@
     <string name="bookreg">BookReg</string>
     <string name="title">Title</string>
     <string name="isbn">ISBN</string>
-    <string name="picture">Picture</string>
     <string name="left">Left</string>
     <string name="right">Right</string>
     <string name="edition">Edition</string>
@@ -50,8 +49,8 @@
     <string name="network_design">Network Design</string>
     <string name="programming">Programming</string>
     <string name="web_design">Web Design</string>
-
-
+    <string name="picture">Picture</string>
+    <string name="book_price">Book Price</string>
 
 
 </resources>

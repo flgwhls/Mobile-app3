@@ -9,21 +9,26 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 public class Timetables extends AppCompatActivity {
+    //Initialize website view
     private WebView webView;
 
     //Initialize drawer
     DrawerLayout drawer;
+    //show timetable content when selected
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timetables);
         drawer= findViewById(R.id.drawer_layout);
+        //call selected webview url, allow access to javasript and website local storage
         webView = (WebView) findViewById(R.id.webview);
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.getSettings().setDomStorageEnabled(true);
         webView.setWebViewClient(new WebViewClient());
         webView.loadUrl("https://ttportalqalive.com/2021/studentlogin.html");
-        webView.getSettings().setJavaScriptEnabled(true);
     }
 
+    //back button to works us a browser back button
     @Override
     public void onBackPressed() {
         if (webView.canGoBack()) {
@@ -64,7 +69,7 @@ public class Timetables extends AppCompatActivity {
     }
 
     public void ClickActivities(View view){
-        Dashboard.redirectActivity(this,Activities.class);
+        Dashboard.redirectActivity(this, Recycler_view_activities.class);
     }
 
     @Override

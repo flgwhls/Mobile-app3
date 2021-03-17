@@ -19,7 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-
+// USED BY GREG DO NOT CHANGE !!!
 public class BookPage extends AppCompatActivity {
     // Variable declaration
     // Arraylist to load all books
@@ -39,6 +39,7 @@ public class BookPage extends AppCompatActivity {
         setContentView(R.layout.activity_book_page);
         // Activity to View book form database
 
+
         title = findViewById(R.id.tv_bookp_title2);
         author = findViewById(R.id.tv_bookp_author2);
         isbn = findViewById(R.id.tv_bookp_isbn2);
@@ -50,81 +51,20 @@ public class BookPage extends AppCompatActivity {
         edition = findViewById(R.id.tv_bookp_edition2);
         category = findViewById(R.id.tv_bookp_category2);
 
-        //database reference
-        dbref = FirebaseDatabase.getInstance().getReference("Book");
-        // Event Listener
-        dbref.addListenerForSingleValueEvent(listener);
-        // btnright listener
 
+        //Get book object from card
+        //Book b= getIntent().getParcelableExtra("Book1");
+        Book b = getIntent().getParcelableExtra("Book");
 
-        btnright.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (index < booklist.size() - 1) {
-                    index++;
-                    title.setText(booklist.get(index).getTitle());
-                    author.setText(booklist.get(index).getAuthor());
-                    isbn.setText(booklist.get(index).getISBN());
-                    publisher.setText(booklist.get(index).getPublisher());
-                    publicyear.setText(booklist.get(index).getPublicyear());
-                    edition.setText(booklist.get(index).getEdition());
-                    category.setText(booklist.get(index).getCategory());
-                    url = booklist.get(index).getImglink();
-                    Glide.with(BookPage.this.getApplicationContext()).load(url).into(bookview);
-                }
-
-
-            }
-        });
-
-        // btnleft listener
-        btnleft.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (index > 0) {
-                    index--;
-                    title.setText(booklist.get(index).getTitle());
-                    author.setText(booklist.get(index).getAuthor());
-                    isbn.setText(booklist.get(index).getISBN());
-                    publisher.setText(booklist.get(index).getPublisher());
-                    publicyear.setText(booklist.get(index).getPublicyear());
-                    edition.setText(booklist.get(index).getEdition());
-                    category.setText(booklist.get(index).getCategory());
-                    url = booklist.get(index).getImglink();
-                    Glide.with(getApplicationContext()).load(url).into(bookview);
-
-                }
-            }
-        });
+        title.setText(b.getTitle());
+        author.setText(b.getAuthor());
+        isbn.setText(b.getISBN());
+        publisher.setText(b.getPublisher());
+        publicyear.setText(b.getPublicyear());
+        edition.setText(b.getEdition());
+        category.setText(b.getCategory());
+        url = b.getImglink();
+        Glide.with(getApplicationContext()).load(url).into(bookview);
 
     }
-
-    ValueEventListener listener = new ValueEventListener() {
-        @Override
-        public void onDataChange(@NonNull DataSnapshot snapshot) {
-            for (DataSnapshot dss : snapshot.getChildren()) {
-
-
-                Book b = dss.getValue(Book.class);
-                booklist.add(b);
-
-
-            }
-            title.setText(booklist.get(0).getTitle());
-            author.setText(booklist.get(0).getAuthor());
-            isbn.setText(booklist.get(0).getISBN());
-            publisher.setText(booklist.get(0).getPublisher());
-            publicyear.setText(booklist.get(0).getPublicyear());
-            edition.setText(booklist.get(0).getEdition());
-            category.setText(booklist.get(0).getCategory());
-            url = booklist.get(0).getImglink();
-            Glide.with(getApplicationContext()).load(url).into(bookview);
-
-        }
-
-        @Override
-        public void onCancelled(@NonNull DatabaseError error) {
-
-        }
-    };
 }
