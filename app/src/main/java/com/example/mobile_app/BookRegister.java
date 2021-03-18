@@ -11,7 +11,7 @@ import android.widget.EditText;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
+// USED BY GREG DO NOT CHANGE !!!
 public class BookRegister extends AppCompatActivity {
 
 

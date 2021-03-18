@@ -19,7 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-
+// USED BY GREG DO NOT CHANGE !!!
 public class BookPage extends AppCompatActivity {
     // Variable declaration
     // Arraylist to load all books
