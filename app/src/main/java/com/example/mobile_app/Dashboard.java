@@ -30,11 +30,6 @@ public class Dashboard extends AppCompatActivity {
         drawer.openDrawer(GravityCompat.START);
     }
 
-    public void ClickLogo(View view){
-        // close drawer
-        closeDrawer(drawer);
-    }
-
     public static void closeDrawer(DrawerLayout drawer) {
         //close drawer layout
         //check condition
