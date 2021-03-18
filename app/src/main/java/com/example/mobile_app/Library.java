@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.PopupMenu;
 
 import com.example.mobile_app.Adaptors.BookAdaptor;
@@ -25,7 +26,8 @@ public class Library extends AppCompatActivity implements PopupMenu.OnMenuItemCl
 
     //Initialize drawer
     DrawerLayout drawer;
-    //TODO: copy all recyclerView to LibRecyklerView and call LibRecyclerView when it is needed
+// Button to go to Book For Sell
+    Button btnbooks4sell;
 
 
 
@@ -38,6 +40,14 @@ public class Library extends AppCompatActivity implements PopupMenu.OnMenuItemCl
 
 
         drawer= findViewById(R.id.drawer_layout);
+        btnbooks4sell = findViewById(R.id.btn_book4sell);
+        btnbooks4sell.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent sellb = new Intent(Library.this,SellBooks.class);
+                startActivity(sellb);
+            }
+        });
 
     }
 

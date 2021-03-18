@@ -26,14 +26,14 @@
             android:text="@string/welcome"
             android:textSize="20sp" />
 
-        <SearchView
-            android:id="@+id/sv_library_search"
+        <Button
+            android:id="@+id/btn_book4sell"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:focusable="auto"
-            android:inputType="text" >
+            android:text="Books For Sell">
 
-        </SearchView>
+        </Button>
 
         <LinearLayout
             android:layout_width="match_parent"
