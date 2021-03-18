@@ -11,6 +11,7 @@ import android.view.View;
 
 public class Dashboard extends AppCompatActivity {
 
+
     DrawerLayout drawer;
 
     @Override
@@ -18,6 +19,9 @@ public class Dashboard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
         drawer = findViewById(R.id.drawer_layout);
+
+
+
     }
 
     public void ClickMenu(View view){
@@ -38,6 +42,27 @@ public class Dashboard extends AppCompatActivity {
             //close it
             drawer.closeDrawer(GravityCompat.START);
         }
+    }
+
+
+    public void VisitLibrary(View view){
+        redirectActivity(this,Library.class);
+    }
+
+    public void VisitTimeTables(View view){
+        redirectActivity(this,Timetables.class);
+    }
+
+    public void VisitFloorPlan(View view){
+        redirectActivity(this,FloorMap.class);
+    }
+
+    public void VisitForum(View view){
+        redirectActivity(this,Forum.class);
+    }
+
+    public void VisitActivities(View view){
+        redirectActivity(this,Activities.class);
     }
 
     public void ClickHome(View view){
