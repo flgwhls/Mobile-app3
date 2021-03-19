@@ -47,6 +47,7 @@ public class ActivitiesDetails extends AppCompatActivity {
         date.setText(a.getDate());
         type.setText(a.getType());
         url = a.getUrl();
+
         Glide.with(getApplicationContext()).load(url).into(iv);
 
 

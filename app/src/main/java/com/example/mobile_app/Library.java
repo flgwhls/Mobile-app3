@@ -84,7 +84,7 @@ public class Library extends AppCompatActivity implements PopupMenu.OnMenuItemCl
     }
 
     public void ClickActivities(View view){
-        Dashboard.redirectActivity(this,Activities.class);
+        Dashboard.redirectActivity(this,Recycler_view_activities.class);
     }
 
     @Override

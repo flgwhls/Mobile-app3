@@ -3,14 +3,20 @@ package com.example.mobile_app;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 public class Activities implements Parcelable {
 
-    private String date,type,url;
+    private String date,type,url,startweek;
 
-    public Activities(String date, String type, String url) {
+    public Activities(String date, String type, String url, String startweek) {
         this.date = date;
         this.type = type;
         this.url = url;
+        this.startweek = startweek;
     }
 
     public Activities() {
@@ -22,6 +28,7 @@ public class Activities implements Parcelable {
         date = in.readString();
         type = in.readString();
         url = in.readString();
+        startweek = in.readString();
     }
 
     public static final Creator<Activities> CREATOR = new Creator<Activities>() {
@@ -32,9 +39,23 @@ public class Activities implements Parcelable {
         public Activities[] newArray(int size) {return new Activities[size];}
     };
 
+    public String getStartweek() {
+        return startweek;
+    }
+
+    public void setStartweek(String startweek) {
+        this.startweek = startweek;
+    }
+
     public String getDate() {
         return date;
     }
+
+    public static Creator<Activities> getCREATOR() {
+        return CREATOR;
+    }
+
+
 
     public void setDate(String date) {
         this.date = date;
@@ -66,5 +87,6 @@ public class Activities implements Parcelable {
         dest.writeString(date);
         dest.writeString(type);
         dest.writeString(url);
+        dest.writeString(startweek);
     }
 }
