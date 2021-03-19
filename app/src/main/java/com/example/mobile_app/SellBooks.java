@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.mobile_app.Adaptors.Book4SellAdapter;
@@ -23,6 +25,7 @@ public class SellBooks extends AppCompatActivity implements Book4SellAdapter.Boo
     ArrayList<Book4Sell> sellbooklist = new ArrayList<>(); // boks for sale arrayList
     RecyclerView rv_sellbooks; //RecyklerView for display list of books
     Book4SellAdapter sellbookAdaptor; // Adaptor
+    Button reg4Sell; // Button to register Book for Sell
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +34,15 @@ public class SellBooks extends AppCompatActivity implements Book4SellAdapter.Boo
         // Database reference
         dbref = FirebaseDatabase.getInstance().getReference("Book4sell");
         rv_sellbooks = findViewById(R.id.rv_sell_books);
+        reg4Sell = findViewById(R.id.btn_Register4Sell);
         rv_sellbooks.setLayoutManager(new LinearLayoutManager(SellBooks.this));
-
+        reg4Sell.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent regintent = new Intent(SellBooks.this,BookRegister.class);
+                startActivity(regintent);
+            }
+        });
         dbref.addListenerForSingleValueEvent(listener);
     }
     // set listener

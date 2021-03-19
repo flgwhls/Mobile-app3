@@ -3,8 +3,8 @@
     <string name="textview">TextView</string>
     <string name="button">Button</string>
     <string name="button1">Button</string>
-    <string name="first_name">First Name</string>
-    <string name="last_name">Last Name</string>
+    <string name="first_name" translatable="false">First Name</string>
+    <string name="last_name" translatable="false">Last Name</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="confirm_password">Confirm Password</string>
@@ -36,7 +36,6 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
@@ -51,6 +50,7 @@
     <string name="web_design">Web Design</string>
     <string name="picture">Picture</string>
     <string name="book_price">Book Price</string>
-
+    <string name="picrure_to_send">Picrure to send</string>
+    <string name="activities">Activities</string>
 
 </resources>

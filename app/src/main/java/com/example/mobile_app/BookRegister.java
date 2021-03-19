@@ -31,7 +31,7 @@ public class BookRegister extends AppCompatActivity {
         edition = findViewById(R.id.et_bookreg_edition);
         isbn = findViewById(R.id.et_bookreg_ISBN);
         category = findViewById(R.id.et_bookreg_category);
-        imagelink = findViewById(R.id.et_bookreg_ImageLink);
+
         bookregister = findViewById(R.id.btn_bookreg_register);
         publisher = findViewById(R.id.et_bookreg_publisher);
         publicyear = findViewById(R.id.et_bookreg_publicyear);

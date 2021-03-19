@@ -23,20 +23,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Activities"
+            android:text="@string/activities"
             android:textSize="50sp" />
 
         <ImageView
             android:id="@+id/iv_activities_details"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/picrure_to_send"
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
             android:id="@+id/tv_activities_Date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="@string/textview" />
 
         <TextView
             android:id="@+id/tv_activities_type"
