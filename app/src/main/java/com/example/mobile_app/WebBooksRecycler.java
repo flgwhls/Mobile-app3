@@ -16,7 +16,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-// USED BY GREG DO NOT CHANGE !!!
+
 public class WebBooksRecycler extends AppCompatActivity implements BookAdaptor.BookHolder.OnBookClickListener{
     DatabaseReference dbref; //dbrefefence
     ArrayList<Book> webbooklist = new ArrayList<>(); //web Books

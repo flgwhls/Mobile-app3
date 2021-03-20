@@ -1,5 +1,5 @@
 package com.example.mobile_app;
-// USED BY GREG DO NOT CHANGE !!!
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -16,7 +16,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-// USED BY GREG DO NOT CHANGE !!!
+
 public class ProgBooksRecykler extends AppCompatActivity implements BookAdaptor.BookHolder.OnBookClickListener{
     DatabaseReference dbref; //dbrefefence
     ArrayList<Book> progbooklist = new ArrayList<>(); //prog Books
