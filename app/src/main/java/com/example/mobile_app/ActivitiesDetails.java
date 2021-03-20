@@ -3,20 +3,12 @@ package com.example.mobile_app;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.squareup.picasso.Picasso;
-
-import java.net.URI;
 
 
 public class ActivitiesDetails extends AppCompatActivity {
@@ -24,19 +16,23 @@ public class ActivitiesDetails extends AppCompatActivity {
 
 
     ImageView iv;
-    TextView date,type;
+    TextView date,type,description,hour;
 
     String url;
 
     //Initialize drawer
    DrawerLayout drawer;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_activities_details);
         iv= findViewById(R.id.iv_activities_details);
-        date= findViewById(R.id.tv_activities_Date);
-        type=findViewById(R.id.tv_activities_type);
+        date= findViewById(R.id.tv_activitiescard_date);
+        type=findViewById(R.id.tv_activitiescard_type);
+        description=findViewById(R.id.tv_activities_description);
+        hour=findViewById(R.id.tv_activities_hour);
 
         drawer= findViewById(R.id.drawer_layout);
 
@@ -46,8 +42,9 @@ public class ActivitiesDetails extends AppCompatActivity {
       // Picasso.get().load(a.getUrl()).fit().into(iv);
         date.setText(a.getDate());
         type.setText(a.getType());
-        url = a.getUrl();
-
+        hour.setText(a.getHour());
+        description.setText(a.getDescription());
+        url = (a.getUrl());
         Glide.with(getApplicationContext()).load(url).into(iv);
 
 

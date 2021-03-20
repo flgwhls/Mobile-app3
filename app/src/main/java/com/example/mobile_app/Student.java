@@ -44,7 +44,7 @@ public class Student {
     }
     // set
 
-    public void getStudentID(String firstName) {
+    public void setStudentID(String studentID) {
         this.studentID = studentID;
     }
     public void setFirstName(String firstName) {

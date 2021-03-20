@@ -38,8 +38,8 @@ public class Recycler_view_activities extends AppCompatActivity implements Activ
     ActivitiesAdaptor adaptor;
     ArrayList<Activities> list= new ArrayList<>();
     // Modification to try date compare
-   Date curentdate= new Date();
-   String strcurdate,strcurdate2, format = "dd/MM/yyyy";
+  // Date curentdate= new Date();
+  // String strcurdate,strcurdate2, format = "dd/MM/yyyy";
     Date date;
     // end of modification
 
