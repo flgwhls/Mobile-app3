@@ -15,7 +15,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class AddActivities extends AppCompatActivity {
 
     DatabaseReference dbref;
-    EditText startweek,date,hour,url,type,description;
+    EditText startweek,date,hour,type,description,url;
     Button submit;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,9 +24,9 @@ public class AddActivities extends AppCompatActivity {
         startweek=findViewById(R.id.add_activities_startweek);
         date= findViewById(R.id.add_activities_date);
         hour=findViewById(R.id.add_activities_hour);
-        url= findViewById(R.id.add_activities_url);
         type=findViewById(R.id.add_activities_type);
         description=findViewById(R.id.add_activities_descript);
+        url= findViewById(R.id.add_activities_url);
 
 
         submit=findViewById(R.id.add_activities_submit);
@@ -40,12 +40,14 @@ public class AddActivities extends AppCompatActivity {
 
 
 
-                Activities a =new Activities(startweek.getText().toString(),date.getText().toString(),hour.getText().toString(),url.getText().toString(),type.getText().toString(),
-                        description.getText().toString());
+                Activities a =new Activities(startweek.getText().toString(),date.getText().toString(),hour.getText().toString(),type.getText().toString(),
+                        description.getText().toString(),url.getText().toString());
 
                 //3. save object to FB
                 dbref.child(dbref.push().getKey()).setValue(a);
 
+                Intent i = new Intent(AddActivities.this, AddActivities.class);
+                startActivity(i);
                /* if (submit.hasOnClickListeners()) {
                     Toast.makeText(AddActivities.this, "The activity has been register", Toast.LENGTH_LONG).show();
 

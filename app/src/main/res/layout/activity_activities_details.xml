@@ -27,34 +27,34 @@
             android:textSize="50sp" />
 
         <ImageView
-            android:id="@+id/iv_activities_details"
+            android:id="@+id/iv_act_img"
             android:layout_width="wrap_content"
             android:layout_height="97dp"
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
-            android:id="@+id/tv_activities_date"
+            android:id="@+id/tv_act_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Date"
             android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/tv_activities_hour"
+            android:id="@+id/tv_act_hour"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Hour"
             android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/tv_activitiescard_type"
+            android:id="@+id/tv_act_type"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Type"
             android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/tv_activities_description"
+            android:id="@+id/tv_act_description"
             android:layout_width="match_parent"
             android:layout_height="189dp"
             android:text="Description"

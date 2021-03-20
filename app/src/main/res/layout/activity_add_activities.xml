@@ -11,79 +11,79 @@
         android:id="@+id/add_activities_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="99dp"
+        android:layout_marginTop="10dp"
         android:ems="10"
         android:hint="Date"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/add_activities_startweek" />
 
     <EditText
         android:id="@+id/add_activities_descript"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="23dp"
+        android:layout_width="213dp"
+        android:layout_height="121dp"
+        android:layout_marginTop="10dp"
         android:ems="10"
         android:hint="Description"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.525"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/add_activities_date" />
+        app:layout_constraintTop_toBottomOf="@+id/add_activities_type" />
 
     <EditText
         android:id="@+id/add_activities_hour"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:ems="10"
         android:hint="Hour"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/add_activities_descript" />
+        app:layout_constraintTop_toBottomOf="@+id/add_activities_date" />
 
     <EditText
         android:id="@+id/add_activities_startweek"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="80dp"
         android:ems="10"
         android:hint="Start week date"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/add_activities_hour" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/add_activities_type"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="10dp"
         android:ems="10"
         android:hint="Type"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/add_activities_startweek" />
+        app:layout_constraintTop_toBottomOf="@+id/add_activities_hour" />
 
     <EditText
         android:id="@+id/add_activities_url"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="10dp"
         android:ems="10"
         android:hint="Url"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/add_activities_type" />
+        app:layout_constraintTop_toBottomOf="@+id/add_activities_descript" />
 
     <Button
         android:id="@+id/add_activities_submit"

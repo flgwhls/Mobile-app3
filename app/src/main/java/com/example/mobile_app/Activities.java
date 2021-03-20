@@ -11,15 +11,16 @@ import java.util.Locale;
 
 public class Activities implements Parcelable {
 
-    private String date,type,url,startweek,description,hour;
+    private String startweek,date,hour,type,description,url;
 
-    public Activities(String date, String type, String url, String startweek,String description,String hour) {
+    public Activities(String startweek,String date,String hour, String type,String description, String url) {
+        this.startweek = startweek;
         this.date = date;
+        this.hour = hour;
         this.type = type;
         this.description = description;
-        this.hour = hour;
         this.url = url;
-        this.startweek = startweek;
+
     }
 
     public Activities() {
@@ -28,12 +29,14 @@ public class Activities implements Parcelable {
 
 
     protected Activities(Parcel in) {
+        startweek = in.readString();
         date = in.readString();
-        description = in.readString();
         hour = in.readString();
         type = in.readString();
+        description = in.readString();
         url = in.readString();
-        startweek = in.readString();
+
+
     }
 
     public static final Creator<Activities> CREATOR = new Creator<Activities>() {
@@ -43,41 +46,23 @@ public class Activities implements Parcelable {
         @Override
         public Activities[] newArray(int size) {return new Activities[size];}
     };
-
-    public String getDescription() {
-        return description;
-    }
-    public String getHour() {return hour;}
     public String getStartweek() {return startweek;}
-    public String getType() {
-        return type;
-    }
-    public String getUrl() {
-        return url;
-    }
-    public String getDate() {
-        return date;
-    }
-
+    public String getDate() {return date;}
+    public String getHour() {return hour;}
+    public String getType() {return type;}
+    public String getDescription() {return description;}
+    public String getUrl() {return url;}
 
     public static Creator<Activities> getCREATOR() {
         return CREATOR;
     }
 
-    public void setDescription(String description) {this.description = description;}
+    public void setStartweek(String startweek) {this.startweek = startweek;}
+    public void setDate(String date) {this.date = date;}
     public void setHour(String hour) {this.hour = hour;}
-    public void setStartweek(String startweek) {
-        this.startweek = startweek;
-    }
-    public void setDate(String date) {
-        this.date = date;
-    }
-    public void setType(String type) {
-        this.type = type;
-    }
-    public void setUrl(String url) {
-        this.url = url;
-    }
+    public void setType(String type) {this.type = type;}
+    public void setDescription(String description) {this.description = description;}
+    public void setUrl(String url) {this.url = url;}
 
     @Override
     public int describeContents() {
@@ -86,12 +71,13 @@ public class Activities implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(startweek);
         dest.writeString(date);
         dest.writeString(hour);
-        dest.writeString(description);
         dest.writeString(type);
+        dest.writeString(description);
         dest.writeString(url);
-        dest.writeString(startweek);
+
     }
 
 }

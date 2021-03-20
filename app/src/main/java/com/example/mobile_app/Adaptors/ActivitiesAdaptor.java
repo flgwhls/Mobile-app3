@@ -58,7 +58,7 @@ public class ActivitiesAdaptor extends RecyclerView.Adapter<ActivitiesAdaptor.Ac
 
             listener=_listener;
             date=itemView.findViewById(R.id.tv_activitiescard_date);
-            type=itemView.findViewById(R.id.tv_activitiescard_type);
+            type=itemView.findViewById(R.id.tv_act_type);
             iv=itemView.findViewById(R.id.iv_activitiescard_img);
             itemView.setOnClickListener(this);
 

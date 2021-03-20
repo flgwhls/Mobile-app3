@@ -38,10 +38,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/iv_activitiescard_img"
-            app:layout_constraintTop_toBottomOf="@+id/tv_activitiescard_type" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_act_type" />
 
         <TextView
-            android:id="@+id/tv_activitiescard_type"
+            android:id="@+id/tv_act_type"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"

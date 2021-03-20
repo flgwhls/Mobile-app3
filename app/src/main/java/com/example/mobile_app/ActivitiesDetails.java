@@ -16,7 +16,7 @@ public class ActivitiesDetails extends AppCompatActivity {
 
 
     ImageView iv;
-    TextView date,type,description,hour;
+    TextView startweek,date,hour,type,description;
 
     String url;
 
@@ -28,11 +28,11 @@ public class ActivitiesDetails extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_activities_details);
-        iv= findViewById(R.id.iv_activities_details);
+        iv= findViewById(R.id.iv_act_img);
         date= findViewById(R.id.tv_activitiescard_date);
-        type=findViewById(R.id.tv_activitiescard_type);
-        description=findViewById(R.id.tv_activities_description);
-        hour=findViewById(R.id.tv_activities_hour);
+        type=findViewById(R.id.tv_act_type);
+        description=findViewById(R.id.tv_act_description);
+        hour=findViewById(R.id.tv_act_hour);
 
         drawer= findViewById(R.id.drawer_layout);
 
@@ -40,9 +40,10 @@ public class ActivitiesDetails extends AppCompatActivity {
        Activities a= getIntent().getParcelableExtra("Activities");
 
       // Picasso.get().load(a.getUrl()).fit().into(iv);
+        startweek.setText(a.getStartweek());
         date.setText(a.getDate());
-        type.setText(a.getType());
         hour.setText(a.getHour());
+        type.setText(a.getType());
         description.setText(a.getDescription());
         url = (a.getUrl());
         Glide.with(getApplicationContext()).load(url).into(iv);
