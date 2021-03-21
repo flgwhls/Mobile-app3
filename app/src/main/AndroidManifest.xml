@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Mobileapp">
-        <activity android:name=".AddActivities"></activity>
+        <activity android:name=".Recycler_view_activities"></activity>
         <activity android:name=".SellPage" />
         <activity android:name=".WebBooksRecycler" />
         <activity android:name=".ProgBooksRecykler" />
@@ -32,14 +32,14 @@
         <activity android:name=".Register" >
 
         </activity>
-        <activity android:name=".Recycler_view_activities">
+        <activity android:name=".Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Login" />
+        <activity android:name=".AddActivities" />
         <activity android:name=".FloorMap" />
         <activity android:name=".Timetables" />
     </application>

@@ -15,12 +15,13 @@
 
         <include
             layout="@layout/nav_header"/>
+
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
             android:text="Forum"
-            android:textSize="50sp"
-            android:gravity="center"/>
+            android:textSize="50sp" />
     </LinearLayout>
 
     <RelativeLayout
