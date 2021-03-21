@@ -11,7 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Mobileapp">
-        <activity android:name=".Create_Topic"/>
+        <activity
+            android:name=".topiccard"
+            android:label="@string/title_activity_topiccard"
+            android:theme="@style/Theme.Mobileapp.NoActionBar"></activity>
+        <activity android:name=".Create_Topic" />
         <activity android:name=".AddActivities" />
         <activity android:name=".SellPage" />
         <activity android:name=".WebBooksRecycler" />
