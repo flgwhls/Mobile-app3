@@ -26,7 +26,6 @@ public class BookRegister extends AppCompatActivity {
 
         // DraweLayout
         drawer = findViewById(R.id.drawer_layout);
-
         title = findViewById(R.id.et_bookreg_title);
         author = findViewById(R.id.et_bookreg_author);
         edition = findViewById(R.id.et_bookreg_edition);
@@ -58,6 +57,10 @@ public class BookRegister extends AppCompatActivity {
             Dashboard.openDrawer(drawer);
         }
 
+        public void ClickLogo(View view){
+            // close drawer
+            Dashboard.closeDrawer(drawer);
+        }
 
         public void ClickHome(View view){
             Dashboard.redirectActivity(this, Dashboard.class);

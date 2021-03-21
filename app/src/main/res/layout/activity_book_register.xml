@@ -51,7 +51,7 @@
             android:inputType="textPersonName" />
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/iv_bookreg_image"
             android:layout_width="match_parent"
             android:layout_height="127dp"
             android:layout_marginStart="150sp"
@@ -103,7 +103,16 @@
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/et_price"
+            android:id="@+id/et_bookreg_email"
+            android:layout_width="match_parent"
+            android:layout_height="55sp"
+            android:ems="10"
+            android:hint="@string/email"
+            android:importantForAutofill="no"
+            android:inputType="textEmailAddress" />
+
+        <EditText
+            android:id="@+id/et_bookreg_price"
             android:layout_width="match_parent"
             android:layout_height="55sp"
             android:background="@drawable/edittextbackground"
