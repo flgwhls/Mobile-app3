@@ -29,7 +29,9 @@
         <activity android:name=".SellBooks" />
         <activity android:name=".ActivitiesDetails"/>
         <activity android:name=".Dashboard"></activity>
-        <activity android:name=".Register" />
+        <activity android:name=".Register" >
+
+        </activity>
         <activity android:name=".Recycler_view_activities">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

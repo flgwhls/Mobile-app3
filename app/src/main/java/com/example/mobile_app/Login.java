@@ -101,5 +101,6 @@ public class Login extends AppCompatActivity {
    protected void onStart() {
      super.onStart();
        mFirebaseAuth.addAuthStateListener(mAuthStateListener);
+
     }
 }
