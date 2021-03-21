@@ -43,11 +43,6 @@ public class Timetables extends AppCompatActivity {
         Dashboard.openDrawer(drawer);
     }
 
-    public void ClickLogo(View view){
-        // close drawer
-        Dashboard.closeDrawer(drawer);
-    }
-
     public void ClickHome(View view){
         Dashboard.redirectActivity(this, Dashboard.class);
     }

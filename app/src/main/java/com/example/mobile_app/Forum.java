@@ -3,28 +3,45 @@ package com.example.mobile_app;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.Button;
 
 public class Forum extends AppCompatActivity {
     //Initialize drawer
     DrawerLayout drawer;
+
+    Button goTo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forum);
         drawer= findViewById(R.id.drawer_layout);
+
+        goTo = findViewById(R.id.btn_forum_create);
+
+
+        goTo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(Forum.this, Create_Topic.class);
+                startActivity(i);
+            }
+        });
+
     }
+
+
 
     public void ClickMenu(View view){
         //Open drawer
         Dashboard.openDrawer(drawer);
     }
 
-    public void ClickLogo(View view){
-        // close drawer
-        Dashboard.closeDrawer(drawer);
-    }
 
     public void ClickHome(View view){
         Dashboard.redirectActivity(this, Dashboard.class);

@@ -129,11 +129,6 @@ public class Recycler_view_activities extends AppCompatActivity implements Activ
         Dashboard.openDrawer(drawer);
     }
 
-    public void ClickLogo(View view){
-        // close drawer
-        Dashboard.closeDrawer(drawer);
-    }
-
     public void ClickHome(View view){
         Dashboard.redirectActivity(this, Dashboard.class);
     }
@@ -153,7 +148,7 @@ public class Recycler_view_activities extends AppCompatActivity implements Activ
     }
 
 
-    public void ClickRecycler_view_activities(View view){
+    public void ClickActivities(View view){
         recreate();
     }
 
