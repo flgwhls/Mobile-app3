@@ -88,6 +88,29 @@ public class BookRegister extends AppCompatActivity {
                             public void onSuccess(Uri uri) {
                                 imageurl= uri.toString();
                                 Toast.makeText(BookRegister.this, imageurl, Toast.LENGTH_SHORT).show();
+                                //Getting email
+                                // Id will be contact email
+                                // date is curent date
+                                date = new SimpleDateFormat("dd/MM/yyyy").format(new Date());
+                                Toast.makeText(BookRegister.this, date, Toast.LENGTH_SHORT).show();
+
+
+
+                                //Sett status
+
+                                Book4Sell b = new Book4Sell(title.getText().toString(), author.getText().toString(),
+                                        edition.getText().toString(), isbn.getText().toString(),
+                                        category.getText().toString(), imageurl,
+                                        publisher.getText().toString(), publicyear.getText().toString(),
+                                        price.getText().toString(),email.getText().toString(), "4Sell",date);
+                                dbref.child(pk).setValue(b);
+
+
+
+
+                                Intent i = new Intent(BookRegister.this, SellBooks.class);
+                                startActivity(i);
+
 
 
 
@@ -110,29 +133,6 @@ public class BookRegister extends AppCompatActivity {
 
                     }
                 });
-
-                //Getting email
-                // Id will be contact email
-                // date is curent date
-                date = new SimpleDateFormat("dd/MM/yyyy").format(new Date());
-                Toast.makeText(BookRegister.this, date, Toast.LENGTH_SHORT).show();
-
-
-
-                //Sett status
-
-                Book4Sell b = new Book4Sell(title.getText().toString(), author.getText().toString(),
-                        edition.getText().toString(), isbn.getText().toString(),
-                        category.getText().toString(), imageurl,
-                        publisher.getText().toString(), publicyear.getText().toString(),
-                        price.getText().toString(),email.getText().toString(), "4Sell",date);
-                dbref.child(pk).setValue(b);
-
-
-
-
-                Intent i = new Intent(BookRegister.this, SellBooks.class);
-                startActivity(i);
 
 
             }
