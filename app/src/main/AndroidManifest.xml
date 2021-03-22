@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Mobileapp">
-        <activity android:name=".AddActivities"></activity>
+        <activity android:name=".topic_page"/>
+        <activity android:name=".AddActivities" />
         <activity android:name=".SellPage" />
         <activity android:name=".WebBooksRecycler" />
         <activity android:name=".ProgBooksRecykler" />
@@ -27,9 +28,10 @@
         <activity android:name=".Library" />
         <activity android:name=".Forum" />
         <activity android:name=".SellBooks" />
-        <activity android:name=".ActivitiesDetails"/>
-        <activity android:name=".Dashboard"></activity>
+        <activity android:name=".ActivitiesDetails" />
+        <activity android:name=".Dashboard" />
         <activity android:name=".Register" />
+        <activity android:name=".Create_Topic" />
         <activity android:name=".Recycler_view_activities">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

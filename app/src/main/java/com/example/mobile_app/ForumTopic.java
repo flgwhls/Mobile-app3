@@ -4,11 +4,12 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class ForumTopic implements Parcelable {
-    private String topicName, topicMessage;
+    private String topicName, topicMessage, topicDesc;
 
-    public ForumTopic(String topicName, String topicMessage ){
+    public ForumTopic(String topicName, String topicMessage, String topicDesc ){
         this.topicName = topicName;
         this.topicMessage = topicMessage;
+        this.topicDesc = topicDesc;
     }
 
     public ForumTopic(){
@@ -18,6 +19,7 @@ public class ForumTopic implements Parcelable {
     protected ForumTopic(Parcel in){
         topicMessage = in.readString();
         topicName = in.readString();
+        topicDesc = in.readString();
     }
 
     public String getTopicName(){
@@ -26,11 +28,17 @@ public class ForumTopic implements Parcelable {
     public String getTopicMessage(){
         return topicMessage;
     }
+    public String getTopicDesc(){
+        return topicDesc;
+    }
     public void setTopicName(String topicName){
         this.topicName = topicName;
     }
     public void setTopicMessage(String topicMessage){
         this.topicMessage = topicMessage;
+    }
+    public void setTopicDesc(String topicDesc) {
+        this.topicDesc = topicDesc;
     }
 
     @Override
@@ -42,6 +50,7 @@ public class ForumTopic implements Parcelable {
     public void writeToParcel(Parcel dest, int flags){
         dest.writeString(topicMessage);
         dest.writeString(topicName);
+        dest.writeString(topicDesc);
     }
 
     public static final Creator<ForumTopic> CREATOR = new Creator<ForumTopic>() {

@@ -13,7 +13,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class Create_Topic extends AppCompatActivity {
 
-    EditText topicName, topicMessage;
+    EditText topicName, topicMessage, topicDesc;
     Button createTopic;
     DatabaseReference databaseReference;
 
@@ -24,6 +24,7 @@ public class Create_Topic extends AppCompatActivity {
 
         topicName = findViewById(R.id.et_ct_topic_name);
         topicMessage = findViewById(R.id.et_ct_topic_message);
+        topicDesc = findViewById(R.id.et_ct_topic_desc);
 
         createTopic = findViewById(R.id.btn_ct_create);
 
@@ -32,7 +33,7 @@ public class Create_Topic extends AppCompatActivity {
         createTopic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ForumTopic topic = new ForumTopic(topicMessage.getText().toString(), topicName.getText().toString());
+                ForumTopic topic = new ForumTopic(topicName.getText().toString(), topicMessage.getText().toString(), topicDesc.getText().toString());
                 databaseReference.child(databaseReference.push().getKey()).setValue(topic);
                 Intent i = new Intent(Create_Topic.this, Forum.class);
                 startActivity(i);

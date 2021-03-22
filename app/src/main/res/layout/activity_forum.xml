@@ -15,12 +15,19 @@
 
         <include
             layout="@layout/nav_header"/>
-        <TextView
+
+        <Button
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Forum"
-            android:textSize="50sp"
-            android:gravity="center"/>
+            android:layout_height="50dp"
+            android:text="Create Topic"
+            android:id="@+id/btn_forum_create"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_forum_topics"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </androidx.recyclerview.widget.RecyclerView>
     </LinearLayout>
 
     <RelativeLayout
