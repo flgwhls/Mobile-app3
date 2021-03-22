@@ -16,7 +16,7 @@ public class ActivitiesDetails extends AppCompatActivity {
 
 
     ImageView iv;
-    TextView startweek,date,hour,type,description;
+    TextView date,hour,type,description;
 
     String url;
 
@@ -29,7 +29,7 @@ public class ActivitiesDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_activities_details);
         iv= findViewById(R.id.iv_act_img);
-        date= findViewById(R.id.tv_activitiescard_date);
+        date= findViewById(R.id.tv_act_date);
         type=findViewById(R.id.tv_act_type);
         description=findViewById(R.id.tv_act_description);
         hour=findViewById(R.id.tv_act_hour);
@@ -40,7 +40,7 @@ public class ActivitiesDetails extends AppCompatActivity {
        Activities a= getIntent().getParcelableExtra("Activities");
 
       // Picasso.get().load(a.getUrl()).fit().into(iv);
-        startweek.setText(a.getStartweek());
+
         date.setText(a.getDate());
         hour.setText(a.getHour());
         type.setText(a.getType());
