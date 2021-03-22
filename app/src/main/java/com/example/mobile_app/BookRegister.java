@@ -2,6 +2,7 @@ package com.example.mobile_app;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresPermission;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -45,8 +46,6 @@ public class BookRegister extends AppCompatActivity {
     StorageReference sref;
     //Firebase User Auth
 
-
-
     // Drawer Layout
     DrawerLayout drawer;
 
@@ -55,7 +54,7 @@ public class BookRegister extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_register);
 
-        // DraweLayout
+        // Join Layout with Variables
         drawer = findViewById(R.id.drawer_layout);
         title = findViewById(R.id.et_bookreg_title);
         author = findViewById(R.id.et_bookreg_author);
@@ -68,51 +67,65 @@ public class BookRegister extends AppCompatActivity {
         publicyear = findViewById(R.id.et_bookreg_publicyear);
         price = findViewById(R.id.et_bookreg_price);
         email = findViewById(R.id.et_bookreg_email);
-
+        // Reference to book4sell in Fire Storage
         sref = FirebaseStorage.getInstance().getReference("books4sell");
 
         bookregister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-
+                // Reference to Database
                 dbref = FirebaseDatabase.getInstance().getReference("Book4sell");
+                // Creating PK
                 String pk=dbref.push().getKey();
+
                 StorageReference reference= sref.child(pk+"."+getExtension(imagePath));
+                // Write Image to Fire Storage
                 reference.putFile(imagePath).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-
+                        // Getting Url for written Image
                         reference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                             @Override
                             public void onSuccess(Uri uri) {
                                 imageurl= uri.toString();
-                                Toast.makeText(BookRegister.this, imageurl, Toast.LENGTH_SHORT).show();
-                                //Getting email
                                 // Id will be contact email
-                                // date is curent date
+                                // curent date
                                 date = new SimpleDateFormat("dd/MM/yyyy").format(new Date());
-                                Toast.makeText(BookRegister.this, date, Toast.LENGTH_SHORT).show();
+                                String strtitle,strauthor,strprice,stremail;
+                                strtitle= title.getText().toString();
+                                strauthor= author.getText().toString();
+                                stremail= email.getText().toString();
+                                strprice= price.getText().toString();
 
+                                //Validation
+                                if (stremail.isEmpty()){
+                                    email.setError("Please enter your email");
+                                    email.requestFocus();
+                                } else if (strtitle.isEmpty()){
+                                    title.setError("Please enter book title");
+                                    title.requestFocus();
+                                } else if (strauthor.isEmpty()){
+                                    author.setError("Please enter book author");
+                                    author.requestFocus();
+                                } else if (strprice.isEmpty()){
+                                    price.setError("Please enter book price");
+                                    price.requestFocus();
+                                } else if (!(stremail.isEmpty() && strtitle.isEmpty() && strauthor.isEmpty() && strprice.isEmpty())) {
 
+                                    // if all field are filled
+                                    // Create Book4Sell Object
+                                    Book4Sell b = new Book4Sell(strtitle, strauthor,
+                                            edition.getText().toString(), isbn.getText().toString(),
+                                            category.getText().toString(), imageurl,
+                                            publisher.getText().toString(), publicyear.getText().toString(),
+                                            strprice, stremail, "4Sell", date);
+                                    // Write Object to FireBase
+                                    dbref.child(pk).setValue(b);
 
-                                //Sett status
-
-                                Book4Sell b = new Book4Sell(title.getText().toString(), author.getText().toString(),
-                                        edition.getText().toString(), isbn.getText().toString(),
-                                        category.getText().toString(), imageurl,
-                                        publisher.getText().toString(), publicyear.getText().toString(),
-                                        price.getText().toString(),email.getText().toString(), "4Sell",date);
-                                dbref.child(pk).setValue(b);
-
-
-
-
-                                Intent i = new Intent(BookRegister.this, SellBooks.class);
-                                startActivity(i);
-
-
-
+                                    Intent i = new Intent(BookRegister.this, SellBooks.class);
+                                    startActivity(i);
+                                }
 
                             }
                         }).addOnFailureListener(new OnFailureListener() {
@@ -120,9 +133,6 @@ public class BookRegister extends AppCompatActivity {
                             public void onFailure(@NonNull Exception e) {
                                 imageurl="No Image";
                                 reference.delete();
-                                //here need to add a toast just to advice is not possible to upload the file!
-
-
                             }
                         });
                     }
