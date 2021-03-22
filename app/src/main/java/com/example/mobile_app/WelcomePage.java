@@ -10,32 +10,41 @@ import android.widget.ImageView;
 
 public class WelcomePage extends AppCompatActivity {
 
-    Button Register,Login;
+    Button Register, Login, MoodleLogin;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome_page);
 
 
+        Register = findViewById(R.id.btn_register);
+        Login = findViewById(R.id.btn_login);
+        MoodleLogin = findViewById(R.id.btn_wp_moodle);
 
-        Button Register=findViewById(R.id.btn_register);
-        Button Login=findViewById(R.id.btn_login);
 
+        Register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent IntoRegisterPage = new Intent(WelcomePage.this, Register.class);
+                startActivity(IntoRegisterPage);
+            }
+        });
+        Login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent IntoLoginPage = new Intent(WelcomePage.this, Login.class);
+                startActivity(IntoLoginPage);
+            }
+        });
 
-       Register.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               Intent IntoRegisterPage=new Intent(WelcomePage.this,Register.class);
-               startActivity(IntoRegisterPage);
-           }
-       });
-       Login.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               Intent IntoLoginPage=new Intent(WelcomePage.this,Login.class);
-               startActivity(IntoLoginPage);
-           }
-       });
+        MoodleLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(WelcomePage.this, moodle_login.class);
+                startActivity(i);
+            }
+        });
     }
 }
 
