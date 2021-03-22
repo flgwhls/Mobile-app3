@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mobileapp">
         <activity android:name=".Recycler_view_activities"/>
+        <activity android:name=".Dashboard"/>
         <activity android:name=".topic_page" />
         <activity android:name=".AddActivities" />
         <activity android:name=".SellPage" />
@@ -29,20 +30,19 @@
         <activity android:name=".Forum" />
         <activity android:name=".SellBooks" />
         <activity android:name=".ActivitiesDetails" />
-        <activity android:name=".WelcomePage" />
+        <activity android:name=".Library" />
         <activity android:name=".Register" />
         <activity android:name=".Create_Topic" />
         <activity android:name=".moodle_login" />
-        <activity android:name=".Library">
+        <activity android:name=".Login" />
+        <activity android:name=".WelcomePage" />
+        <activity android:name=".FloorMap">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Login" />
-        <activity android:name=".FloorMap" />
-        <activity android:name=".Timetables" />
     </application>
 
 </manifest>

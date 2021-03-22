@@ -9,7 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public abstract class Dashboard extends BookRegister {
+public class Dashboard extends AppCompatActivity{
 
 
     DrawerLayout drawer;
@@ -61,33 +61,15 @@ public abstract class Dashboard extends BookRegister {
         redirectActivity(this,Forum.class);
     }
 
-    public void VisitActivities(View view){
-        redirectActivity(this,Activities.class);
+    public void ClickActivities(View view){
+        redirectActivity(this, Recycler_view_activities.class);
     }
 
     public void ClickHome(View view){
         recreate();
     }
 
-    public void ClickLibrary(View view){
-        redirectActivity(this,Library.class);
-    }
 
-    public void ClickTimetables(View view){
-        redirectActivity(this,Timetables.class);
-    }
-
-    public void ClickFloorMap(View view){
-        redirectActivity(this,FloorMap.class);
-    }
-
-    public void ClickForum(View view){
-        redirectActivity(this,Forum.class);
-    }
-
-    public void ClickActivities(View view){
-        redirectActivity(this, Recycler_view_activities.class);
-    }
 
     public static void redirectActivity(Activity activity, Class aClass){
         //Intent
