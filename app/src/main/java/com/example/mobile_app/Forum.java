@@ -1,7 +1,10 @@
 package com.example.mobile_app;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,11 +13,25 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
 
-public class Forum extends AppCompatActivity {
+import com.example.mobile_app.Adaptors.ForumTopicAdaptor;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+
+public class Forum extends AppCompatActivity implements ForumTopicAdaptor.ForumTopicHolder.OnTopicClickListener {
     //Initialize drawer
     DrawerLayout drawer;
 
     Button goTo;
+
+    DatabaseReference databaseReference;
+    ArrayList<ForumTopic> forumTopics = new ArrayList<>();
+    RecyclerView rv_forumTopic;
+    ForumTopicAdaptor topicAdaptor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +40,15 @@ public class Forum extends AppCompatActivity {
         drawer= findViewById(R.id.drawer_layout);
 
         goTo = findViewById(R.id.btn_forum_create);
+
+        databaseReference = FirebaseDatabase.getInstance().getReference("ForumTopic");
+
+        rv_forumTopic = findViewById(R.id.rv_forum_topics);
+        rv_forumTopic.setLayoutManager(new LinearLayoutManager(Forum.this));
+
+        databaseReference.addListenerForSingleValueEvent(listener);
+
+        ArrayList<ForumTopic>topicList;
 
 
         goTo.setOnClickListener(new View.OnClickListener() {
@@ -35,7 +61,29 @@ public class Forum extends AppCompatActivity {
 
     }
 
+    ValueEventListener listener = new ValueEventListener() {
+        @Override
+        public void onDataChange(@NonNull DataSnapshot snapshot) {
+            for(DataSnapshot dss: snapshot.getChildren()){
+                forumTopics.add(dss.getValue(ForumTopic.class));
+            }
+            topicAdaptor= new ForumTopicAdaptor(forumTopics,Forum.this);
+            rv_forumTopic.setAdapter(topicAdaptor);
+        }
 
+        @Override
+        public void onCancelled(@NonNull DatabaseError error) {
+
+        }
+    };
+
+    @Override
+    public void OnTopicClick(int position) {
+        Intent i = new Intent(Forum.this, topic_page.class);
+
+        i.putExtra("ForumTopic", forumTopics.get(position));
+        startActivity(i);
+    }
 
     public void ClickMenu(View view){
         //Open drawer

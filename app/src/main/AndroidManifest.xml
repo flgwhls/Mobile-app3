@@ -25,15 +25,15 @@
         <activity android:name=".BookRegister" />
         <activity android:name=".BookPage" />
         <activity android:name=".SearchResult" />
-        <activity android:name=".Library" />
+        <activity android:name=".Timetables" />
         <activity android:name=".Forum" />
         <activity android:name=".SellBooks" />
         <activity android:name=".ActivitiesDetails" />
-        <activity android:name=".Dashboard" />
+        <activity android:name=".WelcomePage" />
         <activity android:name=".Register" />
         <activity android:name=".Create_Topic" />
         <activity android:name=".moodle_login" />
-        <activity android:name=".WelcomePage">
+        <activity android:name=".Library">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

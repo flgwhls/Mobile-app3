@@ -15,12 +15,13 @@ public class topic_page extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_topic_page);
 
-        ForumTopic topic = getIntent().getParcelableExtra("Forum Topic");
 
         topicName = findViewById(R.id.tv_tp_name);
         topicDesc = findViewById(R.id.tv_tp_desc);
         topicMessage = findViewById(R.id.tv_tp_message);
 
+
+        ForumTopic topic = getIntent().getParcelableExtra("ForumTopic");
         topicName.setText(topic.getTopicName());
         topicDesc.setText(topic.getTopicDesc());
         topicMessage.setText(topic.getTopicMessage());

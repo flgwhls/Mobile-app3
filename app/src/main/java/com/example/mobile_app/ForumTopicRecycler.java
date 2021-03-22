@@ -43,9 +43,6 @@ public class ForumTopicRecycler extends AppCompatActivity implements ForumTopicA
         public void onDataChange(@NonNull DataSnapshot snapshot) {
             for(DataSnapshot dss: snapshot.getChildren()){
                 forumTopics.add(dss.getValue(ForumTopic.class));
-
-
-
             }
             topicAdaptor= new ForumTopicAdaptor(forumTopics,ForumTopicRecycler.this);
             rv_forumTopic.setAdapter(topicAdaptor);
@@ -61,7 +58,7 @@ public class ForumTopicRecycler extends AppCompatActivity implements ForumTopicA
     public void OnTopicClick(int position) {
         Intent i = new Intent(ForumTopicRecycler.this, topic_page.class);
 
-        i.putExtra("Forum Topic", forumTopics.get(position));
+        i.putExtra("ForumTopic", forumTopics.get(position));
         startActivity(i);
     }
 
