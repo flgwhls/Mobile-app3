@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.example.mobile_app</OriginalElement>
+  <nodes>
+    <node x="778.0" y="578.0">com.example.mobile_app.Forum</node>
+    <node x="1190.0" y="1372.0">com.example.mobile_app.Student</node>
+    <node x="671.0" y="1493.0">com.example.mobile_app.BuyBook</node>
+    <node x="1297.0" y="904.0">com.example.mobile_app.WelcomePage</node>
+    <node x="345.0" y="875.0">com.example.mobile_app.CloudBooksRecycler</node>
+    <node x="1094.0" y="893.0">com.example.mobile_app.Login</node>
+    <node x="246.0" y="344.0">com.example.mobile_app.SearchResult</node>
+    <node x="490.0" y="1493.0">com.example.mobile_app.BuildConfig</node>
+    <node x="385.0" y="487.0">com.example.mobile_app.AllBooksRecycler</node>
+    <node x="1159.0" y="1079.0">com.example.mobile_app.Register</node>
+    <node x="486.0" y="286.0">com.example.mobile_app.GraphBooksRecycler</node>
+    <node x="898.0" y="649.0">com.example.mobile_app.Dashboard</node>
+    <node x="498.0" y="559.0">com.example.mobile_app.Adaptors</node>
+    <node x="479.0" y="965.0">com.example.mobile_app.WebBooksRecycler</node>
+    <node x="45.0" y="0.0">com.example.mobile_app.Book4Sell</node>
+    <node x="850.0" y="507.0">com.example.mobile_app.ActivitiesDetails</node>
+    <node x="277.0" y="1493.0">com.example.mobile_app.ExampleUnitTest</node>
+    <node x="603.0" y="487.0">com.example.mobile_app.NetBooksRecycler</node>
+    <node x="1219.0" y="533.0">com.example.mobile_app.AddActivities</node>
+    <node x="664.0" y="365.0">com.example.mobile_app.BookRegister</node>
+    <node x="0.0" y="669.0">com.example.mobile_app.Book</node>
+    <node x="93.0" y="411.0">com.example.mobile_app.SellPage</node>
+    <node x="527.0" y="804.0">com.example.mobile_app.DbaseBooksRecycler</node>
+    <node x="678.0" y="650.0">com.example.mobile_app.Timetables</node>
+    <node x="273.0" y="593.0">com.example.mobile_app.ProgBooksRecykler</node>
+    <node x="624.0" y="721.0">com.example.mobile_app.Library</node>
+    <node x="820.0" y="436.0">com.example.mobile_app.FloorMap</node>
+    <node x="371.0" y="416.0">com.example.mobile_app.SellBooks</node>
+    <node x="0.0" y="1493.0">com.example.mobile_app.ExampleInstrumentedTest</node>
+    <node x="675.0" y="887.0">com.example.mobile_app.Recycler_view_activities</node>
+    <node x="444.0" y="665.0">com.example.mobile_app.BookPage</node>
+    <node x="847.0" y="720.0">com.example.mobile_app.Activities</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.example.mobile_app.Library" target="com.example.mobile_app.AllBooksRecycler">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.BookPage" target="com.example.mobile_app.Book">
+      <point x="0.5449170029041852" y="4.466885431701371" />
+      <point x="0.5449170029041852" y="4.466885431701368" />
+    </edge>
+    <edge source="com.example.mobile_app.ActivitiesDetails" target="com.example.mobile_app.Activities">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.Login" target="com.example.mobile_app.Dashboard">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.Library" target="com.example.mobile_app.SellBooks">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.Dashboard" target="com.example.mobile_app.Timetables">
+      <point x="0.020833110071606598" y="4.49995177546657" />
+      <point x="0.020833110071606598" y="4.49995177546657" />
+    </edge>
+    <edge source="com.example.mobile_app.AllBooksRecycler" target="com.example.mobile_app.Adaptors">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.ActivitiesDetails" target="com.example.mobile_app.Dashboard">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.SearchResult" target="com.example.mobile_app.Book">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.BookRegister" target="com.example.mobile_app.Forum">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.DbaseBooksRecycler" target="com.example.mobile_app.BookPage">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.WebBooksRecycler" target="com.example.mobile_app.Book">
+      <point x="-2.8457674830294764" y="4.111156459262077" />
+      <point x="-2.8457674830294764" y="4.11115645926205" />
+    </edge>
+    <edge source="com.example.mobile_app.Adaptors" target="com.example.mobile_app.Book4Sell">
+      <point x="-4.485723149739499" y="2.208684636586014" />
+      <point x="-4.485723149739499" y="2.2086846365859856" />
+    </edge>
+    <edge source="com.example.mobile_app.Recycler_view_activities" target="com.example.mobile_app.Adaptors">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.Library" target="com.example.mobile_app.ProgBooksRecykler">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.Login" target="com.example.mobile_app.Register">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.Dashboard" target="com.example.mobile_app.BookRegister">
+      <point x="-6.3463364949677725" y="0.0" />
+      <point x="-6.346336494967751" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.FloorMap" target="com.example.mobile_app.Dashboard">
+      <point x="5.357720890065252" y="0.0" />
+      <point x="5.357720890065281" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.Recycler_view_activities" target="com.example.mobile_app.ActivitiesDetails">
+      <point x="-4.663240178477269" y="-1.8039376479898976" />
+      <point x="-4.663240178477281" y="-1.8039376479898976" />
+    </edge>
+    <edge source="com.example.mobile_app.Dashboard" target="com.example.mobile_app.Activities">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.ProgBooksRecykler" target="com.example.mobile_app.BookPage">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.FloorMap" target="com.example.mobile_app.Timetables">
+      <point x="5.899336075190718" y="0.0" />
+      <point x="5.899336075190671" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.SellBooks" target="com.example.mobile_app.SellPage">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.Dashboard" target="com.example.mobile_app.Recycler_view_activities">
+      <point x="6.060223442277277" y="0.0" />
+      <point x="6.060223442277255" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.Timetables" target="com.example.mobile_app.Recycler_view_activities">
+      <point x="5.123499272660446" y="0.0" />
+      <point x="5.1234992726604425" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.SellBooks" target="com.example.mobile_app.Adaptors">
+      <point x="14.341291748977653" y="0.0" />
+      <point x="14.341291748977568" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.ProgBooksRecykler" target="com.example.mobile_app.Adaptors">
+      <point x="0.0" y="-7.08861888595591" />
+      <point x="0.0" y="-7.088618885955896" />
+    </edge>
+    <edge source="com.example.mobile_app.GraphBooksRecycler" target="com.example.mobile_app.Adaptors">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.AddActivities" target="com.example.mobile_app.Activities">
+      <point x="3.0572375053787937" y="3.956425006960842" />
+      <point x="3.057237505378822" y="3.956425006960835" />
+    </edge>
+    <edge source="com.example.mobile_app.FloorMap" target="com.example.mobile_app.Recycler_view_activities">
+      <point x="5.0800011776123455" y="0.0" />
+      <point x="5.080001177612349" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.WelcomePage" target="com.example.mobile_app.Login">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.ActivitiesDetails" target="com.example.mobile_app.Timetables">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.FloorMap" target="com.example.mobile_app.Library">
+      <point x="6.108312406510066" y="0.0" />
+      <point x="6.108312406510066" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.SearchResult" target="com.example.mobile_app.Adaptors">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.ActivitiesDetails" target="com.example.mobile_app.Recycler_view_activities">
+      <point x="5.361079215989179" y="2.8421709430404007E-14" />
+      <point x="5.361079215989172" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.Library" target="com.example.mobile_app.FloorMap">
+      <point x="-4.09278346231207" y="-2.8721287454821507" />
+      <point x="-4.09278346231207" y="-2.8721287454821436" />
+    </edge>
+    <edge source="com.example.mobile_app.GraphBooksRecycler" target="com.example.mobile_app.BookPage">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.Library" target="com.example.mobile_app.NetBooksRecycler">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.AllBooksRecycler" target="com.example.mobile_app.Book">
+      <point x="3.02346398734835" y="3.9822940018546547" />
+      <point x="3.02346398734835" y="3.982294001854659" />
+    </edge>
+    <edge source="com.example.mobile_app.Dashboard" target="com.example.mobile_app.Library">
+      <point x="1.1132246036961817" y="4.3601296978100805" />
+      <point x="1.113224603696196" y="4.360129697810084" />
+    </edge>
+    <edge source="com.example.mobile_app.Library" target="com.example.mobile_app.DbaseBooksRecycler">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.BookRegister" target="com.example.mobile_app.SellBooks">
+      <point x="0.0" y="4.562476802280969" />
+      <point x="0.0" y="4.562476802280969" />
+    </edge>
+    <edge source="com.example.mobile_app.Register" target="com.example.mobile_app.WelcomePage">
+      <point x="-6.585388898066242" y="0.0" />
+      <point x="-6.585388898066412" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.Recycler_view_activities" target="com.example.mobile_app.Timetables">
+      <point x="-4.879477612771954" y="1.0911911961051146" />
+      <point x="-4.87947761277195" y="1.0911911961051217" />
+    </edge>
+    <edge source="com.example.mobile_app.AllBooksRecycler" target="com.example.mobile_app.BookPage">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.FloorMap" target="com.example.mobile_app.Forum">
+      <point x="5.34933211685437" y="0.0" />
+      <point x="5.349332116854356" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.Library" target="com.example.mobile_app.WebBooksRecycler">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.Library" target="com.example.mobile_app.CloudBooksRecycler">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.Forum" target="com.example.mobile_app.FloorMap">
+      <point x="-4.673480624101003" y="-1.7772391105736176" />
+      <point x="-4.673480624101003" y="-1.777239110573646" />
+    </edge>
+    <edge source="com.example.mobile_app.BookRegister" target="com.example.mobile_app.FloorMap">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.Dashboard" target="com.example.mobile_app.Forum">
+      <point x="-10.804065520877288" y="0.0" />
+      <point x="-10.80406552087726" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.Timetables" target="com.example.mobile_app.Dashboard">
+      <point x="0.0" y="-4.500048225050236" />
+      <point x="0.0" y="-4.500048225050236" />
+    </edge>
+    <edge source="com.example.mobile_app.Timetables" target="com.example.mobile_app.FloorMap">
+      <point x="-4.237765009716277" y="-2.6535537911307543" />
+      <point x="-4.237765009716284" y="-2.6535537911307756" />
+    </edge>
+    <edge source="com.example.mobile_app.ActivitiesDetails" target="com.example.mobile_app.Library">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.Recycler_view_activities" target="com.example.mobile_app.Activities">
+      <point x="-2.639283747028742" y="-4.246667081685359" />
+      <point x="-2.639283747028742" y="-4.246667081685345" />
+    </edge>
+    <edge source="com.example.mobile_app.DbaseBooksRecycler" target="com.example.mobile_app.Book">
+      <point x="-1.1320728839577328" y="4.870155129501285" />
+      <point x="-1.132072883957676" y="4.870155129501282" />
+    </edge>
+    <edge source="com.example.mobile_app.DbaseBooksRecycler" target="com.example.mobile_app.Adaptors">
+      <point x="-10.167280577209084" y="0.0" />
+      <point x="-10.167280577209084" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.Library" target="com.example.mobile_app.GraphBooksRecycler">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.Forum" target="com.example.mobile_app.Dashboard">
+      <point x="2.3139437604937854" y="-4.432342977847256" />
+      <point x="2.3139437604937996" y="-4.432342977847256" />
+    </edge>
+    <edge source="com.example.mobile_app.BookRegister" target="com.example.mobile_app.Activities">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.NetBooksRecycler" target="com.example.mobile_app.Adaptors">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.Library" target="com.example.mobile_app.Recycler_view_activities">
+      <point x="6.152030090489362" y="0.0" />
+      <point x="6.152030090489362" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.ActivitiesDetails" target="com.example.mobile_app.Forum">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.BookRegister" target="com.example.mobile_app.Dashboard">
+      <point x="3.939280562860702" y="-3.0792967780108143" />
+      <point x="3.939280562860688" y="-3.0792967780108285" />
+    </edge>
+    <edge source="com.example.mobile_app.Library" target="com.example.mobile_app.Timetables">
+      <point x="-6.826628492607199" y="0.0" />
+      <point x="-6.826628492607185" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.BookRegister" target="com.example.mobile_app.Book4Sell">
+      <point x="-3.1108514204793067" y="3.914409717914282" />
+      <point x="-3.110851420479321" y="3.914409717914282" />
+    </edge>
+    <edge source="com.example.mobile_app.SellPage" target="com.example.mobile_app.Book">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.SellBooks" target="com.example.mobile_app.Book4Sell">
+      <point x="-4.799718453544472" y="1.4009649412832914" />
+      <point x="-4.799718453544472" y="1.4009649412832914" />
+    </edge>
+    <edge source="com.example.mobile_app.Recycler_view_activities" target="com.example.mobile_app.FloorMap">
+      <point x="-4.921258701705696" y="-0.8838624275790607" />
+      <point x="-4.921258701705696" y="-0.8838624275790607" />
+    </edge>
+    <edge source="com.example.mobile_app.Register" target="com.example.mobile_app.Student">
+      <point x="4.698532840973201" y="-1.7099091035187257" />
+      <point x="4.698532840973257" y="-1.7099091035187257" />
+    </edge>
+    <edge source="com.example.mobile_app.Adaptors" target="com.example.mobile_app.Adaptors">
+      <point x="35.0" y="-15.0" />
+      <point x="613.0" y="538.375" />
+      <point x="623.375" y="528.0" />
+      <point x="678.625" y="528.0" />
+      <point x="689.0" y="538.375" />
+      <point x="689.0" y="559.875" />
+      <point x="678.625" y="570.25" />
+      <point x="80.0" y="-3.75" />
+    </edge>
+    <edge source="com.example.mobile_app.ProgBooksRecykler" target="com.example.mobile_app.Book">
+      <point x="2.6445899135724744" y="4.2433647249595055" />
+      <point x="2.6445899135725313" y="4.243364724959502" />
+    </edge>
+    <edge source="com.example.mobile_app.Library" target="com.example.mobile_app.Dashboard">
+      <point x="0.0" y="-4.6443572562006015" />
+      <point x="0.0" y="-4.6443572562006" />
+    </edge>
+    <edge source="com.example.mobile_app.Recycler_view_activities" target="com.example.mobile_app.Library">
+      <point x="-4.0636992394833005" y="2.9131337921597265" />
+      <point x="-4.063699239483299" y="2.913133792159716" />
+    </edge>
+    <edge source="com.example.mobile_app.WelcomePage" target="com.example.mobile_app.Register">
+      <point x="3.7962830118265174" y="3.2539568672798396" />
+      <point x="3.7962830118264606" y="3.2539568672798396" />
+    </edge>
+    <edge source="com.example.mobile_app.Forum" target="com.example.mobile_app.Recycler_view_activities">
+      <point x="4.981021042592971" y="0.43523484838190996" />
+      <point x="4.981021042592971" y="0.43523484838192417" />
+    </edge>
+    <edge source="com.example.mobile_app.Forum" target="com.example.mobile_app.Timetables">
+      <point x="3.3448236581122472" y="3.7164707312358303" />
+      <point x="3.3448236581122472" y="3.7164707312358303" />
+    </edge>
+    <edge source="com.example.mobile_app.SellPage" target="com.example.mobile_app.Book4Sell">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.Forum" target="com.example.mobile_app.Library">
+      <point x="3.4986443647158296" y="3.5720424982413306" />
+      <point x="3.4986443647158296" y="3.572042498241334" />
+    </edge>
+    <edge source="com.example.mobile_app.Recycler_view_activities" target="com.example.mobile_app.Forum">
+      <point x="-5.019051272063235" y="0.0" />
+      <point x="-5.019051272063237" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.GraphBooksRecycler" target="com.example.mobile_app.Book">
+      <point x="3.636516510863572" y="3.4315809281170573" />
+      <point x="3.6365165108635438" y="3.4315809281170537" />
+    </edge>
+    <edge source="com.example.mobile_app.Adaptors" target="com.example.mobile_app.Book">
+      <point x="1.7338264306130213" y="4.689759685581748" />
+      <point x="1.7338264306130213" y="4.689759685581738" />
+    </edge>
+    <edge source="com.example.mobile_app.BookRegister" target="com.example.mobile_app.Library">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.Recycler_view_activities" target="com.example.mobile_app.Dashboard">
+      <point x="-4.125260436041888" y="-2.8252834078774356" />
+      <point x="-4.125260436041884" y="-2.8252834078774285" />
+    </edge>
+    <edge source="com.example.mobile_app.Timetables" target="com.example.mobile_app.Forum">
+      <point x="-7.47423558170761" y="0.0" />
+      <point x="-7.474235581707617" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.Dashboard" target="com.example.mobile_app.FloorMap">
+      <point x="-4.666163190090231" y="1.7963632938375582" />
+      <point x="-4.666163190090231" y="1.796363293837544" />
+    </edge>
+    <edge source="com.example.mobile_app.CloudBooksRecycler" target="com.example.mobile_app.Book">
+      <point x="-2.81490648363814" y="4.132348180922293" />
+      <point x="-2.8149064836381967" y="4.1323481809223" />
+    </edge>
+    <edge source="com.example.mobile_app.WebBooksRecycler" target="com.example.mobile_app.Adaptors">
+      <point x="-10.00366964142367" y="0.0" />
+      <point x="-10.00366964142367" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.CloudBooksRecycler" target="com.example.mobile_app.Adaptors">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.NetBooksRecycler" target="com.example.mobile_app.Book">
+      <point x="1.9745601139861861" y="4.593594709620646" />
+      <point x="1.974560113986172" y="4.5935947096206515" />
+    </edge>
+    <edge source="com.example.mobile_app.WebBooksRecycler" target="com.example.mobile_app.BookPage">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.NetBooksRecycler" target="com.example.mobile_app.BookPage">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.SellBooks" target="com.example.mobile_app.BookRegister">
+      <point x="-0.7421551320716162" y="-4.438378731016542" />
+      <point x="-0.7421551320716162" y="-4.438378731016542" />
+    </edge>
+    <edge source="com.example.mobile_app.Library" target="com.example.mobile_app.Forum">
+      <point x="-7.14562481746573" y="0.0" />
+      <point x="-7.145624817465723" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.CloudBooksRecycler" target="com.example.mobile_app.BookPage">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.Book4Sell" target="com.example.mobile_app.Book">
+      <point x="-5.094956762959384" y="0.0" />
+      <point x="-5.094956762959441" y="0.0" />
+    </edge>
+    <edge source="com.example.mobile_app.Adaptors" target="com.example.mobile_app.Activities">
+      <point x="2.061048249738434" y="-4.555445105832149" />
+      <point x="2.061048249738434" y="-4.555445105832149" />
+    </edge>
+    <edge source="com.example.mobile_app.Timetables" target="com.example.mobile_app.Library">
+      <point x="3.662129853275811" y="3.4042333847352637" />
+      <point x="3.6621298532758146" y="3.40423338473526" />
+    </edge>
+    <edge source="com.example.mobile_app.ActivitiesDetails" target="com.example.mobile_app.FloorMap">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Orthogonal" zoom="0.7999999999999999" x="810.0000000000001" y="451.125" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
