@@ -9,7 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class Dashboard extends AppCompatActivity {
+public abstract class Dashboard extends BookRegister {
 
 
     DrawerLayout drawer;

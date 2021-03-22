@@ -20,7 +20,6 @@
         <activity android:name=".DbaseBooksRecycler" />
         <activity android:name=".CloudBooksRecycler" />
         <activity android:name=".AllBooksRecycler" />
-        <activity android:name=".BuyBook" />
         <activity android:name=".BookRegister" />
         <activity android:name=".BookPage" />
         <activity android:name=".SearchResult" />
