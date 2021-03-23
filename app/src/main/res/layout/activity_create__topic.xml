@@ -6,6 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".Create_Topic">
 
+    <include
+        android:id="@+id/include"
+        layout="@layout/nav_header" />
     <Button
         android:id="@+id/btn_ct_create"
         android:layout_width="wrap_content"
@@ -26,12 +29,12 @@
         android:hint="Enter name of topic"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/include" />
 
     <EditText
         android:id="@+id/et_ct_topic_message"
-        android:layout_width="match_parent"
-        android:layout_height="532dp"
+        android:layout_width="412dp"
+        android:layout_height="495dp"
         android:layout_marginTop="2dp"
         android:ems="10"
         android:gravity="top"
