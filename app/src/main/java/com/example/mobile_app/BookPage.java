@@ -28,7 +28,6 @@ public class BookPage extends AppCompatActivity {
     String url;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

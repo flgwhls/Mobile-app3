@@ -10,7 +10,7 @@ class extended from Book class to create book for sell object with details
 of the book
 */
 
-public class Book4Sell extends Book implements Parcelable{
+public class Book4Sell extends Book implements Parcelable {
     // Variables declaration
     private String price, studentID, status, date;
 
@@ -29,6 +29,7 @@ public class Book4Sell extends Book implements Parcelable{
         this.date = date;
 
     }
+
     // Parcel read
     protected Book4Sell(Parcel in) {
         super(in);
@@ -37,6 +38,7 @@ public class Book4Sell extends Book implements Parcelable{
         status = in.readString();
         date = in.readString();
     }
+
     // Parcel write
     @Override
     public void writeToParcel(Parcel dest, int flags) {
@@ -96,11 +98,11 @@ public class Book4Sell extends Book implements Parcelable{
     }
 
 
-/*
-    public static Parcelable.Creator<Book4Sell> getCREATOR() {
-        return CREATOR;
-    }
-*/
+    /*
+        public static Parcelable.Creator<Book4Sell> getCREATOR() {
+            return CREATOR;
+        }
+    */
     @Override
     public int describeContents() {
         return 0;

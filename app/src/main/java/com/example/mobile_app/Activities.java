@@ -10,12 +10,10 @@ import java.util.Date;
 import java.util.Locale;
 
 public class Activities implements Parcelable {
-    // class to make Activities object
-    // variables
-    private String startweek, date, hour, type, description, url;
 
-    // Constructor to create object and write to FireBase
-    public Activities(String startweek, String date, String hour, String type, String description, String url) {
+    private String startweek,date,hour,type,description,url;
+
+    public Activities(String startweek,String date,String hour, String type,String description, String url) {
         this.startweek = startweek;
         this.date = date;
         this.hour = hour;
@@ -25,7 +23,6 @@ public class Activities implements Parcelable {
 
     }
 
-    // Constructor to create object and read from FireBase
     public Activities() {
 
     }
@@ -44,69 +41,28 @@ public class Activities implements Parcelable {
 
     public static final Creator<Activities> CREATOR = new Creator<Activities>() {
         @Override
-        public Activities createFromParcel(Parcel in) {
-            return new Activities(in);
-        }
+        public Activities createFromParcel(Parcel in) {return new Activities(in);}
 
         @Override
-        public Activities[] newArray(int size) {
-            return new Activities[size];
-        }
+        public Activities[] newArray(int size) {return new Activities[size];}
     };
-
-    //getter
-    public String getStartweek() {
-        return startweek;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public String getHour() {
-        return hour;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public String getUrl() {
-        return url;
-    }
+    public String getStartweek() {return startweek;}
+    public String getDate() {return date;}
+    public String getHour() {return hour;}
+    public String getType() {return type;}
+    public String getDescription() {return description;}
+    public String getUrl() {return url;}
 
     public static Creator<Activities> getCREATOR() {
         return CREATOR;
     }
 
-    //setter
-    public void setStartweek(String startweek) {
-        this.startweek = startweek;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    public void setHour(String hour) {
-        this.hour = hour;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
+    public void setStartweek(String startweek) {this.startweek = startweek;}
+    public void setDate(String date) {this.date = date;}
+    public void setHour(String hour) {this.hour = hour;}
+    public void setType(String type) {this.type = type;}
+    public void setDescription(String description) {this.description = description;}
+    public void setUrl(String url) {this.url = url;}
 
     @Override
     public int describeContents() {
