@@ -12,6 +12,7 @@ import android.content.Intent;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.mobile_app.Adaptors.ActivitiesAdaptor;
 import com.google.firebase.auth.FirebaseAuth;
@@ -28,6 +29,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 public class Recycler_view_activities extends AppCompatActivity implements ActivitiesAdaptor.ActivitiesHolder.OnActivitiesClickListener {
 
@@ -151,7 +153,7 @@ public class Recycler_view_activities extends AppCompatActivity implements Activ
     }
 
     public void ClickForum(View view) {
-        Dashboard.redirectActivity(this, ForumRecycleView.class);
+        Dashboard.redirectActivity(this, Forum.class);
     }
 
 

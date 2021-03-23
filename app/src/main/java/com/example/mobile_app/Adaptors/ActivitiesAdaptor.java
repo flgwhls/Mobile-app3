@@ -15,8 +15,10 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
+// Adaptor for Activities
 public class ActivitiesAdaptor extends RecyclerView.Adapter<ActivitiesAdaptor.ActivitiesHolder> {
 
+    // Arraylist for activities
     ArrayList<Activities> list;
     ActivitiesHolder.OnActivitiesClickListener listener;
 
@@ -49,6 +51,7 @@ public class ActivitiesAdaptor extends RecyclerView.Adapter<ActivitiesAdaptor.Ac
     //implements is 2 part (implements View.OnClickListener + alt+invio need to select implement method)
     public static class ActivitiesHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
+        //variables  that need to be shown in the card
         ImageView iv;
         TextView date, type;
 
@@ -57,6 +60,7 @@ public class ActivitiesAdaptor extends RecyclerView.Adapter<ActivitiesAdaptor.Ac
         public ActivitiesHolder(@NonNull View itemView, OnActivitiesClickListener _listener) {
             super(itemView);
 
+            // variables views
             listener = _listener;
             date = itemView.findViewById(R.id.tv_activitiescard_date);
             type = itemView.findViewById(R.id.tv_act_type);

@@ -42,7 +42,7 @@ public class WelcomePage extends AppCompatActivity {
             }
         });
 
-        //configuration of botton to get web view of Moodle page
+        //configuration of button to get web view of Moodle page
         MoodleLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
