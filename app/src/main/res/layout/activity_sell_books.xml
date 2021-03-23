@@ -20,6 +20,7 @@
         android:textSize="20sp"
         android:textColor="@color/white"
         android:background="#00a06d"/>
+
     <Button
         android:id="@+id/btn_Register4Sell"
         android:layout_width="0dp"
@@ -27,7 +28,7 @@
         android:layout_marginTop="48dp"
 
         android:text="Register New Book for Sell"
-        app:backgroundTint="#2196F3"
+        app:backgroundTint="#00a06d"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,7 +39,6 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:scrollbars="vertical"
-        android:paddingTop="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
