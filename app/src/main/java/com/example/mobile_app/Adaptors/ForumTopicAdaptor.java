@@ -16,22 +16,22 @@ import com.example.mobile_app.R;
 
 import java.util.ArrayList;
 
-public class ForumTopicAdaptor extends RecyclerView.Adapter<ForumTopicAdaptor.ForumTopicHolder>{
+public class ForumTopicAdaptor extends RecyclerView.Adapter<ForumTopicAdaptor.ForumTopicHolder> {
 
-    ArrayList<ForumTopic>topicList;
+    ArrayList<ForumTopic> topicList;
 
     ForumTopicHolder.OnTopicClickListener topicListener;
 
 
-    public ForumTopicAdaptor(ArrayList<ForumTopic>list, ForumTopicHolder.OnTopicClickListener listener){
-        this.topicList=list;
+    public ForumTopicAdaptor(ArrayList<ForumTopic> list, ForumTopicHolder.OnTopicClickListener listener) {
+        this.topicList = list;
         topicListener = listener;
     }
 
     @NonNull
     @Override
     public ForumTopicAdaptor.ForumTopicHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v= LayoutInflater.from(parent.getContext()).inflate(R.layout.topiccard_new,parent,false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.topiccard_new, parent, false);
         return new ForumTopicAdaptor.ForumTopicHolder(v, topicListener);
     }
 
@@ -47,16 +47,15 @@ public class ForumTopicAdaptor extends RecyclerView.Adapter<ForumTopicAdaptor.Fo
 
     }
 
-    public static class ForumTopicHolder extends RecyclerView.ViewHolder implements View.OnClickListener
-    {
+    public static class ForumTopicHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        TextView topicName,topicDesc;
+        TextView topicName, topicDesc;
 
 
         OnTopicClickListener topicListener;
 
 
-        public ForumTopicHolder(@NonNull View itemView, ForumTopicAdaptor.ForumTopicHolder.OnTopicClickListener listener){
+        public ForumTopicHolder(@NonNull View itemView, ForumTopicAdaptor.ForumTopicHolder.OnTopicClickListener listener) {
             super(itemView);
             topicListener = listener;
             topicName = itemView.findViewById(R.id.topiccard_name);
@@ -69,8 +68,7 @@ public class ForumTopicAdaptor extends RecyclerView.Adapter<ForumTopicAdaptor.Fo
             topicListener.OnTopicClick(getAdapterPosition());
         }
 
-        public interface OnTopicClickListener
-        {
+        public interface OnTopicClickListener {
             void OnTopicClick(int position);
         }
 

@@ -17,15 +17,20 @@ import com.google.firebase.database.DatabaseReference;
 public class Dashboard extends AppCompatActivity {
 
 
-    static FirebaseAuth firebaseAuth;
+    //initialise firebase auth
+    FirebaseAuth firebaseAuth;
+    //initialise drawer
     DrawerLayout drawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
+
+        //get drawer layout
         drawer = findViewById(R.id.drawer_layout);
 
+        //get firebase instance
         firebaseAuth = FirebaseAuth.getInstance();
 
 
@@ -36,15 +41,19 @@ public class Dashboard extends AppCompatActivity {
         openDrawer(drawer);
     }
 
+    //close drawer
     public void ClickLogo(View view) {
         closeDrawer(drawer);
     }
 
+
+    //method for opening drawer
     public static void openDrawer(DrawerLayout drawer) {
         //Open drawer layout
         drawer.openDrawer(GravityCompat.START);
     }
 
+    //method for closing drawer
     public static void closeDrawer(DrawerLayout drawer) {
         //close drawer layout
         //check condition
@@ -133,6 +142,7 @@ public class Dashboard extends AppCompatActivity {
     }
 
 
+    //method for redirecting activities
     public static void redirectActivity(Activity activity, Class aClass) {
         //Intent
         Intent i = new Intent(activity, aClass);

@@ -22,12 +22,13 @@ public class Timetables extends AppCompatActivity {
 
     //Initialize drawer
     DrawerLayout drawer;
+
     //show timetable content when selected
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timetables);
-        drawer= findViewById(R.id.drawer_layout);
+        drawer = findViewById(R.id.drawer_layout);
 
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -43,38 +44,39 @@ public class Timetables extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         if (webView.canGoBack()) {
-            webView.goBack();;
-        }else {
+            webView.goBack();
+            ;
+        } else {
             super.onBackPressed();
         }
     }
 
-    public void ClickMenu(View view){
+    public void ClickMenu(View view) {
         //Open drawer
         Dashboard.openDrawer(drawer);
     }
 
-    public void ClickHome(View view){
+    public void ClickHome(View view) {
         Dashboard.redirectActivity(this, Dashboard.class);
     }
 
-    public void ClickLibrary(View view){
+    public void ClickLibrary(View view) {
         Dashboard.redirectActivity(this, Library.class);
     }
 
-    public void ClickTimetables(View view){
+    public void ClickTimetables(View view) {
         recreate();
     }
 
-    public void ClickFloorMap(View view){
-        Dashboard.redirectActivity(this,FloorMap.class);
+    public void ClickFloorMap(View view) {
+        Dashboard.redirectActivity(this, FloorMap.class);
     }
 
-    public void ClickForum(View view){
-        Dashboard.redirectActivity(this,Forum.class);
+    public void ClickForum(View view) {
+        Dashboard.redirectActivity(this, Forum.class);
     }
 
-    public void ClickActivities(View view){
+    public void ClickActivities(View view) {
         Dashboard.redirectActivity(this, Recycler_view_activities.class);
     }
 
@@ -109,7 +111,7 @@ public class Timetables extends AppCompatActivity {
     }
 
     @Override
-    protected void onPause(){
+    protected void onPause() {
         super.onPause();
         Dashboard.closeDrawer(drawer);
     }
