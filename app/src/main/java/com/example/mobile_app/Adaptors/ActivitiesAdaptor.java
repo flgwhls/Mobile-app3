@@ -20,14 +20,15 @@ public class ActivitiesAdaptor extends RecyclerView.Adapter<ActivitiesAdaptor.Ac
     ArrayList<Activities> list;
     ActivitiesHolder.OnActivitiesClickListener listener;
 
-    public ActivitiesAdaptor (ArrayList<Activities>list, ActivitiesHolder.OnActivitiesClickListener _listener){
-        this.list=list;
-        listener= _listener;
-}
+    public ActivitiesAdaptor(ArrayList<Activities> list, ActivitiesHolder.OnActivitiesClickListener _listener) {
+        this.list = list;
+        listener = _listener;
+    }
+
     @NonNull
     @Override
     public ActivitiesHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v= LayoutInflater.from(parent.getContext()).inflate(R.layout.activitiescard,parent,false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.activitiescard, parent, false);
         return new ActivitiesHolder(v, listener);
     }
 
@@ -46,23 +47,24 @@ public class ActivitiesAdaptor extends RecyclerView.Adapter<ActivitiesAdaptor.Ac
     }
 
     //implements is 2 part (implements View.OnClickListener + alt+invio need to select implement method)
-    public static class ActivitiesHolder extends RecyclerView.ViewHolder implements View.OnClickListener
-    {
+    public static class ActivitiesHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         ImageView iv;
-        TextView date,type;
+        TextView date, type;
 
         OnActivitiesClickListener listener;
-        public ActivitiesHolder(@NonNull View itemView,OnActivitiesClickListener _listener) {
+
+        public ActivitiesHolder(@NonNull View itemView, OnActivitiesClickListener _listener) {
             super(itemView);
 
-            listener=_listener;
-            date=itemView.findViewById(R.id.tv_activitiescard_date);
-            type=itemView.findViewById(R.id.tv_act_type);
-            iv=itemView.findViewById(R.id.iv_activitiescard_img);
+            listener = _listener;
+            date = itemView.findViewById(R.id.tv_activitiescard_date);
+            type = itemView.findViewById(R.id.tv_act_type);
+            iv = itemView.findViewById(R.id.iv_activitiescard_img);
             itemView.setOnClickListener(this);
 
         }
+
         // derive from alt+invio (Implements)
         @Override
         public void onClick(View v) {
@@ -71,8 +73,7 @@ public class ActivitiesAdaptor extends RecyclerView.Adapter<ActivitiesAdaptor.Ac
         }
 
         //2 part
-        public interface OnActivitiesClickListener
-        {
+        public interface OnActivitiesClickListener {
             public void OnActivitiesClick(int pos);
         }
     }

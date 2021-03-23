@@ -39,12 +39,13 @@ public class SellBooks extends AppCompatActivity implements Book4SellAdapter.Boo
         reg4Sell.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent regintent = new Intent(SellBooks.this,BookRegister.class);
+                Intent regintent = new Intent(SellBooks.this, BookRegister.class);
                 startActivity(regintent);
             }
         });
         dbref.addListenerForSingleValueEvent(listener);
     }
+
     // set listener
     ValueEventListener listener = new ValueEventListener() {
         @Override

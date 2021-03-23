@@ -24,9 +24,6 @@ public class Register extends AppCompatActivity {
 
     EditText studentID, firstName, lastNAme, email, password, confPassword;
     Button register;
-    // for testing bookpage
-    Button bookpage;
-    Button bookreg;
 
     DatabaseReference dbref;
     private FirebaseAuth mFirebaseAuth;
@@ -35,7 +32,6 @@ public class Register extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
 
 
         // ---------------- TO DELETE WHEN not needed  ---------------

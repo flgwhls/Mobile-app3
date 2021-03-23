@@ -24,17 +24,16 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+
 // USED BY GREG DO NOT CHANGE !!!
 public class Library extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
 
     //Initialize drawer
     DrawerLayout drawer;
-// Button to go to Book For Sell
+    // Button to go to Book For Sell
     Button btnbooks4sell;
 
     FirebaseAuth firebaseAuth;
-
-
 
 
     @Override
@@ -44,12 +43,12 @@ public class Library extends AppCompatActivity implements PopupMenu.OnMenuItemCl
 
         firebaseAuth = FirebaseAuth.getInstance();
 
-        drawer= findViewById(R.id.drawer_layout);
+        drawer = findViewById(R.id.drawer_layout);
         btnbooks4sell = findViewById(R.id.btn_book4sell);
         btnbooks4sell.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent sellb = new Intent(Library.this,SellBooks.class);
+                Intent sellb = new Intent(Library.this, SellBooks.class);
                 startActivity(sellb);
             }
         });
@@ -57,39 +56,38 @@ public class Library extends AppCompatActivity implements PopupMenu.OnMenuItemCl
     }
 
 
-
-    public void ClickMenu(View view){
+    public void ClickMenu(View view) {
         //Open drawer
         Dashboard.openDrawer(drawer);
     }
 
-    public void ClickLogo(View view){
+    public void ClickLogo(View view) {
         // close drawer
         Dashboard.closeDrawer(drawer);
     }
 
-    public void ClickHome(View view){
+    public void ClickHome(View view) {
         Dashboard.redirectActivity(this, Dashboard.class);
     }
 
-    public void ClickLibrary(View view){
+    public void ClickLibrary(View view) {
         recreate();
     }
 
-    public void ClickTimetables(View view){
-        Dashboard.redirectActivity(this,Timetables.class);
+    public void ClickTimetables(View view) {
+        Dashboard.redirectActivity(this, Timetables.class);
     }
 
-    public void ClickFloorMap(View view){
-        Dashboard.redirectActivity(this,FloorMap.class);
+    public void ClickFloorMap(View view) {
+        Dashboard.redirectActivity(this, FloorMap.class);
     }
 
-    public void ClickForum(View view){
-        Dashboard.redirectActivity(this,Forum.class);
+    public void ClickForum(View view) {
+        Dashboard.redirectActivity(this, Forum.class);
     }
 
-    public void ClickActivities(View view){
-        Dashboard.redirectActivity(this,Recycler_view_activities.class);
+    public void ClickActivities(View view) {
+        Dashboard.redirectActivity(this, Recycler_view_activities.class);
     }
 
     //logout method
@@ -123,12 +121,13 @@ public class Library extends AppCompatActivity implements PopupMenu.OnMenuItemCl
     }
 
     @Override
-    protected void onPause(){
+    protected void onPause() {
         super.onPause();
         Dashboard.closeDrawer(drawer);
     }
-    public void showMenu(View v){
-        PopupMenu popup = new PopupMenu(this,v);
+
+    public void showMenu(View v) {
+        PopupMenu popup = new PopupMenu(this, v);
         popup.setOnMenuItemClickListener(this);
         popup.inflate(R.menu.popup_menu);
         popup.show();
@@ -137,9 +136,9 @@ public class Library extends AppCompatActivity implements PopupMenu.OnMenuItemCl
 
     // use to get answer and view cards in RecyclerView
     @Override
-    public boolean onMenuItemClick(MenuItem item){
+    public boolean onMenuItemClick(MenuItem item) {
 
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
           /*  case R.id.all:
                 // when all
                 menuanswer = "all";
@@ -149,47 +148,46 @@ public class Library extends AppCompatActivity implements PopupMenu.OnMenuItemCl
             case R.id.cloud:
                 // when cloud
 
-                Intent cloudb= new Intent(Library.this,CloudBooksRecycler.class);
+                Intent cloudb = new Intent(Library.this, CloudBooksRecycler.class);
                 startActivity(cloudb);
                 return true;
             case R.id.graphics:
                 // when graphics
 
-                Intent graphb= new Intent(Library.this,GraphBooksRecycler.class);
+                Intent graphb = new Intent(Library.this, GraphBooksRecycler.class);
                 startActivity(graphb);
                 return true;
             case R.id.network:
                 // when network
-                Intent netb = new Intent(Library.this,NetBooksRecycler.class);
+                Intent netb = new Intent(Library.this, NetBooksRecycler.class);
                 startActivity(netb);
                 return true;
             case R.id.dbase:
                 // when network
-                Intent dbaseb= new Intent(Library.this,DbaseBooksRecycler.class);
+                Intent dbaseb = new Intent(Library.this, DbaseBooksRecycler.class);
                 startActivity(dbaseb);
 
                 return true;
             case R.id.programming:
                 // when programming
-                Intent progb= new Intent(Library.this,ProgBooksRecykler.class);
+                Intent progb = new Intent(Library.this, ProgBooksRecykler.class);
                 startActivity(progb);
                 return true;
             case R.id.web:
                 // when web
-                Intent webb= new Intent(Library.this,WebBooksRecycler.class);
+                Intent webb = new Intent(Library.this, WebBooksRecycler.class);
                 startActivity(webb);
                 return true;
             default:
-                 // like all
-               
-                Intent allb= new Intent(Library.this,AllBooksRecycler.class);
+                // like all
+
+                Intent allb = new Intent(Library.this, AllBooksRecycler.class);
                 startActivity(allb);
 
 
                 return true;
 
         } //end switch
-
 
 
         // After switch booklist contain object in selected categoy

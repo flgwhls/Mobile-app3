@@ -8,41 +8,45 @@ public class ForumTopic implements Parcelable {
     private String topicName, topicMessage, topicDesc;
 
     //constructor
-    public ForumTopic(String topicName, String topicMessage, String topicDesc ){
+    public ForumTopic(String topicName, String topicMessage, String topicDesc) {
         this.topicName = topicName;
         this.topicMessage = topicMessage;
         this.topicDesc = topicDesc;
     }
 
     //empty constructor
-    public ForumTopic(){
+    public ForumTopic() {
 
     }
 
-    protected ForumTopic(Parcel in){
+    protected ForumTopic(Parcel in) {
         topicMessage = in.readString();
         topicName = in.readString();
         topicDesc = in.readString();
     }
 
     //getter methods
-    public String getTopicName(){
+    public String getTopicName() {
         return topicName;
     }
-    public String getTopicMessage(){
+
+    public String getTopicMessage() {
         return topicMessage;
     }
-    public String getTopicDesc(){
+
+    public String getTopicDesc() {
         return topicDesc;
     }
 
     //setter methods
-    public void setTopicName(String topicName){
+    public void setTopicName(String topicName) {
         this.topicName = topicName;
     }
-    public void setTopicMessage(String topicMessage){
+
+    public void setTopicMessage(String topicMessage) {
         this.topicMessage = topicMessage;
     }
+
     public void setTopicDesc(String topicDesc) {
         this.topicDesc = topicDesc;
     }
@@ -53,7 +57,7 @@ public class ForumTopic implements Parcelable {
     }
 
     @Override
-    public void writeToParcel(Parcel dest, int flags){
+    public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(topicMessage);
         dest.writeString(topicName);
         dest.writeString(topicDesc);

@@ -15,23 +15,24 @@ import com.google.firebase.database.FirebaseDatabase;
 public class AddActivities extends AppCompatActivity {
 
     DatabaseReference dbref;
-    EditText startweek,date,hour,type,description,url;
+    EditText startweek, date, hour, type, description, url;
     Button submit;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_activities);
-        startweek=findViewById(R.id.add_activities_startweek);
-        date= findViewById(R.id.add_activities_date);
-        hour=findViewById(R.id.add_activities_hour);
-        type=findViewById(R.id.add_activities_type);
-        description=findViewById(R.id.add_activities_descript);
-        url= findViewById(R.id.add_activities_url);
+        startweek = findViewById(R.id.add_activities_startweek);
+        date = findViewById(R.id.add_activities_date);
+        hour = findViewById(R.id.add_activities_hour);
+        type = findViewById(R.id.add_activities_type);
+        description = findViewById(R.id.add_activities_descript);
+        url = findViewById(R.id.add_activities_url);
 
 
-        submit=findViewById(R.id.add_activities_submit);
+        submit = findViewById(R.id.add_activities_submit);
 
-        dbref= FirebaseDatabase.getInstance().getReference("Activities");
+        dbref = FirebaseDatabase.getInstance().getReference("Activities");
 
 
         submit.setOnClickListener(new View.OnClickListener() {
@@ -39,9 +40,8 @@ public class AddActivities extends AppCompatActivity {
             public void onClick(View v) {
 
 
-
-                Activities a =new Activities(startweek.getText().toString(),date.getText().toString(),hour.getText().toString(),type.getText().toString(),
-                        description.getText().toString(),url.getText().toString());
+                Activities a = new Activities(startweek.getText().toString(), date.getText().toString(), hour.getText().toString(), type.getText().toString(),
+                        description.getText().toString(), url.getText().toString());
 
                 //3. save object to FB
                 dbref.child(dbref.push().getKey()).setValue(a);

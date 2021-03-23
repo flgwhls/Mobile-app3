@@ -23,15 +23,16 @@ public class SearchResult extends AppCompatActivity {
     ArrayList<Book> booklist = new ArrayList<>();
     RecyclerView rv_library;
     BookAdaptor mybookAdaptor;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_result);
-        drawer= findViewById(R.id.drawer_layout);
+        drawer = findViewById(R.id.drawer_layout);
         // DataBase Reference
         dbref = FirebaseDatabase.getInstance().getReference("Book");
         rv_library = findViewById(R.id.rv_all_books);
-        rv_library.setLayoutManager( new LinearLayoutManager(SearchResult.this));//Vertical view
+        rv_library.setLayoutManager(new LinearLayoutManager(SearchResult.this));//Vertical view
         //rv_library_search.setLayoutManager( new LinearLayoutManager(myRecyclerView.this, LinearLayoutManager.HORIZONTAL,reverseLayout: true)); //Horizontal reversal
         //rv_library_search.setLayoutManager( new GridLayoutManager(myRecyclerView.this),spanCount: 3); // Vertical 3 columns
 

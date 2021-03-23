@@ -3,12 +3,12 @@ package com.example.mobile_app;
 public class Student {
     // class to create Student object
     //Variables
-    private String studentID,firstName, lastName, email, password;
+    private String studentID, firstName, lastName, email, password;
 
     //Constructor to make and write object to FireBase
 
 
-    public Student(String studentID,String firstName, String lastName, String email, String password) {
+    public Student(String studentID, String firstName, String lastName, String email, String password) {
         this.studentID = studentID;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -27,6 +27,7 @@ public class Student {
     public String getStudentID() {
         return studentID;
     }
+
     public String getFirstName() {
         return firstName;
     }
@@ -47,6 +48,7 @@ public class Student {
     public void setStudentID(String studentID) {
         this.studentID = studentID;
     }
+
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }

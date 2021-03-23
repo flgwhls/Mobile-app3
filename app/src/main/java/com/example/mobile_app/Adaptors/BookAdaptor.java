@@ -17,14 +17,13 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 
 // USED BY GREG DO NOT CHANGE !!!
-public class BookAdaptor extends RecyclerView.Adapter<BookAdaptor.BookHolder>
-{
+public class BookAdaptor extends RecyclerView.Adapter<BookAdaptor.BookHolder> {
     // Arraylist for books
-    ArrayList<Book>booklist;
+    ArrayList<Book> booklist;
     BookHolder.OnBookClickListener cardlistener;
 
-    public BookAdaptor(ArrayList<Book>list, BookHolder.OnBookClickListener listener){
-        this.booklist=list;
+    public BookAdaptor(ArrayList<Book> list, BookHolder.OnBookClickListener listener) {
+        this.booklist = list;
         cardlistener = listener;
     }
 
@@ -32,8 +31,8 @@ public class BookAdaptor extends RecyclerView.Adapter<BookAdaptor.BookHolder>
     @NonNull
     @Override
     public BookAdaptor.BookHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v= LayoutInflater.from(parent.getContext()).inflate(R.layout.bookcard,parent,false);
-        return new BookHolder(v,cardlistener);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.bookcard, parent, false);
+        return new BookHolder(v, cardlistener);
     }
 
     @Override
@@ -53,15 +52,15 @@ public class BookAdaptor extends RecyclerView.Adapter<BookAdaptor.BookHolder>
 
     }
 
-    public static class BookHolder extends RecyclerView.ViewHolder implements View.OnClickListener
-    {
+    public static class BookHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        TextView title,author,category;
+        TextView title, author, category;
         ImageView iv_bookview;
         OnBookClickListener cardlistener;
-        public BookHolder(@NonNull View itemView, BookHolder.OnBookClickListener listener){
+
+        public BookHolder(@NonNull View itemView, BookHolder.OnBookClickListener listener) {
             super(itemView);
-            cardlistener=listener;
+            cardlistener = listener;
             title = itemView.findViewById(R.id.tv_bookcard_title);
             author = itemView.findViewById(R.id.tv_bookcard_author);
             category = itemView.findViewById(R.id.tv_bookcard_category);
@@ -74,9 +73,9 @@ public class BookAdaptor extends RecyclerView.Adapter<BookAdaptor.BookHolder>
             cardlistener.OnBookClick(getAdapterPosition());
             //cardlistener.OnBookClick(getLayoutPosition());
         }
+
         //2 part
-        public interface OnBookClickListener
-        {
+        public interface OnBookClickListener {
             void OnBookClick(int position);
         }
 

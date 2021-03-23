@@ -38,7 +38,7 @@ import javax.net.ssl.SSLEngineResult;
 */
 
 public class BookRegister extends AppCompatActivity {
-    EditText title, author, edition, isbn, category, publisher, publicyear,price,email ;
+    EditText title, author, edition, isbn, category, publisher, publicyear, price, email;
     String status, date, imageurl;
     ImageView bookimage;
     Button bookregister;
@@ -48,7 +48,6 @@ public class BookRegister extends AppCompatActivity {
     // Storage Reference
     StorageReference sref;
     //Firebase User Auth
-
 
 
     // Drawer Layout
@@ -82,18 +81,18 @@ public class BookRegister extends AppCompatActivity {
                 // Firebase Reference
                 dbref = FirebaseDatabase.getInstance().getReference("Book4sell");
                 // Get PK
-                String pk=dbref.push().getKey();
+                String pk = dbref.push().getKey();
                 // create url
-                StorageReference reference= sref.child(pk+"."+getExtension(imagePath));
+                StorageReference reference = sref.child(pk + "." + getExtension(imagePath));
                 // write picture to Storage
                 reference.putFile(imagePath).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                            // get url
+                        // get url
                         reference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                             @Override
                             public void onSuccess(Uri uri) {
-                                imageurl= uri.toString();
+                                imageurl = uri.toString();
                                 Toast.makeText(BookRegister.this, imageurl, Toast.LENGTH_SHORT).show();
                                 //Getting email
                                 // Id will be contact email
@@ -107,7 +106,7 @@ public class BookRegister extends AppCompatActivity {
                                         edition.getText().toString(), isbn.getText().toString(),
                                         category.getText().toString(), imageurl,
                                         publisher.getText().toString(), publicyear.getText().toString(),
-                                        price.getText().toString(),email.getText().toString(), "4Sell",date);
+                                        price.getText().toString(), email.getText().toString(), "4Sell", date);
                                 dbref.child(pk).setValue(b);
                                 Intent i = new Intent(BookRegister.this, SellBooks.class);
                                 startActivity(i);
@@ -135,76 +134,73 @@ public class BookRegister extends AppCompatActivity {
         bookimage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i= new Intent();
+                Intent i = new Intent();
                 i.setType("image/*");
                 i.setAction(Intent.ACTION_GET_CONTENT);
-                startActivityForResult(i,100);
+                startActivityForResult(i, 100);
             }
         });
     }
-        // getting extention
-    private String getExtension(Uri _imagePath)
-    {
+
+    // getting extention
+    private String getExtension(Uri _imagePath) {
 
         ContentResolver resolver = getContentResolver();
-        MimeTypeMap map= MimeTypeMap.getSingleton();
-        return map.getExtensionFromMimeType(resolver.getType( _imagePath));
+        MimeTypeMap map = MimeTypeMap.getSingleton();
+        return map.getExtensionFromMimeType(resolver.getType(_imagePath));
     }
+
     // put image to ImageView after selection
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode==100 && resultCode==RESULT_OK && data.getData()!=null);
+        if (requestCode == 100 && resultCode == RESULT_OK && data.getData() != null) ;
         {
             Picasso.get().load(data.getData()).fit().into(bookimage);
-            imagePath =data.getData();
+            imagePath = data.getData();
         }
     }
 
     // Menu part
-    public void ClickMenu(View view){
-            //Open drawer
-            Dashboard.openDrawer(drawer);
+    public void ClickMenu(View view) {
+        //Open drawer
+        Dashboard.openDrawer(drawer);
     }
 
-    public void ClickLogo(View view){
-            // close drawer
-            Dashboard.closeDrawer(drawer);
-    }
-
-        public void ClickHome(View view){
-            Dashboard.redirectActivity(this, Dashboard.class);
-        }
-
-        public void ClickLibrary(View view){
-            Dashboard.redirectActivity(this, Library.class);
-        }
-
-        public void ClickTimetables(View view){
-            recreate();
-        }
-
-        public void ClickFloorMap(View view){
-            Dashboard.redirectActivity(this,FloorMap.class);
-        }
-
-        public void ClickForum(View view){
-            Dashboard.redirectActivity(this,Forum.class);
-        }
-
-        public void ClickActivities(View view){
-            Dashboard.redirectActivity(this,Activities.class);
-    }
-    @Override
-    protected void onPause(){
-        super.onPause();
+    public void ClickLogo(View view) {
+        // close drawer
         Dashboard.closeDrawer(drawer);
     }
 
+    public void ClickHome(View view) {
+        Dashboard.redirectActivity(this, Dashboard.class);
+    }
 
+    public void ClickLibrary(View view) {
+        Dashboard.redirectActivity(this, Library.class);
+    }
 
+    public void ClickTimetables(View view) {
+        recreate();
+    }
 
+    public void ClickFloorMap(View view) {
+        Dashboard.redirectActivity(this, FloorMap.class);
+    }
 
+    public void ClickForum(View view) {
+        Dashboard.redirectActivity(this, Forum.class);
+    }
+
+    public void ClickActivities(View view) {
+        Dashboard.redirectActivity(this, Activities.class);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Dashboard.closeDrawer(drawer);
+    }
 
 
 }
