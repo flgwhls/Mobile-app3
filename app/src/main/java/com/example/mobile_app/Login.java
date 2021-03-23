@@ -24,9 +24,8 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class Login extends AppCompatActivity {
 
-    //variables
-    TextView signup,reset_password;
-    EditText emailID,passwordID;
+    TextView signup, reset_password;
+    EditText emailID, passwordID;
     Button log;
     FirebaseAuth mFirebaseAuth;
 
@@ -37,8 +36,7 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        //views of variables
-        signup=findViewById(R.id.tv_reg_signup);
+        signup = findViewById(R.id.tv_reg_signup);
         emailID = findViewById(R.id.et_log_login);
         passwordID = findViewById(R.id.et_log_pasword);
         log = findViewById(R.id.btn_log_login);
@@ -51,8 +49,7 @@ public class Login extends AppCompatActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser mFirebaseUser = mFirebaseAuth.getCurrentUser();
 
-                //toast to display if you are logged in with succes or not.
-                if (mFirebaseUser !=null) {
+                if (mFirebaseUser != null) {
                     Toast.makeText(Login.this, "Welcome In!", Toast.LENGTH_LONG).show();
 
                 } else {
@@ -95,7 +92,6 @@ public class Login extends AppCompatActivity {
                 }
             }
         });
-        //method to get the register page in case you are not registered
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -103,13 +99,12 @@ public class Login extends AppCompatActivity {
                 startActivity(RegPage);
             }
         });
-        // method to reset the password if you forget it.
         reset_password.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                EditText resetEmail= new EditText(v.getContext());
-                AlertDialog.Builder passwordResetDialog= new AlertDialog.Builder(v.getContext());
+                EditText resetEmail = new EditText(v.getContext());
+                AlertDialog.Builder passwordResetDialog = new AlertDialog.Builder(v.getContext());
                 passwordResetDialog.setTitle("Reset Password?");
                 passwordResetDialog.setMessage("Enter your email to receive a reset link!");
                 passwordResetDialog.setView(resetEmail);
@@ -118,16 +113,16 @@ public class Login extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        String email= resetEmail.getText().toString();
+                        String email = resetEmail.getText().toString();
                         mFirebaseAuth.sendPasswordResetEmail(email).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
-                                Toast.makeText(Login.this,"A link to reset your password has been send to your email", Toast.LENGTH_LONG).show();
-                             }
+                                Toast.makeText(Login.this, "A link to reset your password has been send to your email", Toast.LENGTH_LONG).show();
+                            }
                         }).addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
-                                Toast.makeText(Login.this,"Error! The link is not sent!"+ e.getMessage(), Toast.LENGTH_LONG).show();
+                                Toast.makeText(Login.this, "Error! The link is not sent!" + e.getMessage(), Toast.LENGTH_LONG).show();
                             }
                         });
 
@@ -146,10 +141,10 @@ public class Login extends AppCompatActivity {
     }
 
 
-   @Override
-   protected void onStart() {
-     super.onStart();
-       mFirebaseAuth.addAuthStateListener(mAuthStateListener);
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mFirebaseAuth.addAuthStateListener(mAuthStateListener);
 
     }
 

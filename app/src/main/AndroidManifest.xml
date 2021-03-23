@@ -25,7 +25,6 @@
         <activity android:name=".AllBooksRecycler" />
         <activity android:name=".BookRegister" />
         <activity android:name=".BookPage" />
-        <activity android:name=".SearchResult" />
         <activity android:name=".Timetables" />
         <activity android:name=".Forum" />
         <activity android:name=".SellBooks" />

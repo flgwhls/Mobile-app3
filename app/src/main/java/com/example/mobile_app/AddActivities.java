@@ -12,13 +12,9 @@ import android.widget.Toast;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-//class used just to add the activities in the database (this class has been used just in the background project)
 public class AddActivities extends AppCompatActivity {
 
-
-    DatabaseReference dbref;// reference to database
-
-    //variables
+    DatabaseReference dbref;
     EditText startweek, date, hour, type, description, url;
     Button submit;
 
@@ -26,8 +22,6 @@ public class AddActivities extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_activities);
-
-        //views of variables
         startweek = findViewById(R.id.add_activities_startweek);
         date = findViewById(R.id.add_activities_date);
         hour = findViewById(R.id.add_activities_hour);
@@ -49,12 +43,15 @@ public class AddActivities extends AppCompatActivity {
                 Activities a = new Activities(startweek.getText().toString(), date.getText().toString(), hour.getText().toString(), type.getText().toString(),
                         description.getText().toString(), url.getText().toString());
 
-                //save object to FB
+                //3. save object to FB
                 dbref.child(dbref.push().getKey()).setValue(a);
 
-                //intent to reset the clear view of the same page
                 Intent i = new Intent(AddActivities.this, AddActivities.class);
                 startActivity(i);
+               /* if (submit.hasOnClickListeners()) {
+                    Toast.makeText(AddActivities.this, "The activity has been register", Toast.LENGTH_LONG).show();
+
+                }*/
             }
         });
     }

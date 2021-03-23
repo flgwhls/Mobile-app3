@@ -24,32 +24,30 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-// USED BY GREG DO NOT CHANGE !!!
+// Class to view and manage Library
+
 public class Library extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
 
-    //Initialize drawer
+    // variable declaration
     DrawerLayout drawer;
-// Button to go to Book For Sell
     Button btnbooks4sell;
-
     FirebaseAuth firebaseAuth;
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_library);
-
+        // Firebase reference
         firebaseAuth = FirebaseAuth.getInstance();
-
+        // join variable with layout
         drawer= findViewById(R.id.drawer_layout);
         btnbooks4sell = findViewById(R.id.btn_book4sell);
+        //set listener
         btnbooks4sell.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent sellb = new Intent(Library.this,SellBooks.class);
+                // start SellBooks Activity
                 startActivity(sellb);
             }
         });
@@ -57,7 +55,7 @@ public class Library extends AppCompatActivity implements PopupMenu.OnMenuItemCl
     }
 
 
-
+    // menu
     public void ClickMenu(View view){
         //Open drawer
         Dashboard.openDrawer(drawer);
@@ -127,6 +125,7 @@ public class Library extends AppCompatActivity implements PopupMenu.OnMenuItemCl
         super.onPause();
         Dashboard.closeDrawer(drawer);
     }
+    // MEnu
     public void showMenu(View v){
         PopupMenu popup = new PopupMenu(this,v);
         popup.setOnMenuItemClickListener(this);
@@ -138,7 +137,7 @@ public class Library extends AppCompatActivity implements PopupMenu.OnMenuItemCl
     // use to get answer and view cards in RecyclerView
     @Override
     public boolean onMenuItemClick(MenuItem item){
-
+        // select menu item
         switch (item.getItemId()){
           /*  case R.id.all:
                 // when all

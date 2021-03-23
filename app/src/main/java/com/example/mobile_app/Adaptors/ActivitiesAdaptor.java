@@ -17,7 +17,6 @@ import java.util.ArrayList;
 
 public class ActivitiesAdaptor extends RecyclerView.Adapter<ActivitiesAdaptor.ActivitiesHolder> {
 
-    //arraylist of Activities
     ArrayList<Activities> list;
     ActivitiesHolder.OnActivitiesClickListener listener;
 
@@ -33,7 +32,6 @@ public class ActivitiesAdaptor extends RecyclerView.Adapter<ActivitiesAdaptor.Ac
         return new ActivitiesHolder(v, listener);
     }
 
-    //this method will hold the view of card in the recycle view
     @Override
     public void onBindViewHolder(@NonNull ActivitiesHolder holder, int position) {
 
@@ -43,16 +41,14 @@ public class ActivitiesAdaptor extends RecyclerView.Adapter<ActivitiesAdaptor.Ac
         Picasso.get().load(list.get(position).getUrl()).fit().into(holder.iv);
     }
 
-    // this method return the exactily position of items in the arraylist
     @Override
     public int getItemCount() {
         return list.size();
     }
 
-
+    //implements is 2 part (implements View.OnClickListener + alt+invio need to select implement method)
     public static class ActivitiesHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        //variables
         ImageView iv;
         TextView date, type;
 
@@ -62,7 +58,6 @@ public class ActivitiesAdaptor extends RecyclerView.Adapter<ActivitiesAdaptor.Ac
             super(itemView);
 
             listener = _listener;
-            //variables views
             date = itemView.findViewById(R.id.tv_activitiescard_date);
             type = itemView.findViewById(R.id.tv_act_type);
             iv = itemView.findViewById(R.id.iv_activitiescard_img);
@@ -70,13 +65,14 @@ public class ActivitiesAdaptor extends RecyclerView.Adapter<ActivitiesAdaptor.Ac
 
         }
 
+        // derive from alt+invio (Implements)
         @Override
         public void onClick(View v) {
 
             listener.OnActivitiesClick(getAdapterPosition());
         }
 
-
+        //2 part
         public interface OnActivitiesClickListener {
             public void OnActivitiesClick(int pos);
 

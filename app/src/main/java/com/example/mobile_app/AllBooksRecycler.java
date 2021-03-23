@@ -17,11 +17,12 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class AllBooksRecycler extends AppCompatActivity implements BookAdaptor.BookHolder.OnBookClickListener{
+public class AllBooksRecycler extends AppCompatActivity implements BookAdaptor.BookHolder.OnBookClickListener {
     DatabaseReference dbref; //dbrefefence
     ArrayList<Book> allbooklist = new ArrayList<>(); //all Books
     RecyclerView rv_allbooks; //recyclerView
     BookAdaptor allbookAdaptor; //Adaptor
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,21 +31,21 @@ public class AllBooksRecycler extends AppCompatActivity implements BookAdaptor.B
         dbref = FirebaseDatabase.getInstance().getReference("Book"); //Firebase reference
 
         rv_allbooks = findViewById(R.id.rv_all_books);
-        rv_allbooks.setLayoutManager( new LinearLayoutManager(AllBooksRecycler.this));//Vertical view
+        rv_allbooks.setLayoutManager(new LinearLayoutManager(AllBooksRecycler.this));//Vertical view
 
         dbref.addListenerForSingleValueEvent(listener);
     }
+
     // set listener
     ValueEventListener listener = new ValueEventListener() {
         @Override
         public void onDataChange(@NonNull DataSnapshot snapshot) {
-            for(DataSnapshot dss: snapshot.getChildren()){
+            for (DataSnapshot dss : snapshot.getChildren()) {
                 allbooklist.add(dss.getValue(Book.class)); //Put all book
 
 
-
             }
-            allbookAdaptor= new BookAdaptor(allbooklist,AllBooksRecycler.this);
+            allbookAdaptor = new BookAdaptor(allbooklist, AllBooksRecycler.this);
             rv_allbooks.setAdapter(allbookAdaptor);
         }
 
@@ -53,6 +54,7 @@ public class AllBooksRecycler extends AppCompatActivity implements BookAdaptor.B
 
         }
     };
+
     @Override
     public void OnBookClick(int position) {
         Intent i = new Intent(AllBooksRecycler.this, BookPage.class);

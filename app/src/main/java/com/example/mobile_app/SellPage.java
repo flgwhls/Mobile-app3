@@ -10,26 +10,22 @@ import com.bumptech.glide.Glide;
 import com.google.firebase.database.DatabaseReference;
 
 import java.util.ArrayList;
-
+    // class to view book for sell details
 public class SellPage extends AppCompatActivity {
 
 
     // Variable declaration
     // Arraylist to load all books
     ArrayList<Book> booklist = new ArrayList<>();
-    // reference to database
-    DatabaseReference dbref;
     TextView author, title, isbn, publisher, publicyear, edition, category, price;
     ImageView bookview;
     String strPrice;
-
     String url;
-    int index;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sell_page);
-
+            // join variable with layout
             title = findViewById(R.id.tv_booksellp_title2);
             author = findViewById(R.id.tv_booksellp_author2);
             isbn = findViewById(R.id.tv_booksellp_isbn2);
@@ -40,11 +36,9 @@ public class SellPage extends AppCompatActivity {
             category = findViewById(R.id.tv_booksellp_category2);
             price = findViewById(R.id.tv_booksellp_price2);
 
-
             //Get book object from card
-            //Book b= getIntent().getParcelableExtra("Book1");
             Book4Sell b = getIntent().getParcelableExtra("Book4Sell");
-
+            // View book details
             title.setText(b.getTitle());
             author.setText(b.getAuthor());
             isbn.setText(b.getISBN());

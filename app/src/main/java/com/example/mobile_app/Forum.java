@@ -41,7 +41,7 @@ public class Forum extends AppCompatActivity implements ForumTopicAdaptor.ForumT
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forum);
-        drawer= findViewById(R.id.drawer_layout);
+        drawer = findViewById(R.id.drawer_layout);
 
         goTo = findViewById(R.id.btn_forum_create);
 
@@ -54,7 +54,7 @@ public class Forum extends AppCompatActivity implements ForumTopicAdaptor.ForumT
 
         databaseReference.addListenerForSingleValueEvent(listener);
 
-        ArrayList<ForumTopic>topicList;
+        ArrayList<ForumTopic> topicList;
 
 
         goTo.setOnClickListener(new View.OnClickListener() {
@@ -70,10 +70,10 @@ public class Forum extends AppCompatActivity implements ForumTopicAdaptor.ForumT
     ValueEventListener listener = new ValueEventListener() {
         @Override
         public void onDataChange(@NonNull DataSnapshot snapshot) {
-            for(DataSnapshot dss: snapshot.getChildren()){
+            for (DataSnapshot dss : snapshot.getChildren()) {
                 forumTopics.add(dss.getValue(ForumTopic.class));
             }
-            topicAdaptor= new ForumTopicAdaptor(forumTopics,Forum.this);
+            topicAdaptor = new ForumTopicAdaptor(forumTopics, Forum.this);
             rv_forumTopic.setAdapter(topicAdaptor);
         }
 
@@ -91,33 +91,33 @@ public class Forum extends AppCompatActivity implements ForumTopicAdaptor.ForumT
         startActivity(i);
     }
 
-    public void ClickMenu(View view){
+    public void ClickMenu(View view) {
         //Open drawer
         Dashboard.openDrawer(drawer);
     }
 
 
-    public void ClickHome(View view){
+    public void ClickHome(View view) {
         Dashboard.redirectActivity(this, Dashboard.class);
     }
 
-    public void ClickLibrary(View view){
-        Dashboard.redirectActivity(this,Library.class);
+    public void ClickLibrary(View view) {
+        Dashboard.redirectActivity(this, Library.class);
     }
 
-    public void ClickTimetables(View view){
-        Dashboard.redirectActivity(this,Timetables.class);
+    public void ClickTimetables(View view) {
+        Dashboard.redirectActivity(this, Timetables.class);
     }
 
-    public void ClickFloorMap(View view){
-        Dashboard.redirectActivity(this,FloorMap.class);
+    public void ClickFloorMap(View view) {
+        Dashboard.redirectActivity(this, FloorMap.class);
     }
 
-    public void ClickForum(View view){
+    public void ClickForum(View view) {
         recreate();
     }
 
-    public void ClickActivities(View view){
+    public void ClickActivities(View view) {
         Dashboard.redirectActivity(this, Recycler_view_activities.class);
     }
 
@@ -152,7 +152,7 @@ public class Forum extends AppCompatActivity implements ForumTopicAdaptor.ForumT
     }
 
     @Override
-    protected void onPause(){
+    protected void onPause() {
         super.onPause();
         Dashboard.closeDrawer(drawer);
     }

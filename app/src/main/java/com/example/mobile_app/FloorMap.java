@@ -13,7 +13,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class FloorMap extends AppCompatActivity {
 
     //Initialize drawer
-     DrawerLayout drawer;
+    DrawerLayout drawer;
 
     FirebaseAuth firebaseAuth;
 
@@ -21,40 +21,42 @@ public class FloorMap extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_floor_map);
-        drawer= findViewById(R.id.drawer_layout);
+        drawer = findViewById(R.id.drawer_layout);
         firebaseAuth = FirebaseAuth.getInstance();
     }
 
 
-    public void ClickMenu(View view){
+    public void ClickMenu(View view) {
         //Open drawer
         Dashboard.openDrawer(drawer);
     }
 
-    public void ClickLogo(View view){
+    public void ClickLogo(View view) {
         // close drawer
         Dashboard.closeDrawer(drawer);
     }
 
-    public void ClickHome(View view){ Dashboard.redirectActivity(this, Dashboard.class); }
+    public void ClickHome(View view) {
+        Dashboard.redirectActivity(this, Dashboard.class);
+    }
 
-    public void ClickLibrary(View view){
+    public void ClickLibrary(View view) {
         Dashboard.redirectActivity(this, Library.class);
     }
 
-    public void ClickTimetables(View view){
-        Dashboard.redirectActivity(this,Timetables.class);
+    public void ClickTimetables(View view) {
+        Dashboard.redirectActivity(this, Timetables.class);
     }
 
-    public void ClickFloorMap(View view){
+    public void ClickFloorMap(View view) {
         recreate();
     }
 
-    public void ClickForum(View view){
-        Dashboard.redirectActivity(this,Forum.class);
+    public void ClickForum(View view) {
+        Dashboard.redirectActivity(this, Forum.class);
     }
 
-    public void ClickActivities(View view){
+    public void ClickActivities(View view) {
         Dashboard.redirectActivity(this, Recycler_view_activities.class);
     }
 
@@ -89,7 +91,7 @@ public class FloorMap extends AppCompatActivity {
     }
 
     @Override
-    protected void onPause(){
+    protected void onPause() {
         super.onPause();
         Dashboard.closeDrawer(drawer);
     }

@@ -17,11 +17,12 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class CloudBooksRecycler extends AppCompatActivity implements BookAdaptor.BookHolder.OnBookClickListener{
+public class CloudBooksRecycler extends AppCompatActivity implements BookAdaptor.BookHolder.OnBookClickListener {
     DatabaseReference dbref; //dbrefefence
     ArrayList<Book> cloudbooklist = new ArrayList<>(); //cloud Books
     RecyclerView rv_cloudbooks; //recyclerView
     BookAdaptor cloudbookAdaptor; //Adaptor
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +36,7 @@ public class CloudBooksRecycler extends AppCompatActivity implements BookAdaptor
 
         dbref.addListenerForSingleValueEvent(listener);
     }
+
     // set listener
     ValueEventListener listener = new ValueEventListener() {
         @Override
@@ -55,6 +57,7 @@ public class CloudBooksRecycler extends AppCompatActivity implements BookAdaptor
 
         }
     };
+
     @Override
     public void OnBookClick(int position) {
         Intent i = new Intent(CloudBooksRecycler.this, BookPage.class);
