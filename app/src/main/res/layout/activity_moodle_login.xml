@@ -25,6 +25,18 @@
             android:textColor="@color/white"
             android:background="#00a06d"/>
 
+        <TextView
+            android:id="@+id/tv_moodle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:text="Moodle"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:textColor="#636363"
+            android:layout_marginTop="10dp"/>
+
         <WebView
             android:id="@+id/webview_moodle"
             android:layout_width="match_parent"
