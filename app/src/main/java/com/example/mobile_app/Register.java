@@ -20,10 +20,11 @@ import com.google.firebase.database.FirebaseDatabase;
 
 
 public class Register extends AppCompatActivity {
-    // Variables
 
+    // Variables
     EditText studentID, firstName, lastNAme, email, password, confPassword;
     Button register;
+
 
     DatabaseReference dbref;
     private FirebaseAuth mFirebaseAuth;
@@ -34,7 +35,8 @@ public class Register extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
 
-        // ---------------- TO DELETE WHEN not needed  ---------------
+
+        // view of variables
         studentID = findViewById(R.id.et_reg_StudentID);
         firstName = findViewById(R.id.et_reg_FirstName);
         lastNAme = findViewById(R.id.et_reg_LastName);
@@ -53,7 +55,8 @@ public class Register extends AppCompatActivity {
             Student s = new Student(studentID.getText().toString(), firstName.getText().toString(),
                     lastNAme.getText().toString(), email.getText().toString(),
                     password.getText().toString());
-            // prova
+
+            //method to check if the field are empty or the password is less then 6 characters
             if (!TextUtils.isEmpty(studentID.getText().toString())
                     && !TextUtils.isEmpty(firstName.getText().toString())
                     && !TextUtils.isEmpty(lastNAme.getText().toString())

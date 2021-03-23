@@ -13,7 +13,7 @@ import com.bumptech.glide.Glide;
 
 public class ActivitiesDetails extends AppCompatActivity {
 
-
+    //variables
     ImageView iv;
     TextView date, hour, type, description;
 
@@ -27,6 +27,8 @@ public class ActivitiesDetails extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_activities_details);
+
+        //views of variables
         iv = findViewById(R.id.iv_act_img);
         date = findViewById(R.id.tv_act_date);
         type = findViewById(R.id.tv_act_type);
@@ -38,7 +40,6 @@ public class ActivitiesDetails extends AppCompatActivity {
 
         Activities a = getIntent().getParcelableExtra("Activities");
 
-        // Picasso.get().load(a.getUrl()).fit().into(iv);
 
         date.setText(a.getDate());
         hour.setText(a.getHour());
