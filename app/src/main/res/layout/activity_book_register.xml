@@ -14,6 +14,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#FFFFFF"
         android:orientation="vertical">
 
 
@@ -24,7 +25,6 @@
             android:id="@+id/et_bookreg_title"
             android:layout_width="match_parent"
             android:layout_height="55sp"
-            android:background="@drawable/edittextbackground"
             android:ems="10"
             android:hint="@string/title_of_book"
             android:importantForAutofill="no"
@@ -34,7 +34,6 @@
             android:id="@+id/et_bookreg_author"
             android:layout_width="match_parent"
             android:layout_height="55sp"
-            android:background="@drawable/edittextbackground"
             android:ems="10"
             android:hint="@string/book_author"
             android:importantForAutofill="no"
@@ -44,7 +43,6 @@
             android:id="@+id/et_bookreg_ISBN"
             android:layout_width="match_parent"
             android:layout_height="55sp"
-            android:background="@drawable/edittextbackground"
             android:ems="10"
             android:hint="@string/isbn_number"
             android:importantForAutofill="no"
@@ -58,7 +56,6 @@
             android:layout_marginLeft="150sp"
             android:layout_marginEnd="150sp"
             android:layout_marginRight="150sp"
-            android:background="@drawable/edittextbackground"
             android:contentDescription="@string/picrure_to_send"
             app:srcCompat="@android:drawable/ic_menu_upload" />
 
@@ -66,7 +63,6 @@
             android:id="@+id/et_bookreg_category"
             android:layout_width="match_parent"
             android:layout_height="55sp"
-            android:background="@drawable/edittextbackground"
             android:ems="10"
             android:hint="@string/book_category"
             android:importantForAutofill="no"
@@ -76,7 +72,6 @@
             android:id="@+id/et_bookreg_edition"
             android:layout_width="match_parent"
             android:layout_height="55sp"
-            android:background="@drawable/edittextbackground"
             android:ems="10"
             android:hint="@string/book_edition"
             android:importantForAutofill="no"
@@ -86,7 +81,6 @@
             android:id="@+id/et_bookreg_publisher"
             android:layout_width="match_parent"
             android:layout_height="55sp"
-            android:background="@drawable/edittextbackground"
             android:ems="10"
             android:hint="@string/publisher"
             android:importantForAutofill="no"
@@ -96,7 +90,6 @@
             android:id="@+id/et_bookreg_publicyear"
             android:layout_width="match_parent"
             android:layout_height="55sp"
-            android:background="@drawable/edittextbackground"
             android:ems="10"
             android:hint="@string/publication_year"
             android:importantForAutofill="no"
@@ -115,7 +108,7 @@
             android:id="@+id/et_bookreg_price"
             android:layout_width="match_parent"
             android:layout_height="55sp"
-            android:background="@drawable/edittextbackground"
+            android:layout_marginTop="0dp"
             android:ems="10"
             android:hint="@string/book_price"
             android:importantForAutofill="no"
@@ -127,7 +120,8 @@
             android:layout_height="55sp"
 
             android:background="@color/teal_200"
-            android:text="@string/register_book" />
+            android:text="@string/register_book"
+            app:backgroundTint="#00a06d" />
     </LinearLayout>
 
     <RelativeLayout
