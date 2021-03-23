@@ -6,6 +6,8 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -14,6 +16,7 @@ import android.widget.Button;
 import android.widget.PopupMenu;
 
 import com.example.mobile_app.Adaptors.BookAdaptor;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -29,6 +32,7 @@ public class Library extends AppCompatActivity implements PopupMenu.OnMenuItemCl
 // Button to go to Book For Sell
     Button btnbooks4sell;
 
+    FirebaseAuth firebaseAuth;
 
 
 
@@ -38,6 +42,7 @@ public class Library extends AppCompatActivity implements PopupMenu.OnMenuItemCl
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_library);
 
+        firebaseAuth = FirebaseAuth.getInstance();
 
         drawer= findViewById(R.id.drawer_layout);
         btnbooks4sell = findViewById(R.id.btn_book4sell);
@@ -85,6 +90,36 @@ public class Library extends AppCompatActivity implements PopupMenu.OnMenuItemCl
 
     public void ClickActivities(View view){
         Dashboard.redirectActivity(this,Recycler_view_activities.class);
+    }
+
+    //logout method
+    public void ClickLogout(View view) {
+        //Initialise alert dialog
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        //Set title
+        builder.setTitle("Logout");
+        //Set message
+        builder.setMessage("Are you sure you want to log out?");
+        //Positive answer button
+        builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //Logout user
+                firebaseAuth.signOut();
+                //redirect activity to welcome page
+                Dashboard.redirectActivity(Library.this, WelcomePage.class);
+            }
+        });
+        //Negative answer button
+        builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //Dismiss dialog
+                dialog.dismiss();
+            }
+        });
+        //Show dialog
+        builder.show();
     }
 
     @Override

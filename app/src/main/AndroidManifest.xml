@@ -35,8 +35,8 @@
         <activity android:name=".Create_Topic" />
         <activity android:name=".moodle_login" />
         <activity android:name=".Login" />
-        <activity android:name=".WelcomePage" />
-        <activity android:name=".FloorMap">
+        <activity android:name=".FloorMap" />
+        <activity android:name=".WelcomePage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

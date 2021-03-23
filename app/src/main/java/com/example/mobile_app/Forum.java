@@ -6,6 +6,8 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -14,6 +16,7 @@ import android.webkit.WebViewClient;
 import android.widget.Button;
 
 import com.example.mobile_app.Adaptors.ForumTopicAdaptor;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -28,6 +31,7 @@ public class Forum extends AppCompatActivity implements ForumTopicAdaptor.ForumT
 
     Button goTo;
 
+    FirebaseAuth firebaseAuth;
     DatabaseReference databaseReference;
     ArrayList<ForumTopic> forumTopics = new ArrayList<>();
     RecyclerView rv_forumTopic;
@@ -40,6 +44,8 @@ public class Forum extends AppCompatActivity implements ForumTopicAdaptor.ForumT
         drawer= findViewById(R.id.drawer_layout);
 
         goTo = findViewById(R.id.btn_forum_create);
+
+        firebaseAuth = FirebaseAuth.getInstance();
 
         databaseReference = FirebaseDatabase.getInstance().getReference("ForumTopic");
 
@@ -113,6 +119,36 @@ public class Forum extends AppCompatActivity implements ForumTopicAdaptor.ForumT
 
     public void ClickActivities(View view){
         Dashboard.redirectActivity(this, Recycler_view_activities.class);
+    }
+
+    //logout method
+    public void ClickLogout(View view) {
+        //Initialise alert dialog
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        //Set title
+        builder.setTitle("Logout");
+        //Set message
+        builder.setMessage("Are you sure you want to log out?");
+        //Positive answer button
+        builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //Logout user
+                firebaseAuth.signOut();
+                //redirect activity to welcome page
+                Dashboard.redirectActivity(Forum.this, WelcomePage.class);
+            }
+        });
+        //Negative answer button
+        builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //Dismiss dialog
+                dialog.dismiss();
+            }
+        });
+        //Show dialog
+        builder.show();
     }
 
     @Override

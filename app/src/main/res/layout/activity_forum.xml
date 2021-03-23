@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,16 +12,30 @@
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginBottom="5dp">
 
         <include
             layout="@layout/nav_header"/>
 
+        <TextView
+            android:id="@+id/tv_library_welcome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:text="Welcome to Forum"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:textColor="#636363"
+            android:layout_marginTop="10dp"/>
+
         <Button
+            android:id="@+id/btn_forum_create"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:text="Create Topic"
-            android:id="@+id/btn_forum_create"/>
+            app:backgroundTint="#00a06d" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_forum_topics"
