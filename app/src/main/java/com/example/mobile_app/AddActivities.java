@@ -40,11 +40,10 @@ public class AddActivities extends AppCompatActivity {
 
         dbref = FirebaseDatabase.getInstance().getReference("Activities");
 
-
+        //configuration of submit button that when clicked will make a new activity
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
 
                 Activities a = new Activities(startweek.getText().toString(), date.getText().toString(), hour.getText().toString(), type.getText().toString(),
                         description.getText().toString(), url.getText().toString());

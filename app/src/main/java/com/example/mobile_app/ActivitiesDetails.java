@@ -38,6 +38,7 @@ public class ActivitiesDetails extends AppCompatActivity {
         drawer = findViewById(R.id.drawer_layout);
 
 
+        //get the parcel of clicked activity
         Activities a = getIntent().getParcelableExtra("Activities");
 
 

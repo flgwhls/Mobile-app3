@@ -60,6 +60,8 @@ public class Login extends AppCompatActivity {
                 }
             }
         };
+
+        //configuration of login button that will check if the fields will be empty or not
         log.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,6 +79,8 @@ public class Login extends AppCompatActivity {
 
                     Toast.makeText(Login.this, "Fields are Empty", Toast.LENGTH_LONG).show();
                 } else if (!(email.isEmpty() && password.isEmpty())) {
+
+
                     mFirebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(Login.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {

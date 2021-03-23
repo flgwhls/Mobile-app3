@@ -77,10 +77,7 @@ public class Recycler_view_activities extends AppCompatActivity implements Activ
 
                 if (isInCurrentWeek(date)) {
                     list.add(dss.getValue(Activities.class));
-                    //Toast.makeText(this, "curdate before date", Toast.LENGTH_SHORT).show();
                 }
-
-
             }
 
 

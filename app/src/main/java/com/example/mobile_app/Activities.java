@@ -9,8 +9,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+// class to make Activities object
 public class Activities implements Parcelable {
-    // class to make Activities object
+
     // variables
     private String startweek, date, hour, type, description, url;
 
@@ -25,13 +26,14 @@ public class Activities implements Parcelable {
 
     }
 
-    // Constructor to create object and read from FireBase
+    // Constructor empty
     public Activities() {
 
     }
 
 
     protected Activities(Parcel in) {
+        //read parcel
         startweek = in.readString();
         date = in.readString();
         hour = in.readString();
@@ -115,6 +117,7 @@ public class Activities implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        //write parcel
         dest.writeString(startweek);
         dest.writeString(date);
         dest.writeString(hour);
