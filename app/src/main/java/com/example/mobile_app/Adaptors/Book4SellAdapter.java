@@ -14,7 +14,7 @@ import com.example.mobile_app.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-
+// Adaptor for books for sell
 public class Book4SellAdapter extends RecyclerView.Adapter<Book4SellAdapter.Book4SellHolder> {
     // Arraylist for books
     ArrayList<Book4Sell> sellbooklist;

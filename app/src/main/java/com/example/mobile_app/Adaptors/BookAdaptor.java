@@ -15,8 +15,8 @@ import com.example.mobile_app.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+// Aaptor for books
 
-// USED BY GREG DO NOT CHANGE !!!
 public class BookAdaptor extends RecyclerView.Adapter<BookAdaptor.BookHolder> {
     // Arraylist for books
     ArrayList<Book> booklist;
@@ -40,10 +40,7 @@ public class BookAdaptor extends RecyclerView.Adapter<BookAdaptor.BookHolder> {
         holder.title.setText(booklist.get(position).getTitle());
         holder.author.setText(booklist.get(position).getAuthor());
         holder.category.setText(booklist.get(position).getCategory());
-
         Picasso.get().load(booklist.get(position).getImglink()).fit().into(holder.iv_bookview);
-
-
     }
 
     @Override
@@ -67,7 +64,6 @@ public class BookAdaptor extends RecyclerView.Adapter<BookAdaptor.BookHolder> {
             iv_bookview = itemView.findViewById(R.id.iv_bookcard_bookpic);
             itemView.setOnClickListener(this);
         }
-
         @Override
         public void onClick(View v) {
             cardlistener.OnBookClick(getAdapterPosition());
@@ -78,7 +74,5 @@ public class BookAdaptor extends RecyclerView.Adapter<BookAdaptor.BookHolder> {
         public interface OnBookClickListener {
             void OnBookClick(int position);
         }
-
-
     }
 }
