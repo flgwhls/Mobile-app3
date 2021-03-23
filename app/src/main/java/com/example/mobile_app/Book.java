@@ -3,6 +3,7 @@ package com.example.mobile_app;
 import android.os.Parcel;
 import android.os.Parcelable;
 // USED BY GREG DO NOT CHANGE !!!
+// Bok Class to create object with Book details
 public class Book implements Parcelable {
     // class to make Book object
     // variables
@@ -28,7 +29,7 @@ public class Book implements Parcelable {
 
     }
 
-
+    // Parcel read
     protected Book(Parcel in) {
         title = in.readString();
         author = in.readString();
@@ -40,6 +41,7 @@ public class Book implements Parcelable {
 
         publicyear = in.readString();
     }
+    // Parcell creator
     public static final Creator<Book> CREATOR = new Creator<Book>() {
         @Override
         public Book createFromParcel(Parcel in) {
@@ -51,7 +53,7 @@ public class Book implements Parcelable {
             return new Book[size];
         }
     };
-
+    // Methods
     public String getTitle() {
         return title;
     }
@@ -115,15 +117,16 @@ public class Book implements Parcelable {
     public void setPublicyear(String publicyear) {
         this.publicyear = publicyear;
     }
-
-    public static Parcelable.Creator<Book> getCREATOR() {
-        return CREATOR;
-    }
-
+//
+//    public static Parcelable.Creator<Book> getCREATOR() {
+//        return CREATOR;
+//    }
+    // describe reset
     @Override
     public int describeContents() {
         return 0;
     }
+    // parcel write
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(title);

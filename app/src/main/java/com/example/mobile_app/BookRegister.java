@@ -32,7 +32,11 @@ import java.util.Date;
 
 import javax.net.ssl.SSLEngineResult;
 
-// USED BY GREG DO NOT CHANGE !!!
+/*
+    USED BY GREG DO NOT CHANGE !!!
+    Class to register new book for sell
+*/
+
 public class BookRegister extends AppCompatActivity {
     EditText title, author, edition, isbn, category, publisher, publicyear,price,email ;
     String status, date, imageurl;
@@ -55,7 +59,7 @@ public class BookRegister extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_register);
 
-        // DraweLayout
+        // join layout with variables
         drawer = findViewById(R.id.drawer_layout);
         title = findViewById(R.id.et_bookreg_title);
         author = findViewById(R.id.et_bookreg_author);
@@ -68,21 +72,24 @@ public class BookRegister extends AppCompatActivity {
         publicyear = findViewById(R.id.et_bookreg_publicyear);
         price = findViewById(R.id.et_bookreg_price);
         email = findViewById(R.id.et_bookreg_email);
-
+        // FireStorqage reference
         sref = FirebaseStorage.getInstance().getReference("books4sell");
-
+        // react on click
         bookregister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-
+                // Firebase Reference
                 dbref = FirebaseDatabase.getInstance().getReference("Book4sell");
+                // Get PK
                 String pk=dbref.push().getKey();
+                // create url
                 StorageReference reference= sref.child(pk+"."+getExtension(imagePath));
+                // write picture to Storage
                 reference.putFile(imagePath).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-
+                            // get url
                         reference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                             @Override
                             public void onSuccess(Uri uri) {
@@ -94,9 +101,7 @@ public class BookRegister extends AppCompatActivity {
                                 date = new SimpleDateFormat("dd/MM/yyyy").format(new Date());
                                 Toast.makeText(BookRegister.this, date, Toast.LENGTH_SHORT).show();
 
-
-
-                                //Sett status
+                                //Write Object to Database
 
                                 Book4Sell b = new Book4Sell(title.getText().toString(), author.getText().toString(),
                                         edition.getText().toString(), isbn.getText().toString(),
@@ -104,37 +109,26 @@ public class BookRegister extends AppCompatActivity {
                                         publisher.getText().toString(), publicyear.getText().toString(),
                                         price.getText().toString(),email.getText().toString(), "4Sell",date);
                                 dbref.child(pk).setValue(b);
-
-
-
-
                                 Intent i = new Intent(BookRegister.this, SellBooks.class);
                                 startActivity(i);
 
-
-
-
                             }
                         }).addOnFailureListener(new OnFailureListener() {
+                            // in case of failure
                             @Override
                             public void onFailure(@NonNull Exception e) {
-                                imageurl="No Image";
-                                reference.delete();
-                                //here need to add a toast just to advice is not possible to upload the file!
 
+                                reference.delete();
 
                             }
                         });
                     }
                 }).addOnFailureListener(new OnFailureListener() {
+                    // in case of Failure
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        imageurl="No image";
-
                     }
                 });
-
-
             }
         });
         // Click on Picture
@@ -145,11 +139,10 @@ public class BookRegister extends AppCompatActivity {
                 i.setType("image/*");
                 i.setAction(Intent.ACTION_GET_CONTENT);
                 startActivityForResult(i,100);
-
             }
         });
     }
-
+        // getting extention
     private String getExtension(Uri _imagePath)
     {
 
@@ -157,6 +150,7 @@ public class BookRegister extends AppCompatActivity {
         MimeTypeMap map= MimeTypeMap.getSingleton();
         return map.getExtensionFromMimeType(resolver.getType( _imagePath));
     }
+    // put image to ImageView after selection
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

@@ -4,18 +4,21 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 import java.util.Date;
-// USED BY GREG DO NOT CHANGE !!!
-public class Book4Sell extends Book implements Parcelable{
+/*
+USED BY GREG DO NOT CHANGE !!!
+class extended from Book class to create book for sell object with details
+of the book
+*/
 
+public class Book4Sell extends Book implements Parcelable{
+    // Variables declaration
     private String price, studentID, status, date;
 
     public Book4Sell() {
     }
-// class to make Book object
-    // variables
-    // temporry values for studentid and date
 
 
+    // Constructor to create Object
     public Book4Sell(String title, String author, String edition, String ISBN, String category,
                      String imagelink, String publisher, String publicyear, String price,
                      String studentID, String status, String date) {
@@ -26,7 +29,7 @@ public class Book4Sell extends Book implements Parcelable{
         this.date = date;
 
     }
-
+    // Parcel read
     protected Book4Sell(Parcel in) {
         super(in);
         price = in.readString();
@@ -34,7 +37,7 @@ public class Book4Sell extends Book implements Parcelable{
         status = in.readString();
         date = in.readString();
     }
-
+    // Parcel write
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         super.writeToParcel(dest, flags);
@@ -45,7 +48,7 @@ public class Book4Sell extends Book implements Parcelable{
     }
 
 
-
+    // Parcel Creator
     public static final Creator<Book4Sell> CREATOR = new Creator<Book4Sell>() {
         @Override
         public Book4Sell createFromParcel(Parcel in) {
@@ -82,7 +85,7 @@ public class Book4Sell extends Book implements Parcelable{
     public void setDate(String date) {
         this.date = date;
     }
-// Methods
+
 
     public String getPrice() {
         return price;
@@ -92,10 +95,12 @@ public class Book4Sell extends Book implements Parcelable{
         this.price = price;
     }
 
-    //TODO: pleqse look and think if we need something more in this class
-    public static Parcelable.Creator<Book4Sell> getCREATORsell() {
+
+/*
+    public static Parcelable.Creator<Book4Sell> getCREATOR() {
         return CREATOR;
     }
+*/
     @Override
     public int describeContents() {
         return 0;
