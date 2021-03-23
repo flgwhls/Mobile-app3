@@ -16,8 +16,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-
+ // Class to View Books in Cloud category
 public class CloudBooksRecycler extends AppCompatActivity implements BookAdaptor.BookHolder.OnBookClickListener{
+    // Variable Declaration
     DatabaseReference dbref; //dbrefefence
     ArrayList<Book> cloudbooklist = new ArrayList<>(); //cloud Books
     RecyclerView rv_cloudbooks; //recyclerView
@@ -25,14 +26,13 @@ public class CloudBooksRecycler extends AppCompatActivity implements BookAdaptor
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_cloud_books_recycler);
-
+        // Firebase reference
         dbref = FirebaseDatabase.getInstance().getReference("Book"); //Firebase reference
-
+        // Join variables with layout
         rv_cloudbooks = findViewById(R.id.rv_cloud_books);
         rv_cloudbooks.setLayoutManager(new LinearLayoutManager(CloudBooksRecycler.this));//Vertical view
-
+        // Set Layout Manager
         dbref.addListenerForSingleValueEvent(listener);
     }
     // set listener
@@ -45,7 +45,9 @@ public class CloudBooksRecycler extends AppCompatActivity implements BookAdaptor
 
 
                 }
+                // create adaptor
                 cloudbookAdaptor = new BookAdaptor(cloudbooklist, CloudBooksRecycler.this);
+                // Set adaptor
                 rv_cloudbooks.setAdapter(cloudbookAdaptor);
             }
         }
@@ -55,11 +57,13 @@ public class CloudBooksRecycler extends AppCompatActivity implements BookAdaptor
 
         }
     };
+    // react on click
     @Override
     public void OnBookClick(int position) {
         Intent i = new Intent(CloudBooksRecycler.this, BookPage.class);
-
+        // write parcel Book
         i.putExtra("Book", cloudbooklist.get(position));
+        // start BookPage Activity
         startActivity(i);
     }
 }
