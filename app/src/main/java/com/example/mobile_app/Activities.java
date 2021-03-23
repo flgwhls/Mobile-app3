@@ -32,6 +32,7 @@ public class Activities implements Parcelable {
 
 
     protected Activities(Parcel in) {
+        //reading parcel
         startweek = in.readString();
         date = in.readString();
         hour = in.readString();
