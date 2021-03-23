@@ -79,6 +79,8 @@ public class ActivitiesAdaptor extends RecyclerView.Adapter<ActivitiesAdaptor.Ac
 
         public interface OnActivitiesClickListener {
             public void OnActivitiesClick(int pos);
+
+
         }
     }
 
