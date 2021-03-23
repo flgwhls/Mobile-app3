@@ -61,5 +61,8 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="welcome_to_library">Welcome to Library</string>
+    <string name="books_for_sell">Books For Sell</string>
+    <string name="nwelcome_in_our_library_we_have_many_books_in_many_categories_you_can_choose_category_to_check_what_we_offer_n_n_if_you_have_some_books_what_you_don_t_need_you_can_sell_it_through_our_library_please_look_no_book_for_sell">\nWelcome in Our Library We have many books in many categories. You can choose category to check what we offer.\n\n If you have some books what you don\'t need, you can sell it through our library. Please look no Book for sell</string>
 
 </resources>

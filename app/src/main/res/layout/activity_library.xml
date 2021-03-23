@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:gravity="center"
-            android:text="Welcome to Library"
+            android:text="@string/welcome_to_library"
             android:textSize="40sp"
             android:textStyle="bold"
             android:textColor="#636363"
@@ -35,7 +35,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:focusable="auto"
-            android:text="Books For Sell"
+            android:text="@string/books_for_sell"
             app:backgroundTint="#00a06d"
             android:layout_marginTop="10dp">
 
@@ -59,7 +59,12 @@
 
         </LinearLayout>
 
-
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="354dp"
+            android:text="@string/nwelcome_in_our_library_we_have_many_books_in_many_categories_you_can_choose_category_to_check_what_we_offer_n_n_if_you_have_some_books_what_you_don_t_need_you_can_sell_it_through_our_library_please_look_no_book_for_sell"
+            android:textSize="24sp" />
 
 
     </LinearLayout>

@@ -19,8 +19,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-
+    // class to view books for sell
 public class SellBooks extends AppCompatActivity implements Book4SellAdapter.Book4SellHolder.OnBookClickListener {
+    // Variable declaration
     DatabaseReference dbref; //dbrefefence
     ArrayList<Book4Sell> sellbooklist = new ArrayList<>(); // boks for sale arrayList
     RecyclerView rv_sellbooks; //RecyklerView for display list of books
@@ -36,13 +37,16 @@ public class SellBooks extends AppCompatActivity implements Book4SellAdapter.Boo
         rv_sellbooks = findViewById(R.id.rv_sell_books);
         reg4Sell = findViewById(R.id.btn_Register4Sell);
         rv_sellbooks.setLayoutManager(new LinearLayoutManager(SellBooks.this));
+        // create listener
         reg4Sell.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent regintent = new Intent(SellBooks.this,BookRegister.class);
+                // start BookRegister Activity
                 startActivity(regintent);
             }
         });
+        // create listener
         dbref.addListenerForSingleValueEvent(listener);
     }
     // set listener
@@ -50,10 +54,12 @@ public class SellBooks extends AppCompatActivity implements Book4SellAdapter.Boo
         @Override
         public void onDataChange(@NonNull DataSnapshot snapshot) {
             for (DataSnapshot dss : snapshot.getChildren()) {
-
+                // add books for sell to list
                 sellbooklist.add(dss.getValue(Book4Sell.class));
             }
+            // create adaptor
             sellbookAdaptor = new Book4SellAdapter(sellbooklist, SellBooks.this);
+            // set adaptor
             rv_sellbooks.setAdapter(sellbookAdaptor);
 
         }
@@ -63,12 +69,13 @@ public class SellBooks extends AppCompatActivity implements Book4SellAdapter.Boo
 
         }
     };
-
+    // react on click
     @Override
     public void OnBookClick(int position) {
         Intent i = new Intent(SellBooks.this, SellPage.class);
-
+        // send parcell
         i.putExtra("Book4Sell", sellbooklist.get(position));
+        // start SellPage activity
         startActivity(i);
     }
 
