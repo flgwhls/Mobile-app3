@@ -35,17 +35,14 @@ import java.util.Locale;
 
 public class Recycler_view_activities extends AppCompatActivity implements ActivitiesAdaptor.ActivitiesHolder.OnActivitiesClickListener{
     
-    DatabaseReference dbref;
-    DrawerLayout drawer;
+    DatabaseReference dbref; //dbrefefence
+    DrawerLayout drawer; // drawer menu
     RecyclerView recview;
-    ActivitiesAdaptor adaptor;
-    ArrayList<Activities> list= new ArrayList<>();
-    FirebaseAuth firebaseAuth;
-    // Modification to try date compare
-  // Date curentdate= new Date();
-  // String strcurdate,strcurdate2, format = "dd/MM/yyyy";
-    Date date;
-    // end of modification
+    ActivitiesAdaptor adaptor; // adaptor
+    ArrayList<Activities> list= new ArrayList<>(); //dbase Activities
+    FirebaseAuth firebaseAuth; //dbase authentification
+    Date date; //Current date
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,27 +53,13 @@ public class Recycler_view_activities extends AppCompatActivity implements Activ
         firebaseAuth = FirebaseAuth.getInstance();
 
         recview = findViewById(R.id.recview);
-        //vertical way
+        //vertical way to display the recycle view
         recview.setLayoutManager(new LinearLayoutManager(Recycler_view_activities.this));
+
         dbref= FirebaseDatabase.getInstance().getReference("Activities");
-       /* strcurdate= (new SimpleDateFormat(format)).format(curentdate);
-       */
         dbref.addListenerForSingleValueEvent(listener);
 
 
-
-       /* String string = "25/03/2021";
-
-        Date date = null;
-        try {
-            date = new SimpleDateFormat("dd/MM/yyyy").parse(string);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        strcurdate2= (new SimpleDateFormat(format)).format(date);
-        if (curentdate.before(date)) {
-            Toast.makeText(this, "curdate before date", Toast.LENGTH_SHORT).show();
-        }*/
     }
     ValueEventListener listener= new ValueEventListener() {
         @Override
@@ -126,6 +109,7 @@ public class Recycler_view_activities extends AppCompatActivity implements Activ
     @Override
     public void OnActivitiesClick(int pos) {
 
+        // intent to navigate to another activities by clicking on one activity
         Intent i= new Intent(Recycler_view_activities.this,ActivitiesDetails.class);
         i.putExtra("Activities", list.get(pos));
         startActivity(i);
