@@ -11,7 +11,7 @@ import android.widget.EditText;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class Create_Topic extends AppCompatActivity {
+public class CreateTopic extends AppCompatActivity {
 
     EditText topicName, topicMessage, topicDesc;
     Button createTopic;
@@ -35,7 +35,7 @@ public class Create_Topic extends AppCompatActivity {
             public void onClick(View view) {
                 ForumTopic topic = new ForumTopic(topicName.getText().toString(), topicMessage.getText().toString(), topicDesc.getText().toString());
                 databaseReference.child(databaseReference.push().getKey()).setValue(topic);
-                Intent i = new Intent(Create_Topic.this, ForumRecycleView.class);
+                Intent i = new Intent(CreateTopic.this, ForumRecycler.class);
                 startActivity(i);
 
 

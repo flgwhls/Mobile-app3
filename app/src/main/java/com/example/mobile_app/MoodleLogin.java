@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-public class moodle_login extends AppCompatActivity {
+public class MoodleLogin extends AppCompatActivity {
 
     //Initialize website view
     private WebView webView;

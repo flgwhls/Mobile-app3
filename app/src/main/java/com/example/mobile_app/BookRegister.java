@@ -185,7 +185,7 @@ public class BookRegister extends AppCompatActivity {
     }
 
     public void ClickForum(View view) {
-        Dashboard.redirectActivity(this, ForumRecycleView.class);
+        Dashboard.redirectActivity(this, ForumRecycler.class);
     }
 
     public void ClickActivities(View view) {

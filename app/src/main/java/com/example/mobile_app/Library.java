@@ -72,11 +72,11 @@ public class Library extends AppCompatActivity implements PopupMenu.OnMenuItemCl
     }
 
     public void ClickForum(View view){
-        Dashboard.redirectActivity(this, ForumRecycleView.class);
+        Dashboard.redirectActivity(this, ForumRecycler.class);
     }
 
     public void ClickActivities(View view){
-        Dashboard.redirectActivity(this,Recycler_view_activities.class);
+        Dashboard.redirectActivity(this, ActivitiesRecycler.class);
     }
 
     //logout method
@@ -159,7 +159,7 @@ public class Library extends AppCompatActivity implements PopupMenu.OnMenuItemCl
                 return true;
             case R.id.programming:
                 // when programming
-                Intent progb= new Intent(Library.this,ProgBooksRecykler.class);
+                Intent progb= new Intent(Library.this, ProgBooksRecycler.class);
                 startActivity(progb);
                 return true;
             case R.id.web:

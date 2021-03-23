@@ -17,7 +17,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
     // class to view books in Programming category
-public class ProgBooksRecykler extends AppCompatActivity implements BookAdaptor.BookHolder.OnBookClickListener{
+public class ProgBooksRecycler extends AppCompatActivity implements BookAdaptor.BookHolder.OnBookClickListener{
     // variable declaration
     DatabaseReference dbref; //dbrefefence
     ArrayList<Book> progbooklist = new ArrayList<>(); //prog Books
@@ -31,7 +31,7 @@ public class ProgBooksRecykler extends AppCompatActivity implements BookAdaptor.
         dbref = FirebaseDatabase.getInstance().getReference("Book"); //Firebase reference
             // join variables with layout
         rv_progbooks = findViewById(R.id.rv_prog_books);
-        rv_progbooks.setLayoutManager(new LinearLayoutManager(ProgBooksRecykler.this));//Vertical view
+        rv_progbooks.setLayoutManager(new LinearLayoutManager(ProgBooksRecycler.this));//Vertical view
         // create listener
         dbref.addListenerForSingleValueEvent(listener);
     }
@@ -48,7 +48,7 @@ public class ProgBooksRecykler extends AppCompatActivity implements BookAdaptor.
 
                 }
                 // create adaptor
-                progbookAdaptor = new BookAdaptor(progbooklist, ProgBooksRecykler.this);
+                progbookAdaptor = new BookAdaptor(progbooklist, ProgBooksRecycler.this);
                 // set adaptor
                 rv_progbooks.setAdapter(progbookAdaptor);
             }
@@ -62,7 +62,7 @@ public class ProgBooksRecykler extends AppCompatActivity implements BookAdaptor.
     // react on click
     @Override
     public void OnBookClick(int position) {
-        Intent i = new Intent(ProgBooksRecykler.this, BookPage.class);
+        Intent i = new Intent(ProgBooksRecycler.this, BookPage.class);
         // send parcell
         i.putExtra("Book", progbooklist.get(position));
         // start BookPage Activity

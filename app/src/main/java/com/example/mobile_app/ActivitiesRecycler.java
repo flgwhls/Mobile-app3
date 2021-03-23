@@ -12,7 +12,6 @@ import android.content.Intent;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import com.example.mobile_app.Adaptors.ActivitiesAdaptor;
 import com.google.firebase.auth.FirebaseAuth;
@@ -29,9 +28,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Locale;
 
-public class Recycler_view_activities extends AppCompatActivity implements ActivitiesAdaptor.ActivitiesHolder.OnActivitiesClickListener {
+public class ActivitiesRecycler extends AppCompatActivity implements ActivitiesAdaptor.ActivitiesHolder.OnActivitiesClickListener {
 
     DatabaseReference dbref;
     DrawerLayout drawer;
@@ -55,7 +53,7 @@ public class Recycler_view_activities extends AppCompatActivity implements Activ
 
         recview = findViewById(R.id.recview);
         //vertical way
-        recview.setLayoutManager(new LinearLayoutManager(Recycler_view_activities.this));
+        recview.setLayoutManager(new LinearLayoutManager(ActivitiesRecycler.this));
         dbref = FirebaseDatabase.getInstance().getReference("Activities");
         /* strcurdate= (new SimpleDateFormat(format)).format(curentdate);
          */
@@ -99,7 +97,7 @@ public class Recycler_view_activities extends AppCompatActivity implements Activ
             }
 
 
-            adaptor = new ActivitiesAdaptor(list, Recycler_view_activities.this);
+            adaptor = new ActivitiesAdaptor(list, ActivitiesRecycler.this);
             recview.setAdapter(adaptor);
         }
 
@@ -125,7 +123,7 @@ public class Recycler_view_activities extends AppCompatActivity implements Activ
     @Override
     public void OnActivitiesClick(int pos) {
 
-        Intent i = new Intent(Recycler_view_activities.this, ActivitiesDetails.class);
+        Intent i = new Intent(ActivitiesRecycler.this, ActivitiesDetails.class);
         i.putExtra("Activities", list.get(pos));
         startActivity(i);
 
@@ -153,7 +151,7 @@ public class Recycler_view_activities extends AppCompatActivity implements Activ
     }
 
     public void ClickForum(View view) {
-        Dashboard.redirectActivity(this, Forum.class);
+        Dashboard.redirectActivity(this, ForumRecycler.class);
     }
 
 
@@ -176,7 +174,7 @@ public class Recycler_view_activities extends AppCompatActivity implements Activ
                 //Logout user
                 firebaseAuth.signOut();
                 //redirect activity to welcome page
-                Dashboard.redirectActivity(Recycler_view_activities.this, WelcomePage.class);
+                Dashboard.redirectActivity(ActivitiesRecycler.this, WelcomePage.class);
             }
         });
         //Negative answer button

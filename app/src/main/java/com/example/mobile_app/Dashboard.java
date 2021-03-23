@@ -64,6 +64,8 @@ public class Dashboard extends AppCompatActivity {
     }
 
 
+
+    //dashboard navigation methods
     public void VisitLibrary(View view) {
         redirectActivity(this, Library.class);
     }
@@ -77,11 +79,11 @@ public class Dashboard extends AppCompatActivity {
     }
 
     public void VisitForum(View view) {
-        redirectActivity(this, ForumRecycleView.class);
+        redirectActivity(this, ForumRecycler.class);
     }
 
     public void VisitActivities(View view) {
-        redirectActivity(this, Recycler_view_activities.class);
+        redirectActivity(this, ActivitiesRecycler.class);
     }
 
     public void ClickHome(View view) {
@@ -89,6 +91,7 @@ public class Dashboard extends AppCompatActivity {
     }
 
 
+    //drawer menu navigation methods
     public void ClickLibrary(View view) {
         redirectActivity(this, Library.class);
     }
@@ -102,11 +105,11 @@ public class Dashboard extends AppCompatActivity {
     }
 
     public void ClickForum(View view) {
-        redirectActivity(this, ForumRecycleView.class);
+        redirectActivity(this, ForumRecycler.class);
     }
 
     public void ClickActivities(View view) {
-        redirectActivity(this, Recycler_view_activities.class);
+        redirectActivity(this, ActivitiesRecycler.class);
     }
 
 

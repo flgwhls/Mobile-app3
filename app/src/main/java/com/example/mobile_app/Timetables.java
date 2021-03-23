@@ -71,11 +71,11 @@ public class Timetables extends AppCompatActivity {
     }
 
     public void ClickForum(View view) {
-        Dashboard.redirectActivity(this, ForumRecycleView.class);
+        Dashboard.redirectActivity(this, ForumRecycler.class);
     }
 
     public void ClickActivities(View view) {
-        Dashboard.redirectActivity(this, Recycler_view_activities.class);
+        Dashboard.redirectActivity(this, ActivitiesRecycler.class);
     }
 
     //logout method

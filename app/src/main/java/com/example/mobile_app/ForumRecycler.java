@@ -23,7 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class ForumRecycleView extends AppCompatActivity implements ForumTopicAdaptor.ForumTopicHolder.OnTopicClickListener {
+public class ForumRecycler extends AppCompatActivity implements ForumTopicAdaptor.ForumTopicHolder.OnTopicClickListener {
     //Initialize drawer
     DrawerLayout drawer;
 
@@ -54,7 +54,7 @@ public class ForumRecycleView extends AppCompatActivity implements ForumTopicAda
 
         rv_forumTopic = findViewById(R.id.rv_forum_topics);
         //set recycler view layout
-        rv_forumTopic.setLayoutManager(new LinearLayoutManager(ForumRecycleView.this));
+        rv_forumTopic.setLayoutManager(new LinearLayoutManager(ForumRecycler.this));
 
         databaseReference.addListenerForSingleValueEvent(listener);
 
@@ -63,7 +63,7 @@ public class ForumRecycleView extends AppCompatActivity implements ForumTopicAda
             @Override
             public void onClick(View view) {
                 //initialise intent
-                Intent i = new Intent(ForumRecycleView.this, Create_Topic.class);
+                Intent i = new Intent(ForumRecycler.this, CreateTopic.class);
                 //start intent
                 startActivity(i);
             }
@@ -79,7 +79,7 @@ public class ForumRecycleView extends AppCompatActivity implements ForumTopicAda
                 forumTopics.add(dss.getValue(ForumTopic.class));
             }
             //send data to the recycler view
-            topicAdaptor = new ForumTopicAdaptor(forumTopics, ForumRecycleView.this);
+            topicAdaptor = new ForumTopicAdaptor(forumTopics, ForumRecycler.this);
             //get data from adaptor to recycler
             rv_forumTopic.setAdapter(topicAdaptor);
         }
@@ -93,7 +93,7 @@ public class ForumRecycleView extends AppCompatActivity implements ForumTopicAda
     //method to navigate form recycler view item to the activity
     @Override
     public void OnTopicClick(int position) {
-        Intent i = new Intent(ForumRecycleView.this, topic_page.class);
+        Intent i = new Intent(ForumRecycler.this, TopicPage.class);
 
         i.putExtra("ForumTopic", forumTopics.get(position));
         startActivity(i);
@@ -132,7 +132,7 @@ public class ForumRecycleView extends AppCompatActivity implements ForumTopicAda
     }
 
     public void ClickActivities(View view) {
-        Dashboard.redirectActivity(this, Recycler_view_activities.class);
+        Dashboard.redirectActivity(this, ActivitiesRecycler.class);
     }
 
     //logout method
@@ -150,7 +150,7 @@ public class ForumRecycleView extends AppCompatActivity implements ForumTopicAda
                 //Logout user
                 firebaseAuth.signOut();
                 //redirect activity to welcome page
-                Dashboard.redirectActivity(ForumRecycleView.this, WelcomePage.class);
+                Dashboard.redirectActivity(ForumRecycler.this, WelcomePage.class);
             }
         });
         //Negative answer button

@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 
-public class topic_page extends AppCompatActivity {
+public class TopicPage extends AppCompatActivity {
 
     TextView topicName, topicDesc, topicMessage;
 
