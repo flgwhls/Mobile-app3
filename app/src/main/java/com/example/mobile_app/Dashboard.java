@@ -12,7 +12,6 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
 
 public class Dashboard extends AppCompatActivity {
 
@@ -78,7 +77,7 @@ public class Dashboard extends AppCompatActivity {
     }
 
     public void VisitForum(View view) {
-        redirectActivity(this, Forum.class);
+        redirectActivity(this, ForumRecycleView.class);
     }
 
     public void VisitActivities(View view) {
@@ -103,7 +102,7 @@ public class Dashboard extends AppCompatActivity {
     }
 
     public void ClickForum(View view) {
-        redirectActivity(this, Forum.class);
+        redirectActivity(this, ForumRecycleView.class);
     }
 
     public void ClickActivities(View view) {

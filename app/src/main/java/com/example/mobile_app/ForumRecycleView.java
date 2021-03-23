@@ -11,8 +11,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.Button;
 
 import com.example.mobile_app.Adaptors.ForumTopicAdaptor;
@@ -25,16 +23,21 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class Forum extends AppCompatActivity implements ForumTopicAdaptor.ForumTopicHolder.OnTopicClickListener {
+public class ForumRecycleView extends AppCompatActivity implements ForumTopicAdaptor.ForumTopicHolder.OnTopicClickListener {
     //Initialize drawer
     DrawerLayout drawer;
 
     Button goTo;
 
+    //initialise firebase auth
     FirebaseAuth firebaseAuth;
+    //initialisa database reference
     DatabaseReference databaseReference;
+    //create arraylist
     ArrayList<ForumTopic> forumTopics = new ArrayList<>();
+    //recycler view
     RecyclerView rv_forumTopic;
+    //adaptor for recylerview
     ForumTopicAdaptor topicAdaptor;
 
     @Override
@@ -44,36 +47,40 @@ public class Forum extends AppCompatActivity implements ForumTopicAdaptor.ForumT
         drawer = findViewById(R.id.drawer_layout);
 
         goTo = findViewById(R.id.btn_forum_create);
-
+        //get instance of firebase auth
         firebaseAuth = FirebaseAuth.getInstance();
-
+        //get firebase reference from table "ForumTopic"
         databaseReference = FirebaseDatabase.getInstance().getReference("ForumTopic");
 
         rv_forumTopic = findViewById(R.id.rv_forum_topics);
-        rv_forumTopic.setLayoutManager(new LinearLayoutManager(Forum.this));
+        //set recycler view layout
+        rv_forumTopic.setLayoutManager(new LinearLayoutManager(ForumRecycleView.this));
 
         databaseReference.addListenerForSingleValueEvent(listener);
 
-        ArrayList<ForumTopic> topicList;
-
-
+        //navigation to the Create Topic activity
         goTo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(Forum.this, Create_Topic.class);
+                //initialise intent
+                Intent i = new Intent(ForumRecycleView.this, Create_Topic.class);
+                //start intent
                 startActivity(i);
             }
         });
 
     }
 
+    //method to post data into recycler view
     ValueEventListener listener = new ValueEventListener() {
         @Override
         public void onDataChange(@NonNull DataSnapshot snapshot) {
             for (DataSnapshot dss : snapshot.getChildren()) {
                 forumTopics.add(dss.getValue(ForumTopic.class));
             }
-            topicAdaptor = new ForumTopicAdaptor(forumTopics, Forum.this);
+            //send data to the recycler view
+            topicAdaptor = new ForumTopicAdaptor(forumTopics, ForumRecycleView.this);
+            //get data from adaptor to recycler
             rv_forumTopic.setAdapter(topicAdaptor);
         }
 
@@ -83,9 +90,10 @@ public class Forum extends AppCompatActivity implements ForumTopicAdaptor.ForumT
         }
     };
 
+    //method to navigate form recycler view item to the activity
     @Override
     public void OnTopicClick(int position) {
-        Intent i = new Intent(Forum.this, topic_page.class);
+        Intent i = new Intent(ForumRecycleView.this, topic_page.class);
 
         i.putExtra("ForumTopic", forumTopics.get(position));
         startActivity(i);
@@ -96,7 +104,13 @@ public class Forum extends AppCompatActivity implements ForumTopicAdaptor.ForumT
         Dashboard.openDrawer(drawer);
     }
 
+    public void ClickLogo(View viwe){
+        //close drawer
+        Dashboard.closeDrawer(drawer);
+    }
 
+
+    //navigation menu methods to change activities
     public void ClickHome(View view) {
         Dashboard.redirectActivity(this, Dashboard.class);
     }
@@ -136,7 +150,7 @@ public class Forum extends AppCompatActivity implements ForumTopicAdaptor.ForumT
                 //Logout user
                 firebaseAuth.signOut();
                 //redirect activity to welcome page
-                Dashboard.redirectActivity(Forum.this, WelcomePage.class);
+                Dashboard.redirectActivity(ForumRecycleView.this, WelcomePage.class);
             }
         });
         //Negative answer button

@@ -3,7 +3,7 @@
   <ID>JAVA</ID>
   <OriginalElement>com.example.mobile_app</OriginalElement>
   <nodes>
-    <node x="778.0" y="578.0">com.example.mobile_app.Forum</node>
+    <node x="778.0" y="578.0">com.example.mobile_app.ForumRecycleView</node>
     <node x="1190.0" y="1372.0">com.example.mobile_app.Student</node>
     <node x="671.0" y="1493.0">com.example.mobile_app.BuyBook</node>
     <node x="1297.0" y="904.0">com.example.mobile_app.WelcomePage</node>
@@ -74,7 +74,7 @@
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
-    <edge source="com.example.mobile_app.BookRegister" target="com.example.mobile_app.Forum">
+    <edge source="com.example.mobile_app.BookRegister" target="com.example.mobile_app.ForumRecycleView">
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
@@ -218,7 +218,7 @@
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
-    <edge source="com.example.mobile_app.FloorMap" target="com.example.mobile_app.Forum">
+    <edge source="com.example.mobile_app.FloorMap" target="com.example.mobile_app.ForumRecycleView">
       <point x="5.34933211685437" y="0.0" />
       <point x="5.349332116854356" y="0.0" />
     </edge>
@@ -230,7 +230,7 @@
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
-    <edge source="com.example.mobile_app.Forum" target="com.example.mobile_app.FloorMap">
+    <edge source="com.example.mobile_app.ForumRecycleView" target="com.example.mobile_app.FloorMap">
       <point x="-4.673480624101003" y="-1.7772391105736176" />
       <point x="-4.673480624101003" y="-1.777239110573646" />
     </edge>
@@ -238,7 +238,7 @@
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
-    <edge source="com.example.mobile_app.Dashboard" target="com.example.mobile_app.Forum">
+    <edge source="com.example.mobile_app.Dashboard" target="com.example.mobile_app.ForumRecycleView">
       <point x="-10.804065520877288" y="0.0" />
       <point x="-10.80406552087726" y="0.0" />
     </edge>
@@ -270,7 +270,7 @@
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
-    <edge source="com.example.mobile_app.Forum" target="com.example.mobile_app.Dashboard">
+    <edge source="com.example.mobile_app.ForumRecycleView" target="com.example.mobile_app.Dashboard">
       <point x="2.3139437604937854" y="-4.432342977847256" />
       <point x="2.3139437604937996" y="-4.432342977847256" />
     </edge>
@@ -286,7 +286,7 @@
       <point x="6.152030090489362" y="0.0" />
       <point x="6.152030090489362" y="0.0" />
     </edge>
-    <edge source="com.example.mobile_app.ActivitiesDetails" target="com.example.mobile_app.Forum">
+    <edge source="com.example.mobile_app.ActivitiesDetails" target="com.example.mobile_app.ForumRecycleView">
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
@@ -344,11 +344,11 @@
       <point x="3.7962830118265174" y="3.2539568672798396" />
       <point x="3.7962830118264606" y="3.2539568672798396" />
     </edge>
-    <edge source="com.example.mobile_app.Forum" target="com.example.mobile_app.Recycler_view_activities">
+    <edge source="com.example.mobile_app.ForumRecycleView" target="com.example.mobile_app.Recycler_view_activities">
       <point x="4.981021042592971" y="0.43523484838190996" />
       <point x="4.981021042592971" y="0.43523484838192417" />
     </edge>
-    <edge source="com.example.mobile_app.Forum" target="com.example.mobile_app.Timetables">
+    <edge source="com.example.mobile_app.ForumRecycleView" target="com.example.mobile_app.Timetables">
       <point x="3.3448236581122472" y="3.7164707312358303" />
       <point x="3.3448236581122472" y="3.7164707312358303" />
     </edge>
@@ -356,11 +356,11 @@
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
-    <edge source="com.example.mobile_app.Forum" target="com.example.mobile_app.Library">
+    <edge source="com.example.mobile_app.ForumRecycleView" target="com.example.mobile_app.Library">
       <point x="3.4986443647158296" y="3.5720424982413306" />
       <point x="3.4986443647158296" y="3.572042498241334" />
     </edge>
-    <edge source="com.example.mobile_app.Recycler_view_activities" target="com.example.mobile_app.Forum">
+    <edge source="com.example.mobile_app.Recycler_view_activities" target="com.example.mobile_app.ForumRecycleView">
       <point x="-5.019051272063235" y="0.0" />
       <point x="-5.019051272063237" y="0.0" />
     </edge>
@@ -380,7 +380,7 @@
       <point x="-4.125260436041888" y="-2.8252834078774356" />
       <point x="-4.125260436041884" y="-2.8252834078774285" />
     </edge>
-    <edge source="com.example.mobile_app.Timetables" target="com.example.mobile_app.Forum">
+    <edge source="com.example.mobile_app.Timetables" target="com.example.mobile_app.ForumRecycleView">
       <point x="-7.47423558170761" y="0.0" />
       <point x="-7.474235581707617" y="0.0" />
     </edge>
@@ -416,7 +416,7 @@
       <point x="-0.7421551320716162" y="-4.438378731016542" />
       <point x="-0.7421551320716162" y="-4.438378731016542" />
     </edge>
-    <edge source="com.example.mobile_app.Library" target="com.example.mobile_app.Forum">
+    <edge source="com.example.mobile_app.Library" target="com.example.mobile_app.ForumRecycleView">
       <point x="-7.14562481746573" y="0.0" />
       <point x="-7.145624817465723" y="0.0" />
     </edge>

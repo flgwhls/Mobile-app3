@@ -12,8 +12,6 @@ import android.webkit.WebViewClient;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-import java.sql.Time;
-
 public class Timetables extends AppCompatActivity {
     //Initialize website view
     private WebView webView;
@@ -73,7 +71,7 @@ public class Timetables extends AppCompatActivity {
     }
 
     public void ClickForum(View view) {
-        Dashboard.redirectActivity(this, Forum.class);
+        Dashboard.redirectActivity(this, ForumRecycleView.class);
     }
 
     public void ClickActivities(View view) {

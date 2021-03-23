@@ -53,7 +53,7 @@ public class FloorMap extends AppCompatActivity {
     }
 
     public void ClickForum(View view) {
-        Dashboard.redirectActivity(this, Forum.class);
+        Dashboard.redirectActivity(this, ForumRecycleView.class);
     }
 
     public void ClickActivities(View view) {

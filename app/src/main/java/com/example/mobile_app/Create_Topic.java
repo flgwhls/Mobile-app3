@@ -35,7 +35,7 @@ public class Create_Topic extends AppCompatActivity {
             public void onClick(View view) {
                 ForumTopic topic = new ForumTopic(topicName.getText().toString(), topicMessage.getText().toString(), topicDesc.getText().toString());
                 databaseReference.child(databaseReference.push().getKey()).setValue(topic);
-                Intent i = new Intent(Create_Topic.this, Forum.class);
+                Intent i = new Intent(Create_Topic.this, ForumRecycleView.class);
                 startActivity(i);
 
 
