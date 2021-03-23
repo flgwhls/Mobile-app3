@@ -9,7 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class Dashboard extends AppCompatActivity{
+public class Dashboard extends AppCompatActivity {
 
 
     DrawerLayout drawer;
@@ -21,15 +21,18 @@ public class Dashboard extends AppCompatActivity{
         drawer = findViewById(R.id.drawer_layout);
 
 
-
     }
 
-    public void ClickMenu(View view){
+    public void ClickMenu(View view) {
         //Open drawer
         openDrawer(drawer);
     }
 
-    public static void openDrawer(DrawerLayout drawer){
+    public void ClickLogo(View view) {
+        closeDrawer(drawer);
+    }
+
+    public static void openDrawer(DrawerLayout drawer) {
         //Open drawer layout
         drawer.openDrawer(GravityCompat.START);
     }
@@ -37,7 +40,7 @@ public class Dashboard extends AppCompatActivity{
     public static void closeDrawer(DrawerLayout drawer) {
         //close drawer layout
         //check condition
-        if (drawer.isDrawerOpen(GravityCompat.START)){
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
             //if drawer is open
             //close it
             drawer.closeDrawer(GravityCompat.START);
@@ -45,33 +48,32 @@ public class Dashboard extends AppCompatActivity{
     }
 
 
-    public void VisitLibrary(View view){
-        redirectActivity(this,Library.class);
+    public void VisitLibrary(View view) {
+        redirectActivity(this, Library.class);
     }
 
-    public void VisitTimeTables(View view){
-        redirectActivity(this,Timetables.class);
+    public void VisitTimeTables(View view) {
+        redirectActivity(this, Timetables.class);
     }
 
-    public void VisitFloorPlan(View view){
-        redirectActivity(this,FloorMap.class);
+    public void VisitFloorPlan(View view) {
+        redirectActivity(this, FloorMap.class);
     }
 
-    public void VisitForum(View view){
-        redirectActivity(this,Forum.class);
+    public void VisitForum(View view) {
+        redirectActivity(this, Forum.class);
     }
 
-    public void ClickActivities(View view){
+    public void ClickActivities(View view) {
         redirectActivity(this, Recycler_view_activities.class);
     }
 
-    public void ClickHome(View view){
+    public void ClickHome(View view) {
         recreate();
     }
 
 
-
-    public static void redirectActivity(Activity activity, Class aClass){
+    public static void redirectActivity(Activity activity, Class aClass) {
         //Intent
         Intent i = new Intent(activity, aClass);
         // set flag
@@ -81,7 +83,7 @@ public class Dashboard extends AppCompatActivity{
     }
 
     @Override
-    protected void onPause(){
+    protected void onPause() {
         super.onPause();
         closeDrawer(drawer);
     }
