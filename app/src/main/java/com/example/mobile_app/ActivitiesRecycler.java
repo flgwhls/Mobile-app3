@@ -38,8 +38,7 @@ public class ActivitiesRecycler extends AppCompatActivity implements ActivitiesA
     ArrayList<Activities> list = new ArrayList<>();
     FirebaseAuth firebaseAuth;
     // Modification to try date compare
-    // Date curentdate= new Date();
-    // String strcurdate,strcurdate2, format = "dd/MM/yyyy";
+
     Date date;
     // end of modification
 
@@ -55,24 +54,9 @@ public class ActivitiesRecycler extends AppCompatActivity implements ActivitiesA
         //vertical way
         recview.setLayoutManager(new LinearLayoutManager(ActivitiesRecycler.this));
         dbref = FirebaseDatabase.getInstance().getReference("Activities");
-        /* strcurdate= (new SimpleDateFormat(format)).format(curentdate);
-         */
+
         dbref.addListenerForSingleValueEvent(listener);
 
-
-
-       /* String string = "25/03/2021";
-
-        Date date = null;
-        try {
-            date = new SimpleDateFormat("dd/MM/yyyy").parse(string);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        strcurdate2= (new SimpleDateFormat(format)).format(date);
-        if (curentdate.before(date)) {
-            Toast.makeText(this, "curdate before date", Toast.LENGTH_SHORT).show();
-        }*/
     }
 
     ValueEventListener listener = new ValueEventListener() {
