@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:gravity="center"
-            android:text="Timetable"
+            android:text="@string/timetable"
             android:textSize="40sp"
             android:textStyle="bold"
             android:textColor="#636363"

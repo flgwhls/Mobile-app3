@@ -5,8 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.mobile_app.Adaptors.BookAdaptor;
 import com.google.firebase.database.DataSnapshot;
@@ -16,7 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-    // clase to view books in computer graphics category
+    // class to view books in computer graphics category
 public class GraphBooksRecycler extends AppCompatActivity implements BookAdaptor.BookHolder.OnBookClickListener{
     // variable declaration
     DatabaseReference dbref; //dbrefefence
@@ -44,8 +47,6 @@ public class GraphBooksRecycler extends AppCompatActivity implements BookAdaptor
                 if (dss.getValue(Book.class).getCategory().equals("Computer Graphics")) {
                     // add book to list
                     graphbooklist.add(dss.getValue(Book.class));
-
-
                 }
                 // create adaptor
                 graphbookAdaptor = new BookAdaptor(graphbooklist, GraphBooksRecycler.this);
@@ -56,7 +57,6 @@ public class GraphBooksRecycler extends AppCompatActivity implements BookAdaptor
 
         @Override
         public void onCancelled(@NonNull DatabaseError error) {
-
         }
     };
     // react on click
@@ -67,4 +67,6 @@ public class GraphBooksRecycler extends AppCompatActivity implements BookAdaptor
         i.putExtra("Book", graphbooklist.get(position));
         startActivity(i);
     }
+
+
 }
